@@ -3,24 +3,29 @@
 function LoginButton() {
   return (
     <div>
-      {/* <!-- The button to open modal --> */}
-      <label for='my-modal-6' class='btn modal-button'>
+      <label for='my-modal-4' class='btn modal-button'>
         LOGIN
       </label>
 
       {/* <!-- Put this part before </body> tag --> */}
-      <input type='checkbox' id='my-modal-6' class='modal-toggle' />
-      <div class='modal modal-bottom sm:modal-middle'>
-        <div class='modal-box'>
-          <h3 class='font-bold text-lg'>ENTER YOUR USERNAME and PASSWORD</h3>
-          <p class='py-4'>LOGIN</p>
-          <div class='modal-action'>
-            <label for='my-modal-6' class='btn'>
-              Yay!
+      <input type='checkbox' id='my-modal-4' class='modal-toggle' />
+      <label for='my-modal-4' class='modal cursor-pointer'>
+        <label class='modal-box relative' for=''>
+          <h3 class='text-lg font-bold'>LOGIN</h3>
+          <div class='form-control'>
+            <label class='label'></label>
+            <label class='input-group'>
+              <span class='uppercase'>Username</span>
+              <input type='text' class='input input-bordered' />
             </label>
+            <label class='input-group'>
+              <span class='uppercase'>Password</span>
+              <input type='text' class='input input-bordered' />
+            </label>
+            <button class='btn glass'>SUBMIT</button>
           </div>
-        </div>
-      </div>
+        </label>
+      </label>
     </div>
   );
 }
