@@ -18,13 +18,6 @@ function App() {
           <h1 className='text-5xl font-semibold italic'>Hello world!</h1>
           <p>Mashlindo testing React with Tailwind here</p>
           <button class='btn glass'>Beautiful Design here</button>
-          <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'>
-            Learn React
-          </a>
         </header>
       </div>
     </div>
