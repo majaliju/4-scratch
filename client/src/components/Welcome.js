@@ -15,8 +15,8 @@ function Welcome({ getStarted, setGetStarted }) {
             unexpected fees.
           </p>
           <p class='py-4'>
-            Well now you don't have to deal with them just to find your favorite
-            artists and watch them live!
+            Well now you don't have to deal with them just to watch your
+            favorite artists live!
           </p>
           <button
             class='btn btn-primary'

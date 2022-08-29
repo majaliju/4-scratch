@@ -1,4 +1,8 @@
 import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
+import ArtistsDisplay from './ArtistDisplay';
+import VenuesDisplay from './VenueDisplay';
+import ConcertsDisplay from './ConcertDisplay';
 
 // create a conditional that holds status
 // if user is logged in, don't show the LoginButton
@@ -56,6 +60,7 @@ function Header() {
           </ul>
         </div>
         <div class='navbar-end'>
+          <a class='font-semibold uppercase'>Shopping Cart</a>
           <LoginButton />
         </div>
       </div>

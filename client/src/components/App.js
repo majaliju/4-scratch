@@ -6,7 +6,7 @@ import { themeChange } from 'theme-change';
 
 // user visits page --> they click on GET STARTED
 // the GETSTARTED info becomes a cookie param "user_visited_once" that moves from false to true; this gets saved
-// getStarted  needs update to check first if the cookies[:user_visited_once] exists then if it doesnt exist, to save state about it
+// getStarted  needs update to check first if the cookies[:user_visited_once] exists then if it doesn't exist, to save state about it
 
 // we also have a cookies[:has_account]
 // if they have an account, there's a conditional on the header that produces a <Login /> if they do and a <Signup /> if they dont
