@@ -1,7 +1,15 @@
 import '../../src/App.css';
-import Header from './Header';
-import { useEffect } from 'react';
+import Welcome from './Welcome';
+import FrontPage from './FrontPage';
+import { useEffect, useState } from 'react';
 import { themeChange } from 'theme-change';
+
+// user visits page
+// if they have an account, they see the Front Page (which has the header and the links to our other pages. it's here where we check cookies)
+// if they don't, they're sent to the welcome page
+// on the Welcome page, they're prompted to login or sign-up
+
+// still gotta decide if I want an initial loading page or just a welcome that has a state set on if the getStarted button was clicked
 
 function App() {
   useEffect(() => {
@@ -10,18 +18,9 @@ function App() {
     // https://github.com/saadeghi/theme-change
   }, []);
 
-  return (
-    <div>
-      <Header />
-      <div className='App'>
-        <header className='App-header'>
-          <h1 className='text-5xl font-semibold italic'>Hello world!</h1>
-          <p>Mashlindo testing React with Tailwind here</p>
-          <button class='btn glass'>Beautiful Design here</button>
-        </header>
-      </div>
-    </div>
-  );
+  const [hasAccount, setHasAccount] = useState(false);
+
+  return <>{hasAccount ? <FrontPage /> : <Welcome />}</>;
 }
 
 export default App;
