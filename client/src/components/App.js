@@ -4,12 +4,13 @@ import FrontPage from './FrontPage';
 import { useEffect, useState } from 'react';
 import { themeChange } from 'theme-change';
 
-// user visits page
-// if they have an account, they see the Front Page (which has the header and the links to our other pages. it's here where we check cookies)
-// if they don't, they're sent to the welcome page
-// on the Welcome page, they're prompted to login or sign-up
+// user visits page --> they click on GET STARTED
+// the GETSTARTED info becomes a cookie param "user_visited_once" that moves from false to true; this gets saved
+// getStarted  needs update to check first if the cookies[:user_visited_once] exists then if it doesnt exist, to save state about it
 
-// still gotta decide if I want an initial loading page or just a welcome that has a state set on if the getStarted button was clicked
+// we also have a cookies[:has_account]
+// if they have an account, there's a conditional on the header that produces a <Login /> if they do and a <Signup /> if they dont
+// if they do have a an account and are logged in, the <Login /> will transform to a <Logout />
 
 function App() {
   useEffect(() => {
@@ -19,8 +20,17 @@ function App() {
   }, []);
 
   const [hasAccount, setHasAccount] = useState(false);
+  const [getStarted, setGetStarted] = useState(false);
 
-  return <>{hasAccount ? <FrontPage /> : <Welcome />}</>;
+  return (
+    <>
+      {getStarted ? (
+        <FrontPage />
+      ) : (
+        <Welcome getStarted={getStarted} setGetStarted={setGetStarted} />
+      )}
+    </>
+  );
 }
 
 export default App;
