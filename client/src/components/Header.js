@@ -13,7 +13,7 @@ import ConcertsDisplay from './ConcertDisplay';
 // within the LOGIN, there's an extra SIGNUP option
 // TODO activity button purpose?
 // instead show some other component -> something showing a person's favorite/saved artists, concerts, etc
-// maybe pull actual info from ticketmaster API
+// maybe pull actual info from ticketmaster API (https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
 // TODO routes
 // ticketblaster routes to FrontPage
 // artists to ArtistsDisplay, same for venues and concerts etc
