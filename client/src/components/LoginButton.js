@@ -1,4 +1,5 @@
-// add the login-form details
+// TODO
+// remove the modal and create a login page outright
 
 function LoginButton() {
   return (

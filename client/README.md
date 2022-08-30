@@ -1,4 +1,5 @@
 # THE FRONTEND
 
-## DESIGN CHECKLIST
-- [ ]
+## TOOLS
+- React 
+- TailwindCSS for styling

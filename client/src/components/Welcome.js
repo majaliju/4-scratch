@@ -1,5 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
+
 function Welcome({ getStarted, setGetStarted }) {
+  // TODO
+  // stylize the FINALLY text to be more centered
+
   return (
     <div class='hero min-h-screen bg-base-200'>
       <div class='hero-content flex-col lg:flex-row'>

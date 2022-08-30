@@ -6,9 +6,9 @@ function FrontPage() {
       <Header />
       <div className='App'>
         <header className='App-header'>
-          <h1 className='text-5xl font-semibold italic'>Hello world!</h1>
-          <p>Mashlindo testing React with Tailwind here</p>
-          <button class='btn glass'>Beautiful Design here</button>
+          <h1 className='text-5xl font-semibold italic'>Upcoming Dates here</h1>
+          <p>Here we show top 10 upcoming dates</p>
+          <button class='btn glass'>Click for random concert </button>
         </header>
       </div>
     </>

@@ -4,6 +4,7 @@ import ArtistsDisplay from './ArtistDisplay';
 import VenuesDisplay from './VenueDisplay';
 import ConcertsDisplay from './ConcertDisplay';
 
+// TODO
 // create a conditional that holds status
 // if user is logged in, don't show the LoginButton
 // instead show some other component -> something showing a person's favorite/saved artists, concerts, etc
@@ -44,12 +45,12 @@ function Header() {
               </li>
             </ul>
           </div>
-          <a class='btn btn-ghost normal-case text-xl'>daisyUI</a>
+          <a class='btn btn-ghost normal-case text-xl'>ticketblaster</a>
         </div>
         <div class='navbar-center hidden lg:flex'>
           <ul class='menu menu-horizontal p-0'>
             <li>
-              <a class='font-semibold uppercase'>Artists</a>
+              <a class='font-semibold uppercase'>artists</a>
             </li>
             <li>
               <a class='font-semibold uppercase'>Venues</a>
@@ -60,7 +61,7 @@ function Header() {
           </ul>
         </div>
         <div class='navbar-end'>
-          <a class='font-semibold uppercase'>Shopping Cart</a>
+          <a class='px-4 font-semibold uppercase'>ACTIVITY</a>
           <LoginButton />
         </div>
       </div>
