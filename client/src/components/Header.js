@@ -1,4 +1,4 @@
-import LoginButton from './LoginButton';
+import Login from './Login';
 import LogoutButton from './LogoutButton';
 import ArtistsDisplay from './ArtistDisplay';
 import VenuesDisplay from './VenueDisplay';
@@ -62,7 +62,9 @@ function Header() {
         </div>
         <div class='navbar-end'>
           <a class='px-4 font-semibold uppercase'>ACTIVITY</a>
-          <LoginButton />
+          <btn class='btn btn-ghost normal-case text-xl' onClick={<Login />}>
+            ticketblaster
+          </btn>
         </div>
       </div>
     </div>
