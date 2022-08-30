@@ -4,7 +4,7 @@
 function LoginButton() {
   return (
     <div>
-      <label for='my-modal-4' class='btn glass modal-button'>
+      <label for='my-modal-4' class='btn btn-ghost modal-button'>
         LOGIN
       </label>
 
