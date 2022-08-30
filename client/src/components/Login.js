@@ -2,6 +2,7 @@
 // remove the modal and create a login page outright
 
 function Login() {
+  console.log('login successful');
   return (
     <div>
       <div class='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-900 dark:text-gray-100'>

@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 
 function Welcome({ getStarted, setGetStarted }) {
-  // TODO
+  // TODO stylizing
   // stylize the FINALLY text to be more centered
+  // change the image that renders
+  //
 
   return (
     <div class='hero min-h-screen bg-base-200'>

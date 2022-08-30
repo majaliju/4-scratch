@@ -1,5 +1,7 @@
 import Header from './Header';
 
+// TODO frontpage contents
+
 function FrontPage() {
   return (
     <>

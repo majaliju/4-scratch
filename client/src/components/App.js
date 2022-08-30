@@ -4,8 +4,7 @@ import FrontPage from './FrontPage';
 import { useEffect, useState } from 'react';
 import { themeChange } from 'theme-change';
 
-// TODO
-// USER FLOW
+// TODO user flow (cookies)
 // user visits page --> they click on GET STARTED
 // the GETSTARTED info becomes a cookie param "user_visited_once" that moves from false to true; this gets saved
 // getStarted  needs update to check first if the cookies[:user_visited_once] exists then if it doesn't exist, to save state about it

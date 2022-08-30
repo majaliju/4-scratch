@@ -4,13 +4,27 @@ import ArtistsDisplay from './ArtistDisplay';
 import VenuesDisplay from './VenueDisplay';
 import ConcertsDisplay from './ConcertDisplay';
 
-// TODO
+// TODO header conditionals (Login/Logout)
 // create a conditional that holds status
 // if user is logged in, don't show the LoginButton
+// great website to show conditionals
+// https://bobbyhadz.com/blog/react-onclick-show-component
+// 2 conditions: LOGIN or LOGOUT
+// within the LOGIN, there's an extra SIGNUP option
+// TODO activity button purpose?
 // instead show some other component -> something showing a person's favorite/saved artists, concerts, etc
 // maybe pull actual info from ticketmaster API
+// TODO routes
+// ticketblaster routes to FrontPage
+// artists to ArtistsDisplay, same for venues and concerts etc
+// the loginbutton to LogIn
+// the logout button a popup that says 'are you sure?'
 
 function Header() {
+  function handleLoginButton() {
+    console.log('button clicked');
+  }
+
   return (
     <div>
       <div class='navbar bg-base-100'>
@@ -50,7 +64,7 @@ function Header() {
         <div class='navbar-center hidden lg:flex'>
           <ul class='menu menu-horizontal p-0'>
             <li>
-              <a class='font-semibold uppercase'>artists</a>
+              <a class='font-semibold uppercase'>Artists</a>
             </li>
             <li>
               <a class='font-semibold uppercase'>Venues</a>
@@ -60,11 +74,13 @@ function Header() {
             </li>
           </ul>
         </div>
-        <div class='navbar-end'>
-          <a class='px-4 font-semibold uppercase'>ACTIVITY</a>
-          <btn class='btn btn-ghost normal-case text-xl' onClick={<Login />}>
-            ticketblaster
-          </btn>
+        <div class='navbar-end hidden lg:flex'>
+          <a class='px-4 btn btn-ghost font-semibold uppercase text-lg'>
+            ACTIVITY
+          </a>
+          <a class='px-4 btn btn-ghost font-semibold uppercase text-lg'>
+            LOGIN
+          </a>
         </div>
       </div>
     </div>
