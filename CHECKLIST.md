@@ -12,5 +12,5 @@ For this project, you must:
   - [ ] full CRUD actions for at least one resource</br>
   *maybe something like selling the tickets or leaving a comment looking for tickets*</br>
   *create a situation where you can't delete others reviews but you can create/delete/update your own*
-- [ ] Have at least three different client-side routes using React Router. Be sure to include a nav bar or other UI element that allows users to navigate between routes.
+- [x] Have at least three different client-side routes using React Router. Be sure to include a nav bar or other UI element that allows users to navigate between routes.
 - [ ] Implement authentication/authorization, including password protection. A user should be able to log in to the site with a secure password and stay logged in via user ID in the session hash.

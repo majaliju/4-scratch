@@ -5,4 +5,8 @@ class ApplicationController < ActionController::API
     session[:count] = (session[:count] || 0) + 1
     render json: { count: session[:count] }
   end
+
+  def show_session
+    render json: session
+  end
 end

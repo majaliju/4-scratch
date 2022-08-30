@@ -6,4 +6,8 @@ Rails.application.routes.draw do
 
     # route to test your configuration
   get '/hello', to: 'application#hello_world'
+
+  # route to show my sessions param basically
+  # shows session_id and that's it basically
+  get '/sessions', to: 'application#show_session'
 end
