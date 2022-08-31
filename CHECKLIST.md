@@ -11,8 +11,23 @@ For this project, you must:
   *one VENUE can have many CONCERTS*</br>
   - [ ] full CRUD actions for at least one resource</br>
   *maybe something like selling the tickets or leaving a comment looking for tickets*</br>
-  *create a situation where you can't delete others reviews but you can create/delete/update your own*
+  *you can't delete others reviews but you can create/delete/update your own, matching your own userID*
 - [x] Have at least three different client-side routes using React Router. Be sure to include a nav bar or other UI element that allows users to navigate between routes.
 - [ ] Implement authentication/authorization, including password protection. A user should be able to log in to the site with a secure password and stay logged in via user ID in the session hash.
 
 // TODO
+**WHAT IS THE SITE?**
+A virtual marketplace like CraigsList but for concerts: where you can leave posts either announcing tickets for sale, or requesting tickets for a given event. 
+MVP: As a user, I can:
+  - [ ] Log into the site
+  - [ ] View 
+    - [ ] upcoming events on the front page
+    - [ ] a list of artists and their upcoming events
+    - [ ] a list of venues and their upcoming events
+    - [ ] a list of upcoming concerts, sorted by proximity of date
+    - [ ] saved posts on the FrontPage
+  - [ ] create a post for a concert
+  - [ ] edit or delete my own posts
+STRETCH: As a user, I can:
+  - [ ] View a map of concerts near-by, and sorted by a date slider
+  - [ ] Search feature to find artists or venues
