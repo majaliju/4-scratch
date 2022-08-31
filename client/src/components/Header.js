@@ -51,13 +51,19 @@ function Header() {
               tabindex='0'
               class='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'>
               <li>
-                <a>Artists</a>
+                <a class='font-semibold uppercase'>Artists</a>
               </li>
               <li>
-                <a>Venues</a>
+                <a class='font-semibold uppercase'>Venues</a>
               </li>
               <li>
-                <a>Concerts</a>
+                <a class='font-semibold uppercase'>Concerts</a>
+              </li>
+              <li>
+                <a class='font-semibold uppercase'>Activity</a>
+              </li>
+              <li>
+                <a class='font-semibold uppercase'>Login</a>
               </li>
             </ul>
           </div>
