@@ -27,3 +27,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+## seatgeek API 
+## app secret: 31beacda086823ba592ae9076ef94c53fa6d04c800d4e8b6351e5b707f0372fd
+## client ID: Mjg3ODc3NzR8MTY2MTkxMzg4MS4wMjY3Njk
