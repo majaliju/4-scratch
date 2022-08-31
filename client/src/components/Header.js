@@ -14,6 +14,8 @@ import ConcertsDisplay from './ConcertDisplay';
 // TODO activity button purpose?
 // instead show some other component -> something showing a person's favorite/saved artists, concerts, etc
 // maybe pull actual info from ticketmaster API (https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
+// TODO RAILS
+// seed with this link: https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
 // TODO routes
 // ticketblaster routes to FrontPage
 // artists to ArtistsDisplay, same for venues and concerts etc
