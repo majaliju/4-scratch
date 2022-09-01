@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   get '/cookies', to: 'application#show_cookies'
 
 
-  # render session info for me to render first_visit for getStarted
-  get '/session_info', to: 'session#stranger'
+  # render session info for me to set state with in frontend
+  get '/session_info', to: 'session#session_info'
 end

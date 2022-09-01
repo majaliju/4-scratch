@@ -6,8 +6,8 @@ import { themeChange } from 'theme-change';
 
 // TODO user flow (cookies)
 // user visits page --> they click on GET STARTED
-// the isStranger info becomes a cookie param "user_visited_once" that moves from false to true; this gets saved
-// isStranger  needs update to check first if the cookies[:user_visited_once] exists then if it doesn't exist, to save state about it
+// the sessionID info becomes a cookie param "user_visited_once" that moves from false to true; this gets saved
+// sessionID  needs update to check first if the cookies[:user_visited_once] exists then if it doesn't exist, to save state about it
 
 // we also have a cookies[:has_account]
 // if they have an account, there's a conditional on the header that produces a <Login /> if they do and a <Signup /> if they dont
@@ -20,22 +20,21 @@ function App() {
   const [hasAccount, setHasAccount] = useState(false);
 
   // TODO put a cookie here to show user has been here before
-
   // TODO this method isn't working -- gotta use the sessionID here; replace that with sessionID
-  const [isStranger, setIsStranger] = useState(true);
+  const [sessionID, setSessionID] = useState();
 
   const userStranger = () => {
     fetch('/session_info')
       .then((r) => r.json())
-      .then((data) => console.log(data));
+      .then((data) => setSessionID(data.session_id));
   };
 
   return (
     <>
-      {isStranger ? (
+      {sessionID === '' ? (
         <Welcome
-          isStranger={isStranger}
-          setIsStranger={setIsStranger}
+          sessionID={sessionID}
+          setSessionID={setSessionID}
           update={userStranger}
         />
       ) : (
