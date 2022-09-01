@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Login from './Login';
 import LogoutButton from './LogoutButton';
-import ArtistsDisplay from './ArtistDisplay';
-import VenuesDisplay from './VenueDisplay';
-import ConcertsDisplay from './ConcertDisplay';
+import ArtistsDisplay from './ArtistsDisplay';
+import VenuesDisplay from './VenuesDisplay';
+import ConcertsDisplay from './ConcertsDisplay';
 
 // TODO header conditionals (Login/Logout)
 // create a conditional that holds status
@@ -24,8 +24,8 @@ import ConcertsDisplay from './ConcertDisplay';
 // the logout button a popup that says 'are you sure?'
 
 function Header() {
-  function handleLoginButton() {
-    console.log('button clicked');
+  function renderLogin() {
+    <Login />;
   }
 
   return (
@@ -84,10 +84,9 @@ function Header() {
           </ul>
         </div>
         <div class='navbar-end hidden lg:flex'>
-          <a class='px-4 btn btn-ghost font-semibold uppercase text-lg'>
-            ACTIVITY
-          </a>
-          <a class='px-4 btn btn-ghost font-semibold uppercase text-lg'>
+          <a
+            class='px-4 btn btn-ghost font-semibold uppercase text-lg'
+            onClick={renderLogin}>
             LOGIN
           </a>
         </div>

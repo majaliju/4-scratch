@@ -6,6 +6,7 @@ class SessionController < ApplicationController
     render json: session
   end
 
+  ## send page_views to the frontend
   def page_views_check
     session[:page_views] = (session[:page_views] || 0) + 1
     render json: {page_views: session[:page_views]}

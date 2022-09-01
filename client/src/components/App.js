@@ -1,8 +1,13 @@
 import '../../src/App.css';
 import Welcome from './Welcome';
+import MainPage from './MainPage';
+import Header from './Header';
+import ArtistsDisplay from './ArtistsDisplay';
+import ConcertsDisplay from './ConcertsDisplay';
+import VenuesDisplay from './VenuesDisplay';
 import FrontPage from './FrontPage';
-import { useEffect, useState } from 'react';
-import { themeChange } from 'theme-change';
+import Login from './Login';
+import { Route, Routes } from 'react-router-dom';
 
 // TODO user flow (cookies)
 // user visits page --> they click on GET STARTED
@@ -14,27 +19,19 @@ import { themeChange } from 'theme-change';
 // if they do have a an account and are logged in, the <Login /> will transform to a <Logout />
 
 function App() {
-  // TODO daisyUI theme styling -- gotta implement this
-  // https://daisyui.com/theme-generator/
-
-  // TODO gotta implement a more efficient version of this
-  // managed to clear the glitch but still, pageViews is being reset to undefined everytime then being set properly. that's 2 renders, no bueno
-
-  const [pageViews, setPageViews] = useState();
-
-  useEffect(() => {
-    fetch('/page_views_check')
-      .then((r) => r.json())
-      .then((data) => setPageViews(data.page_views));
-  }, []);
-
-  console.log('page_views in App: ', pageViews);
-
-  const update = () => {
-    setPageViews(pageViews + 1);
-  };
-
-  return <>{pageViews < 2 ? <Welcome update={update} /> : <FrontPage />}</>;
+  return (
+    <>
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/frontpage' element={<FrontPage />} />
+        <Route path='/artists' element={<ArtistsDisplay />} />
+        <Route path='/concerts' element={<ConcertsDisplay />} />
+        <Route path='/venues' element={<VenuesDisplay />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/welcome' element={<Welcome />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
