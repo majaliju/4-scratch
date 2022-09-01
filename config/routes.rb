@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :genres
-  resources :artists
-  resources :posts
-  resources :venues
-  resources :tickets
-  resources :concerts
 
   ## TODO
   ## remove the excess rails routes via this video https://youtu.be/IDsYWrsmO9g?t=182

@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('daisyui'), require('@tailwindcss/forms')],
+  plugins: [
+    require('daisyui'),
+    require('@tailwindcss/forms'),
+    require('flowbite/plugin'),
+  ],
   daisyui: {
     themes: [
       'light',
