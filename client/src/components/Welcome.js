@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-function Welcome({ sessionID, setSessionID, update }) {
+function Welcome({ update }) {
   // TODO stylizing
   // stylize the FINALLY text to be more centered
   // change the image that renders

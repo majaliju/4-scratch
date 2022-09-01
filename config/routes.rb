@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   # configured the root route to display cookies & session info
   get '/cookies', to: 'application#show_cookies'
 
-
-  # render session info for me to set state with in frontend
+  # render session info
   get '/session_info', to: 'session#session_info'
+
+  get '/page_views_check', to: 'session#page_views_check'
 end
