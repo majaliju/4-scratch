@@ -1,10 +1,17 @@
 /* eslint-disable jsx-a11y/alt-text */
 
-function Welcome({ getStarted, setGetStarted }) {
+import { useEffect } from 'react';
+
+function Welcome({ firstVisit, setFirstVisit, update }) {
   // TODO stylizing
   // stylize the FINALLY text to be more centered
   // change the image that renders
-  //
+
+  useEffect(() => {
+    fetch('/session_info')
+      .then((r) => r.json())
+      .then((data) => console.log('first_visit: ', data.first_visit));
+  });
 
   return (
     <div class='hero min-h-screen bg-base-200'>
@@ -24,9 +31,7 @@ function Welcome({ getStarted, setGetStarted }) {
             Well now you don't have to deal with them just to watch your
             favorite artists live!
           </p>
-          <button
-            class='btn btn-primary'
-            onClick={(e) => setGetStarted(!getStarted)}>
+          <button class='btn btn-primary' onClick={update}>
             Get Started with TICKETBLASTER
           </button>
         </div>

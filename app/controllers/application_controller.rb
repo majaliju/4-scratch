@@ -10,9 +10,8 @@ class ApplicationController < ActionController::API
     render json: session
   end
 
-  def index
-    session[:session_namer] ||= "session here works"
+  def show_cookies
     cookies[:cookies_tester] ||= "Cookies work!"
-    render json: { session: session, cookies: cookies.to_hash }
+    render json: {cookies: cookies.to_hash }
   end
 end

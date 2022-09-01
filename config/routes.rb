@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  ## TODO
-  ## remove the excess rails routes via this video https://youtu.be/IDsYWrsmO9g?t=182
-  ## if that doesn't work, then undo the scaffolding >> copy the migration files, & app files, to a new folder then rollback all migrations and undo the scaffolding. then just replace the files back in, after doing new migrations/controllers etc
-  
-
   # to login our user
   post "/login", to: "sessions#create"
   # to keep the user logged in
@@ -23,5 +18,9 @@ Rails.application.routes.draw do
   get '/sessions', to: 'application#show_session'
 
   # configured the root route to display cookies & session info
-  get '/', to: 'application#index'
+  get '/cookies', to: 'application#show_cookies'
+
+
+  # render session info for me to render first_visit for getStarted
+  get '/session_info', to: 'session#first_visit'
 end
