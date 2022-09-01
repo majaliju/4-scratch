@@ -1,11 +1,13 @@
 class SessionController < ApplicationController
 
-  def first_visit
-    session[:first_visit] ||= true
+  ## gotta figure out this method ; somethings not working
+  ## just use sessionID instead of page_views or stranger
+  def stranger
+    session[:stranger] ||= true
     session[:page_views] ||= 0 
     session[:page_views] = session[:page_views] + 1
     if session[:page_views] > 1
-      session[:first_visit] = false
+      session[:stranger] = false
       render json: session
   else 
     render json: session

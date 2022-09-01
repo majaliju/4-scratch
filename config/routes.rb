@@ -22,5 +22,5 @@ Rails.application.routes.draw do
 
 
   # render session info for me to render first_visit for getStarted
-  get '/session_info', to: 'session#first_visit'
+  get '/session_info', to: 'session#stranger'
 end

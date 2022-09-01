@@ -6,8 +6,8 @@ import { themeChange } from 'theme-change';
 
 // TODO user flow (cookies)
 // user visits page --> they click on GET STARTED
-// the firstVisit info becomes a cookie param "user_visited_once" that moves from false to true; this gets saved
-// firstVisit  needs update to check first if the cookies[:user_visited_once] exists then if it doesn't exist, to save state about it
+// the isStranger info becomes a cookie param "user_visited_once" that moves from false to true; this gets saved
+// isStranger  needs update to check first if the cookies[:user_visited_once] exists then if it doesn't exist, to save state about it
 
 // we also have a cookies[:has_account]
 // if they have an account, there's a conditional on the header that produces a <Login /> if they do and a <Signup /> if they dont
@@ -21,21 +21,25 @@ function App() {
 
   // TODO put a cookie here to show user has been here before
 
-  // TODO gotta configure it so App has a default value of first_visit = true (as is set in routes) then send user to Welcome. Within Welcome, set first_visit to false and hold it there -- always pulling state from the database itself
-  const [firstVisit, setFirstVisit] = useState(false);
+  // TODO this method isn't working -- gotta use the sessionID here; replace that with sessionID
+  const [isStranger, setIsStranger] = useState(true);
 
-  const usersFirstTimeHere = (e) => setFirstVisit(!firstVisit);
+  const userStranger = () => {
+    fetch('/session_info')
+      .then((r) => r.json())
+      .then((data) => console.log(data));
+  };
 
   return (
     <>
-      {firstVisit ? (
-        <FrontPage />
-      ) : (
+      {isStranger ? (
         <Welcome
-          firstVisit={firstVisit}
-          setFirstVisit={setFirstVisit}
-          update={usersFirstTimeHere}
+          isStranger={isStranger}
+          setIsStranger={setIsStranger}
+          update={userStranger}
         />
+      ) : (
+        <FrontPage />
       )}
     </>
   );

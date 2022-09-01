@@ -7,12 +7,6 @@ function Welcome({ firstVisit, setFirstVisit, update }) {
   // stylize the FINALLY text to be more centered
   // change the image that renders
 
-  useEffect(() => {
-    fetch('/session_info')
-      .then((r) => r.json())
-      .then((data) => console.log('first_visit: ', data.first_visit));
-  });
-
   return (
     <div class='hero min-h-screen bg-base-200'>
       <div class='hero-content flex-col lg:flex-row'>
