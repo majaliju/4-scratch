@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 // TODO
 // remove the modal and create a login page outright
 

@@ -14,11 +14,8 @@ import { themeChange } from 'theme-change';
 // if they do have a an account and are logged in, the <Login /> will transform to a <Logout />
 
 function App() {
-  useEffect(() => {
-    themeChange(false);
-    // 👆 false parameter is required for react project
-    // https://github.com/saadeghi/theme-change
-  }, []);
+  // TODO daisyUI theme styling -- gotta implement this
+  // https://daisyui.com/theme-generator/
 
   const [hasAccount, setHasAccount] = useState(false);
   const [getStarted, setGetStarted] = useState(false);

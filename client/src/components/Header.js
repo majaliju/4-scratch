@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Login from './Login';
 import LogoutButton from './LogoutButton';
 import ArtistsDisplay from './ArtistDisplay';

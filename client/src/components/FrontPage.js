@@ -2,6 +2,9 @@ import Header from './Header';
 
 // TODO frontpage contents
 
+// https://flowbite-react.com/buttons
+// wanna implement this button style but issue on render; just doesnt render
+
 function FrontPage() {
   return (
     <>
