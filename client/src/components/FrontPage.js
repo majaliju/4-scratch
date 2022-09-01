@@ -1,4 +1,5 @@
 import Header from './Header';
+import { useState, useEffect } from 'react';
 
 // TODO frontpage contents
 
@@ -6,11 +7,21 @@ import Header from './Header';
 // wanna implement this button style but issue on render; just doesnt render
 
 function FrontPage() {
+  // this code to test if backend communicates with frontend properly
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    fetch('/hello')
+      .then((r) => r.json())
+      .then((data) => setCount(data.count));
+  }, []);
+
   return (
     <>
       <Header />
       <div className='App'>
         <header className='App-header'>
+          <h1>Page Count: {count}</h1>
           <h1 className='text-5xl font-semibold italic'>
             saved posts display here probably?
           </h1>
