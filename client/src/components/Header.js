@@ -1,9 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import Login from './Login';
-import LogoutButton from './LogoutButton';
-import ArtistsDisplay from './ArtistsDisplay';
-import VenuesDisplay from './VenuesDisplay';
-import ConcertsDisplay from './ConcertsDisplay';
+
+import { NavLink } from 'react-router-dom';
 
 // TODO header conditionals (Login/Logout)
 // create a conditional that holds status
@@ -24,10 +21,6 @@ import ConcertsDisplay from './ConcertsDisplay';
 // the logout button a popup that says 'are you sure?'
 
 function Header() {
-  function renderLogin() {
-    <Login />;
-  }
-
   return (
     <div>
       <div class='navbar bg-base-100'>
@@ -52,19 +45,27 @@ function Header() {
               tabindex='0'
               class='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'>
               <li>
-                <a class='font-semibold uppercase'>Artists</a>
+                <a class='font-semibold uppercase'>
+                  <NavLink to='/artists'>artists</NavLink>
+                </a>
               </li>
               <li>
-                <a class='font-semibold uppercase'>Venues</a>
+                <a class='font-semibold uppercase'>
+                  <NavLink to='/concerts'>concerts</NavLink>
+                </a>
               </li>
               <li>
-                <a class='font-semibold uppercase'>Concerts</a>
+                <a class='font-semibold uppercase'>
+                  <NavLink to='/venues'>venues</NavLink>
+                </a>
               </li>
               <li>
                 <a class='font-semibold uppercase'>Activity</a>
               </li>
               <li>
-                <a class='font-semibold uppercase'>Login</a>
+                <a class='font-semibold uppercase'>
+                  <NavLink to='/login'>login</NavLink>
+                </a>
               </li>
             </ul>
           </div>
@@ -84,10 +85,8 @@ function Header() {
           </ul>
         </div>
         <div class='navbar-end hidden lg:flex'>
-          <a
-            class='px-4 btn btn-ghost font-semibold uppercase text-lg'
-            onClick={renderLogin}>
-            LOGIN
+          <a class='px-4 btn btn-ghost font-semibold uppercase text-lg'>
+            <NavLink to='/login'>LOGIN</NavLink>
           </a>
         </div>
       </div>

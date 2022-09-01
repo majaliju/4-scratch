@@ -8,9 +8,14 @@ class UsersController < ApplicationController
     render json: @users
   end
 
-  # GET /users/1
+ # get our specific user
   def show
-    render json: @user
+    user = User.find_by(id: session[:user_id])
+    if user
+      render json: user
+    else
+      render json: { error: "Not authorized" }, status: :unauthorized
+    end
   end
 
   # POST /users

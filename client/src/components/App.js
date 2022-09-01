@@ -1,7 +1,6 @@
 import '../../src/App.css';
 import Welcome from './Welcome';
 import MainPage from './MainPage';
-import Header from './Header';
 import ArtistsDisplay from './ArtistsDisplay';
 import ConcertsDisplay from './ConcertsDisplay';
 import VenuesDisplay from './VenuesDisplay';

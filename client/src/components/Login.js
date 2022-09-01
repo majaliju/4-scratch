@@ -1,9 +1,24 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-// TODO
-// remove the modal and create a login page outright
+import { useEffect, useState } from 'react';
 
 function Login() {
   console.log('login successful');
+
+  const [username, setUsername] = useState('');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username }),
+    })
+      .then((r) => r.json())
+      .then((user) => onLogin(user));
+  }
+
   return (
     <div>
       <div class='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-900 dark:text-gray-100'>
