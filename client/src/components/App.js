@@ -6,6 +6,7 @@ import ConcertsDisplay from './ConcertsDisplay';
 import VenuesDisplay from './VenuesDisplay';
 import FrontPage from './FrontPage';
 import Login from './Login';
+import Header from './Header';
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
