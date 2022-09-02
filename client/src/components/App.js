@@ -7,6 +7,7 @@ import VenuesDisplay from './VenuesDisplay';
 import FrontPage from './FrontPage';
 import Login from './Login';
 import { Route, Routes } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 // TODO user flow (cookies)
 // user visits page --> they click on GET STARTED
@@ -18,6 +19,16 @@ import { Route, Routes } from 'react-router-dom';
 // if they do have a an account and are logged in, the <Login /> will transform to a <Logout />
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch('/me').then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
   return (
     <>
       <Routes>
@@ -26,7 +37,7 @@ function App() {
         <Route path='/artists' element={<ArtistsDisplay />} />
         <Route path='/concerts' element={<ConcertsDisplay />} />
         <Route path='/venues' element={<VenuesDisplay />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<Login onLogin={setUser} />} />
         <Route path='/welcome' element={<Welcome />} />
       </Routes>
     </>

@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from 'react';
 
-function Login() {
-  console.log('login successful');
-
+function Login({ onLogin }) {
   const [username, setUsername] = useState('');
+
+  console.log('username: ', username);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -21,7 +21,15 @@ function Login() {
 
   return (
     <div>
-      <div class='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-900 dark:text-gray-100'>
+      <form onSubmit={handleSubmit}>
+        <input
+          type='text'
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <button type='submit'>Login</button>
+      </form>
+      {/* <div class='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-900 dark:text-gray-100'>
         <div class='mb-8 text-center'>
           <h1 class='my-3 text-4xl font-bold'>Sign in</h1>
           <p class='text-sm dark:text-gray-400'>
@@ -86,7 +94,7 @@ function Login() {
             </p>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 }
