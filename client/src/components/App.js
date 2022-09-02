@@ -19,18 +19,6 @@ import { useState, useEffect } from 'react';
 // if they do have a an account and are logged in, the <Login /> will transform to a <Logout />
 
 function App() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    fetch('/me').then((response) => {
-      if (response.ok) {
-        response.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
-
-  console.log('user :', user);
-
   return (
     <>
       <Routes>
@@ -39,7 +27,7 @@ function App() {
         <Route path='/artists' element={<ArtistsDisplay />} />
         <Route path='/concerts' element={<ConcertsDisplay />} />
         <Route path='/venues' element={<VenuesDisplay />} />
-        <Route path='/login' element={<Login onLogin={setUser} />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/welcome' element={<Welcome />} />
       </Routes>
     </>

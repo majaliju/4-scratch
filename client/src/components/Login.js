@@ -1,20 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Login({ onLogin }) {
   const [username, setUsername] = useState('');
 
-  console.log('username: ', username);
-
   function handleSubmit(e) {
     e.preventDefault();
+    console.log('within handleSubmit: ', username);
     fetch('/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ name: username }),
+      body: JSON.stringify({ username }),
     })
       .then((r) => r.json())
       .then((user) => onLogin(user));
@@ -28,7 +28,9 @@ function Login({ onLogin }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <button type='submit'>Login</button>
+        <button type='submit'>
+          <NavLink to='/'>login</NavLink>
+        </button>
       </form>
       {/* <div class='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-900 dark:text-gray-100'>
         <div class='mb-8 text-center'>

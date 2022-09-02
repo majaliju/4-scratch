@@ -28,7 +28,27 @@ function MainPage() {
     setPageViews(pageViews + 1);
   };
 
-  return <>{pageViews < 2 ? <Welcome update={update} /> : <FrontPage />}</>;
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch('/me').then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  console.log('user in MainPage :', user);
+
+  return (
+    <>
+      {pageViews < 2 ? (
+        <Welcome update={update} />
+      ) : (
+        <FrontPage user={user} onLogin={setUser} />
+      )}
+    </>
+  );
 }
 
 export default MainPage;
