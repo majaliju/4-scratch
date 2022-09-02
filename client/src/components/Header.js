@@ -2,6 +2,8 @@
 
 import { NavLink } from 'react-router-dom';
 
+// TODO use a different navbar -- responsive one
+
 // TODO header conditionals (Login/Logout)
 // create a conditional that holds status
 // if user is logged in, don't show the LoginButton

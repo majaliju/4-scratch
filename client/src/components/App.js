@@ -11,13 +11,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 // TODO user flow (cookies)
-// user visits page --> they click on GET STARTED
-// the firstVisit info becomes a cookie param "user_visited_once" that moves from false to true; this gets saved
-// firstVisit  needs update to check first if the cookies[:user_visited_once] exists then if it doesn't exist, to save state about it
-
-// we also have a cookies[:has_account]
-// if they have an account, there's a conditional on the header that produces a <Login /> if they do and a <Signup /> if they dont
-// if they do have a an account and are logged in, the <Login /> will transform to a <Logout />
+// rn working on react-router link and navlink to make sure props pass to each component thru header
 
 function App() {
   return (
