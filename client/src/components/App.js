@@ -1,5 +1,4 @@
 import '../../src/App.css';
-import Welcome from './Welcome';
 import MainPage from './MainPage';
 import ArtistsDisplay from './ArtistsDisplay';
 import ConcertsDisplay from './ConcertsDisplay';
@@ -17,13 +16,12 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='/frontpage' element={<FrontPage />} />
+        {/* <Route path='/' element={<MainPage />} /> */}
+        <Route path='/' element={<FrontPage />} />
         <Route path='/artists' element={<ArtistsDisplay />} />
         <Route path='/concerts' element={<ConcertsDisplay />} />
         <Route path='/venues' element={<VenuesDisplay />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/welcome' element={<Welcome />} />
       </Routes>
     </>
   );

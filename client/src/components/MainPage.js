@@ -1,5 +1,5 @@
-import Welcome from './Welcome';
 import FrontPage from './FrontPage';
+import Header from './Header';
 import { useState, useEffect } from 'react';
 
 // TODO frontpage contents
@@ -14,20 +14,6 @@ function MainPage() {
   // TODO gotta implement a more efficient version of this
   // managed to clear the glitch but still, pageViews is being reset to undefined everytime then being set properly. that's 2 renders, no bueno
 
-  const [pageViews, setPageViews] = useState();
-
-  // check out pageViews from the server
-  useEffect(() => {
-    fetch('/page_views_check')
-      .then((r) => r.json())
-      .then((data) => setPageViews(data.page_views));
-  }, []);
-
-  // update the pageView by 1
-  const update = () => {
-    setPageViews(pageViews + 1);
-  };
-
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -40,11 +26,8 @@ function MainPage() {
 
   return (
     <>
-      {pageViews < 2 ? (
-        <Welcome update={update} />
-      ) : (
-        <FrontPage user={user} onLogin={setUser} />
-      )}
+      <Header />
+      <FrontPage />
     </>
   );
 }
