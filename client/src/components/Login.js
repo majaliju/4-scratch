@@ -12,8 +12,9 @@ function Login({ onLogin }) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ username }),
+      body: JSON.stringify({ name: username }),
     })
       .then((r) => r.json())
       .then((user) => onLogin(user));
