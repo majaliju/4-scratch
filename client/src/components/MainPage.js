@@ -16,14 +16,14 @@ function MainPage() {
 
   const [pageViews, setPageViews] = useState();
 
+  // check out pageViews from the server
   useEffect(() => {
     fetch('/page_views_check')
       .then((r) => r.json())
       .then((data) => setPageViews(data.page_views));
   }, []);
 
-  console.log('page_views in MainPage: ', pageViews);
-
+  // update the pageView by 1
   const update = () => {
     setPageViews(pageViews + 1);
   };
@@ -37,8 +37,6 @@ function MainPage() {
       }
     });
   }, []);
-
-  console.log('user in MainPage :', user);
 
   return (
     <>
