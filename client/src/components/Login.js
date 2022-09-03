@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Login({ onLogin }) {
+function Login({ user, onLogin }) {
   const [username, setUsername] = useState('');
 
   function handleSubmit(e) {
@@ -22,17 +22,17 @@ function Login({ onLogin }) {
 
   return (
     <div>
-      {/* <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           type='text'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <button type='submit'>
-          <NavLink to='/'>login</NavLink>
+          {/* <NavLink to='/'>login</NavLink> */} Login
         </button>
-      </form> */}
-      <div class='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-900 dark:text-gray-100'>
+      </form>
+      {/* <div class='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-900 dark:text-gray-100'>
         <div class='mb-8 text-center'>
           <h1 class='my-3 text-4xl font-bold uppercase'>login</h1>
           <p class='text-sm dark:text-gray-400'>
@@ -82,7 +82,7 @@ function Login({ onLogin }) {
             </p>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,16 +1,14 @@
 import Header from './Header';
 import { useState, useEffect } from 'react';
 import UsersPage from './UsersPage';
+import Login from './Login';
 
-// TODO frontpage contents
-// https://flowbite-react.com/buttons
-// wanna implement this button style but issue on render; just doesnt render
-
-function FrontPage({ user, setUser }) {
+function FrontPage({ user, onLogin }) {
   return (
     <>
-      <Header user={user} setUser={setUser} />
-      <UsersPage user={user} />
+      <Header user={user} onLogin={onLogin} />
+      <UsersPage user={user} onLogin={onLogin} />
+      <Login user={user} onLogin={onLogin} />
     </>
   );
 }

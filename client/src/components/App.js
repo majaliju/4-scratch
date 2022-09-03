@@ -9,19 +9,32 @@ import Header from './Header';
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-// TODO user flow (cookies)
-// rn working on react-router link and navlink to make sure props pass to each component thru header
+// TODO
+// <Route /> doesn't actually pass props or render any routes
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch('/me').then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
   return (
     <>
       <Routes>
         {/* <Route path='/' element={<MainPage />} /> */}
-        <Route path='/' element={<FrontPage />} />
+        <Route path='/' element={<FrontPage user={user} onLogin={setUser} />} />
         <Route path='/artists' element={<ArtistsDisplay />} />
         <Route path='/concerts' element={<ConcertsDisplay />} />
         <Route path='/venues' element={<VenuesDisplay />} />
-        <Route path='/login' element={<Login />} />
+        <Route
+          path='/login'
+          element={<Login user={user} onLogin={setUser} />}
+        />
       </Routes>
     </>
   );
