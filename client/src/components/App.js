@@ -13,28 +13,15 @@ import { useState, useEffect } from 'react';
 // <Route /> doesn't actually pass props or render any routes
 
 function App() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    fetch('/me').then((response) => {
-      if (response.ok) {
-        response.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
-
   return (
     <>
       <Routes>
         {/* <Route path='/' element={<MainPage />} /> */}
-        <Route path='/' element={<FrontPage user={user} onLogin={setUser} />} />
+        <Route path='/' element={<FrontPage />} />
         <Route path='/artists' element={<ArtistsDisplay />} />
         <Route path='/concerts' element={<ConcertsDisplay />} />
         <Route path='/venues' element={<VenuesDisplay />} />
-        <Route
-          path='/login'
-          element={<Login user={user} onLogin={setUser} />}
-        />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </>
   );

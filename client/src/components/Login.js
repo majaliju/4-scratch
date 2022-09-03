@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 function Login({ user, onLogin }) {
   const [username, setUsername] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('within handleSubmit: ', username);
+    console.log('within /Login/handleSubmit: ', username);
     fetch('/login', {
       method: 'POST',
       headers: {
@@ -17,7 +17,7 @@ function Login({ user, onLogin }) {
       body: JSON.stringify({ username }),
     })
       .then((r) => r.json())
-      .then((user) => onLogin(user));
+      .then((thisName) => onLogin(thisName));
   }
 
   return (
@@ -30,6 +30,9 @@ function Login({ user, onLogin }) {
         />
         <button type='submit'>
           {/* <NavLink to='/'>login</NavLink> */} Login
+        </button>
+        <button>
+          <Link to='/'>Go Back</Link>
         </button>
       </form>
       {/* <div class='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-900 dark:text-gray-100'>

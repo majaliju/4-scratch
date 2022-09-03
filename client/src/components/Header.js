@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 // TODO use a different navbar -- responsive one
 
@@ -15,7 +15,9 @@ import { NavLink } from 'react-router-dom';
 // TODO RAILS
 // seed with this link: https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
 
-function Header() {
+function Header({ user, onLogin }) {
+  const something = 'placeholder-string';
+
   return (
     <div>
       <div class='navbar bg-base-100'>
@@ -33,9 +35,20 @@ function Header() {
             <li>
               <a class='uppercase font-bold'>venues</a>
             </li>
-            <li>
+            {/* the lines below is an example of how I need to render individual login/logout buttons in the dom;
+            line below assumes user exists and if so, render the login button */}
+            {/* {user && <li>
               <a class='uppercase font-bold'>login</a>
-            </li>
+            </li>} */}
+            {user === null && (
+              <li>
+                <a class='uppercase font-bold'>
+                  <Link to='/login' state={something}>
+                    login
+                  </Link>
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </div>
