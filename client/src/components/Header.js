@@ -11,9 +11,7 @@ import { NavLink } from 'react-router-dom';
 // https://bobbyhadz.com/blog/react-onclick-show-component
 // 2 conditions: LOGIN or LOGOUT
 // within the LOGIN, there's an extra SIGNUP option
-// TODO activity button purpose?
-// instead show some other component -> something showing a person's favorite/saved artists, concerts, etc
-// maybe pull actual info from seatgeek API https://platform.seatgeek.com/
+
 // TODO RAILS
 // seed with this link: https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
 
@@ -27,11 +25,17 @@ function Header() {
         <div class='flex-none'>
           <ul class='menu menu-horizontal p-0'>
             <li>
-              <a>Item 1</a>
+              <a class='uppercase font-bold'>artist</a>
+            </li>
+            <li>
+              <a class='uppercase font-bold'>concerts</a>
+            </li>
+            <li>
+              <a class='uppercase font-bold'>venues</a>
             </li>
             <li tabindex='0'>
-              <a>
-                Parent
+              <a class='uppercase font-bold'>
+                ACTIVITY
                 <svg
                   class='fill-current'
                   xmlns='http://www.w3.org/2000/svg'
@@ -49,9 +53,6 @@ function Header() {
                   <a>Submenu 2</a>
                 </li>
               </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
             </li>
           </ul>
         </div>
