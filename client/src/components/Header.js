@@ -27,26 +27,30 @@ function Header({ user, onLogin }) {
         <div class='flex-none'>
           <ul class='menu menu-horizontal p-0'>
             <li>
-              <a class='uppercase font-bold'>artist</a>
+              <Link class='uppercase font-bold' to='/artists'>
+                artist
+              </Link>
             </li>
             <li>
-              <a class='uppercase font-bold'>concerts</a>
+              <Link class='uppercase font-bold' to='/concerts'>
+                concerts
+              </Link>
             </li>
             <li>
-              <a class='uppercase font-bold'>venues</a>
+              <Link class='uppercase font-bold' to='/venues'>
+                venues
+              </Link>
             </li>
-            {/* the lines below is an example of how I need to render individual login/logout buttons in the dom;
-            line below assumes user exists and if so, render the login button */}
-            {/* {user && <li>
-              <a class='uppercase font-bold'>login</a>
-            </li>} */}
             {user === null && (
               <li>
-                <a class='uppercase font-bold'>
-                  <Link to='/login' state={something}>
-                    login
-                  </Link>
-                </a>
+                <Link class='uppercase font-bold' to='/login'>
+                  login
+                </Link>
+              </li>
+            )}
+            {user != null && (
+              <li>
+                <button class='uppercase font-bold'>logout</button>
               </li>
             )}
           </ul>

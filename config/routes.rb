@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  ## THE LOGIN/LOGOUT ROUTES
   # to login our user
   post "/login", to: "session#create"
   # to keep the user logged in
@@ -10,8 +11,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-    # route to test your configuration
-  get '/hello', to: 'application#hello_world'
 
   # route to show my sessions param basically
   # shows session_id and that's it basically
@@ -20,8 +19,4 @@ Rails.application.routes.draw do
   # configured the root route to display cookies & session info
   get '/cookies', to: 'application#show_cookies'
 
-  # render session info
-  get '/session_info', to: 'session#session_info'
-
-  get '/page_views_check', to: 'session#page_views_check'
 end
