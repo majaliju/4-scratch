@@ -17,18 +17,38 @@ import UsersPage from './UsersPage';
 function App() {
   return (
     <>
+      <Routes location='/'>
+        <Route path='/' element={<Header />} />
+      </Routes>
       <Routes>
-        <Route path='/' element={<Header />}>
-          <Route index element={<UsersPage />} />
-          <Route path='/artists' element={<ArtistsDisplay />} />
-          <Route path='/concerts' element={<ConcertsDisplay />} />
-          <Route path='/venues' element={<VenuesDisplay />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='*' element={<NotFound />} />
-        </Route>
+        <Route path='/' element={<UsersPage />} />
+        <Route path='/artists' element={<ArtistsDisplay />} />
+        <Route path='/concerts' element={<ConcertsDisplay />} />
+        <Route path='/venues' element={<VenuesDisplay />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </>
   );
 }
 
 export default App;
+
+// function App() {
+//   return (
+//     <>
+//       <Routes>
+//         <Route path='/' element={<Header />}>
+//           <Route index element={<UsersPage />} />
+//           <Route path='/artists' element={<ArtistsDisplay />} />
+//           <Route path='/concerts' element={<ConcertsDisplay />} />
+//           <Route path='/venues' element={<VenuesDisplay />} />
+//           <Route path='/login' element={<Login />} />
+//           <Route path='*' element={<NotFound />} />
+//         </Route>
+//       </Routes>
+//     </>
+//   );
+// }
+
+// export default App;
