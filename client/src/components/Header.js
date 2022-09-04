@@ -53,10 +53,13 @@ function Header({ user, onLogin, onLogout }) {
                 <button class='uppercase font-bold'>venues</button>
               </NavLink>
             </li>
+            {/* BELOW IS THE LOGIN COMPONENT */}
             {user === null && (
               <li>
                 <NavLink class='uppercase font-bold' to='/login'>
-                  <button class='uppercase font-bold'>login</button>
+                  <label for='my-modal-6' class='btn modal-button'>
+                    login
+                  </label>
                 </NavLink>
               </li>
             )}
