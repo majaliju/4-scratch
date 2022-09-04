@@ -76,33 +76,6 @@ function App() {
 
 export default App;
 
-// // WORKING LAYOUT -- GREAT IN CASE OF BACKUP
-// return (
-//   <>
-//     <Routes location='/'>
-//       <Route
-//         path='/'
-//         element={<Header user={user} onLogin={onLogin} onLogout={onLogout} />}
-//       />
-//     </Routes>
-//     <Routes>
-//       <Route
-//         path='/'
-//         element={<UsersPage user={user} sessionInfo={sessionInfo} />}
-//       />
-//       <Route path='/artists' element={<ArtistsDisplay />} />
-//       <Route path='/concerts' element={<ConcertsDisplay />} />
-//       <Route path='/venues' element={<VenuesDisplay />} />
-//       <Route
-//         path='/login'
-//         element={<Login user={user} onLogin={onLogin} />}
-//       />
-//       <Route path='*' element={<NotFound />} />
-//     </Routes>
-//   </>
-// );
-
-// // ORIGINAL
 // function App() {
 //   return (
 //     <>
