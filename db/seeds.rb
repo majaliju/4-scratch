@@ -8,13 +8,13 @@
 
 # pull actual info from seatgeek API https://platform.seatgeek.com/
 
-u1 = User.create({name: 'onlineguy1'})
-u2 = User.create({name: 'anotherDude'})
-u3 = User.create({name: 'p3rs0n'})
-u4 = User.create({name: 'thatsme'})
-u6 = User.create({name: 'testing'})
-u7 = User.create({name: 'asdf'})
-u8 = User.create({name: 'heythere'})
-u9 = User.create({name: '12345'})
-u10 = User.create({name: 'me'})
-u11 = User.create({name: 'whatsup'})
+u1 = User.create({name: 'onlineguy1', password: })
+u2 = User.create({name: 'anotherDude', password: })
+u3 = User.create({name: 'p3rs0n', password: })
+u4 = User.create({name: 'thatsme', password: })
+u6 = User.create({name: 'testing', password: })
+u7 = User.create({name: 'asdf', password: })
+u8 = User.create({name: 'heythere', password: })
+u9 = User.create({name: '12345', password: })
+u10 = User.create({name: 'me', password: })
+u11 = User.create({name: 'whatsup', password: })
