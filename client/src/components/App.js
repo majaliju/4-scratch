@@ -27,22 +27,25 @@ function App() {
   }, []);
 
   function onLogin(username) {
-    console.log('🚀 ~ file: App.js ~ line 29 ~ onLogin ~ username:', username);
     setUser(username);
-    console.log('🚀 ~ file: App.js ~ line 31 ~ onLogin ~ user:', user);
+    getSession();
   }
 
   const [sessionInfo, setSessionInfo] = useState({});
   console.log('🚀 ~ file: App.js ~ line 36 ~ App ~ sessionInfo', sessionInfo);
 
-  useEffect(() => {
+  function getSession() {
     fetch('/show_session')
       .then((r) => r.json())
       .then((thisInfo) => setSessionInfo(thisInfo));
+  }
+  useEffect(() => {
+    getSession();
   }, []);
 
   function onLogout() {
     setUser(null);
+    setSessionInfo({});
   }
 
   return (
