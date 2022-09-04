@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+import Login from './Login';
 
 // TODO use a different navbar -- responsive one
 
@@ -15,47 +16,55 @@ import { NavLink, Link } from 'react-router-dom';
 // TODO RAILS
 // seed with this link: https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
 
-function Header({ user, onLogin }) {
-  const something = 'placeholder-string';
+function Header({ user, onLogin, onLogout }) {
+  // const location = useLocation();
+  // console.log('🚀 ~ file: Header.js ~ line 21 ~ Header ~ location', location);
+
+  function handleLogout() {
+    fetch('/logout', {
+      method: 'DELETE',
+    }).then(() => onLogout());
+  }
 
   return (
     <div>
       <div class='navbar bg-base-100'>
         <div class='flex-1'>
-          <a class='btn btn-ghost normal-case text-2xl'>ticketblaster</a>
+          <NavLink to='/'>
+            <button class='btn btn-ghost normal-case text-2xl'>
+              ticketblaster
+            </button>
+          </NavLink>
         </div>
         <div class='flex-none'>
           <ul class='menu menu-horizontal p-0'>
             <li>
-              <NavLink
-                style={({ isActive }) => {
-                  return isActive ? { color: 'red' } : {};
-                }}
-                class='uppercase font-bold'
-                to='/artists'>
-                artist
+              <NavLink to='/artists'>
+                <button class='uppercase font-bold'>artists</button>
               </NavLink>
             </li>
             <li>
-              <NavLink class='uppercase font-bold' to='/concerts'>
-                concerts
+              <NavLink to='/concerts'>
+                <button class='uppercase font-bold'>concerts</button>
               </NavLink>
             </li>
             <li>
-              <NavLink class='uppercase font-bold' to='/venues'>
-                venues
+              <NavLink to='/venues'>
+                <button class='uppercase font-bold'>venues</button>
               </NavLink>
             </li>
             {user === null && (
               <li>
                 <NavLink class='uppercase font-bold' to='/login'>
-                  login
+                  <button class='uppercase font-bold'>login</button>
                 </NavLink>
               </li>
             )}
             {user != null && (
               <li>
-                <button class='uppercase font-bold'>logout</button>
+                <button class='uppercase font-bold' onClick={handleLogout}>
+                  logout
+                </button>
               </li>
             )}
           </ul>
