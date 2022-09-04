@@ -17,7 +17,7 @@ function FrontPage() {
   console.log('within FrontPage: ', user);
   return (
     <>
-      <Header user={user} onLogin={setUser} />
+      {/* <Header user={user} onLogin={setUser} /> */}
       <UsersPage />
       {/* <Login user={user} onLogin={setUser} /> */}
     </>

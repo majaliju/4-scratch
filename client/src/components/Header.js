@@ -27,25 +27,30 @@ function Header({ user, onLogin }) {
         <div class='flex-none'>
           <ul class='menu menu-horizontal p-0'>
             <li>
-              <Link class='uppercase font-bold' to='/artists'>
+              <NavLink
+                style={({ isActive }) => {
+                  return isActive ? { color: 'red' } : {};
+                }}
+                class='uppercase font-bold'
+                to='/artists'>
                 artist
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link class='uppercase font-bold' to='/concerts'>
+              <NavLink class='uppercase font-bold' to='/concerts'>
                 concerts
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link class='uppercase font-bold' to='/venues'>
+              <NavLink class='uppercase font-bold' to='/venues'>
                 venues
-              </Link>
+              </NavLink>
             </li>
             {user === null && (
               <li>
-                <Link class='uppercase font-bold' to='/login'>
+                <NavLink class='uppercase font-bold' to='/login'>
                   login
-                </Link>
+                </NavLink>
               </li>
             )}
             {user != null && (
