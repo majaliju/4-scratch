@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
 
+  # #show all of our users
+  # def index
+  #   users = User.all
 
-  #show all of our users
-  def index
-    users = User.all
-
-    render json: users
-  end
+  #   render json: users
+  # end
 
  # get our specific user
   def show
@@ -22,35 +21,30 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
 
-    if user.save
-      render json: user, status: :created, location: user
+    if user.valid?
+      render json: user, status: :created
     else
       render json: user.errors, status: :unprocessable_entity
     end
   end
 
-  # update a specific user
-  def update
-    if user.update(user_params)
-      render json: user
-    else
-      render json: user.errors, status: :unprocessable_entity
-    end
-  end
+  # # update a specific user
+  # def update
+  #   if user.update(user_params)
+  #     render json: user
+  #   else
+  #     render json: user.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # delete a specific user
-  def destroy
-    user.destroy
-  end
+  # # delete a specific user
+  # def destroy
+  #   user.destroy
+  # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      user = User.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:username, :password_digest)
+      params.require(:user).permit(:username, :password, :password_confirmation)
     end
 end

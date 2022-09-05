@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   ## THE LOGIN/LOGOUT ROUTES
 
   # to login our user
-  post "/login", to: "session#create"
+  post "/login", to: "sessions#create"
   # to keep the user logged in
   get "/me", to: "users#show"
   # to log the user out
-  delete "/logout", to: "session#destroy"
+  delete "/logout", to: "sessions#destroy"
 
   # Defines the root path route ("/")
   # root "articles#index"
