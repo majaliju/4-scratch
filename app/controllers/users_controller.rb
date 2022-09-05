@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-has_secure_password
+
 
   #show all of our users
   def index
@@ -20,7 +20,7 @@ has_secure_password
 
   # create a new user
   def create
-    user = User.new(user_params)
+    user = User.create(user_params)
 
     if user.save
       render json: user, status: :created, location: user

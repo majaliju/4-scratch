@@ -1,51 +1,51 @@
 class ConcertsController < ApplicationController
-  before_action :set_concert, only: %i[ show update destroy ]
 
-  # GET /concerts
-  def index
-    @concerts = Concert.all
 
-    render json: @concerts
-  end
+  # # GET /concerts
+  # def index
+  #   @concerts = Concert.all
 
-  # GET /concerts/1
-  def show
-    render json: @concert
-  end
+  #   render json: @concerts
+  # end
 
-  # POST /concerts
-  def create
-    @concert = Concert.new(concert_params)
+  # # GET /concerts/1
+  # def show
+  #   render json: @concert
+  # end
 
-    if @concert.save
-      render json: @concert, status: :created, location: @concert
-    else
-      render json: @concert.errors, status: :unprocessable_entity
-    end
-  end
+  # # POST /concerts
+  # def create
+  #   @concert = Concert.new(concert_params)
 
-  # PATCH/PUT /concerts/1
-  def update
-    if @concert.update(concert_params)
-      render json: @concert
-    else
-      render json: @concert.errors, status: :unprocessable_entity
-    end
-  end
+  #   if @concert.save
+  #     render json: @concert, status: :created, location: @concert
+  #   else
+  #     render json: @concert.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # DELETE /concerts/1
-  def destroy
-    @concert.destroy
-  end
+  # # PATCH/PUT /concerts/1
+  # def update
+  #   if @concert.update(concert_params)
+  #     render json: @concert
+  #   else
+  #     render json: @concert.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_concert
-      @concert = Concert.find(params[:id])
-    end
+  # # DELETE /concerts/1
+  # def destroy
+  #   @concert.destroy
+  # end
 
-    # Only allow a list of trusted parameters through.
-    def concert_params
-      params.require(:concert).permit(:date, :artist_id, :venue_id)
-    end
+  # private
+  #   # Use callbacks to share common setup or constraints between actions.
+  #   def set_concert
+  #     @concert = Concert.find(params[:id])
+  #   end
+
+  #   # Only allow a list of trusted parameters through.
+  #   def concert_params
+  #     params.require(:concert).permit(:date, :artist_id, :venue_id)
+  #   end
 end

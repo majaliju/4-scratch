@@ -1,11 +1,7 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { useEffect, useState } from 'react';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
-
-function Login({ user, onLogin }) {
-  const navigate = useNavigate();
+function SignUp({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -15,7 +11,11 @@ function Login({ user, onLogin }) {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({
+        username,
+        password,
+        password_confirmation: passwordConfirmation,
+      }),
     })
       .then((r) => r.json())
       .then((item) => {
@@ -42,8 +42,20 @@ function Login({ user, onLogin }) {
               <span class='text uppercase font-extralight'>password</span>
               <input
                 type='text'
+                id='password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+              />
+            </label>
+            <label className='password-confirmation'>
+              <span class='text uppercase font-extralight'>
+                confirm password
+              </span>
+              <input
+                type='text'
+                id='passwordConfirmation'
+                value={passwordConfirmation}
+                onChange={(e) => setPasswordConfirmation(e.target.value)}
               />
             </label>
           </label>
@@ -54,7 +66,8 @@ function Login({ user, onLogin }) {
           <br />
           <button>
             <Link to='/'>Go Back</Link>
-          </button>
+          </button>{' '}
+          <br />
           <button>First time here? Sign up!</button>
         </form>
       </div>
@@ -62,4 +75,4 @@ function Login({ user, onLogin }) {
   );
 }
 
-export default Login;
+export default SignUp;
