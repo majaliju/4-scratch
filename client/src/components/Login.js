@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 
-function Login({ user, onLogin }) {
+function Login({ onLogin }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +15,7 @@ function Login({ user, onLogin }) {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username: username, password_digest: password }),
     })
       .then((r) => r.json())
       .then((item) => {

@@ -1,6 +1,4 @@
-class SessionsController < ApplicationController
-
-  ## validate ?
+class SessionController < ApplicationController
 
   ## logs in the user & cross-checks if the password is correct
   def create

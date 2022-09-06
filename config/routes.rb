@@ -7,11 +7,14 @@ Rails.application.routes.draw do
   #& to create a new user outright
   post "/new_user", to: "users#create"
   #& to login our user
-  post "/login", to: "sessions#create"
+  post '/login', to: "session#create"
   #& to keep the user logged in
   get "/me", to: "users#show"
   #& to log the user out
-  delete "/logout", to: "sessions#destroy"
+  delete "/logout", to: "session#destroy"
+
+  #& show all the users
+  get "/users", to: "users#index"
 
   ##~ SESSION & COOKIES INFO
   #& shows session_id and sessions info

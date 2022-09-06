@@ -15,7 +15,11 @@ import UsersPage from './UsersPage';
 
 function App() {
   const [user, setUser] = useState(null);
+  console.log('🚀 ~ file: App.js ~ line 18 ~ App ~ user', user);
+
   const [sessionInfo, setSessionInfo] = useState({});
+  console.log('🚀 ~ file: App.js ~ line 21 ~ App ~ sessionInfo', sessionInfo);
+
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -28,13 +32,11 @@ function App() {
 
   function onLogin(username) {
     setUser(username);
-    setLoggedIn(true);
     getSession();
   }
 
   function onLogout() {
     setUser(null);
-    setLoggedIn(false);
     setSessionInfo({});
   }
 

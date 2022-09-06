@@ -39,18 +39,17 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem "byebug", platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
-  gem 'listen', '~> 3.3'
+  gem "listen", "~> 3.3"
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   gem "spring"
 end
 
-
-gem 'active_model_serializers',
-    '~> 0.10.12',
-    git: 'https://github.com/jpawlyn/active_model_serializers.git',
-    branch: '0-10-stable'
+gem "active_model_serializers",
+    "~> 0.10.12",
+    git: "https://github.com/jpawlyn/active_model_serializers.git",
+    branch: "0-10-stable"

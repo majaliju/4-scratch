@@ -1,16 +1,9 @@
 import { useEffect, useState } from 'react';
 
 function UsersPage({ user, sessionInfo, loggedIn }) {
-  console.log('🚀 ~ file: UsersPage.js ~ line 4 ~ UsersPage ~ user', user);
-
-  console.log(
-    '🚀 ~ file: UsersPage.js ~ line 4 ~ UsersPage ~ sessionInfo',
-    sessionInfo
-  );
-
   return (
     <div>
-      <div>
+      {/* <div>
         {loggedIn === true && (
           <div>
             <h1 class='text-xl font-semibold'>
@@ -29,7 +22,7 @@ function UsersPage({ user, sessionInfo, loggedIn }) {
             </h1>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }

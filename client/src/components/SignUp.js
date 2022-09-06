@@ -22,9 +22,7 @@ function SignUp({ onLogin }) {
       }),
     })
       .then((r) => r.json())
-      .then((item) => {
-        onLogin(item);
-      });
+      .then(onLogin);
     navigate('/');
   }
 

@@ -11,17 +11,20 @@
 
 #^ pull actual info from seatgeek API https://platform.seatgeek.com/
 
+puts "---------------------- Removing old data..."
+User.delete_all
+
 puts "---------------------- Seeding as we speak..."
 
-u1 = User.create({ username: "onlineguy1", password: "123" })
-u2 = User.create({ username: "anotherDude", password: "123" })
-u3 = User.create({ username: "p3rs0n", password: "123" })
-u4 = User.create({ username: "thatsme", password: "123" })
-u6 = User.create({ username: "testing", password: "123" })
-u7 = User.create({ username: "asdf", password: "123" })
-u8 = User.create({ username: "heythere", password: "123" })
-u9 = User.create({ username: "12345", password: "123" })
-u10 = User.create({ username: "me", password: "123" })
-u11 = User.create({ username: "whatsup", password: "123" })
+u1 = User.create({ username: "onlineguy1", password_digest: "123123123123" })
+u2 = User.create({ username: "anotherDude", password_digest: "123123123123" })
+u3 = User.create({ username: "p3rs0n", password_digest: "123123123123" })
+u4 = User.create({ username: "thatsme", password_digest: "123123123123" })
+u6 = User.create({ username: "testing", password_digest: "123123123123" })
+u7 = User.create({ username: "asdf", password_digest: "123123123123" })
+u8 = User.create({ username: "heythere", password_digest: "123123123123" })
+u9 = User.create({ username: "12345", password_digest: "123123123123" })
+u10 = User.create({ username: "me", password_digest: "123123123123" })
+u11 = User.create({ username: "whatsup", password_digest: "123123123123" })
 
 puts "---------------------- Success!!"

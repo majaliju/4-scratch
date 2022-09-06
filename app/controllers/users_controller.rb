@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
-  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
   # #show all of our users
   # def index
@@ -8,6 +6,11 @@ class UsersController < ApplicationController
 
   #   render json: users
   # end
+
+  def index
+    users = User.all
+    render json: users, status: 200
+  end
 
   # get our specific user
   def show
@@ -21,14 +24,13 @@ class UsersController < ApplicationController
 
   # create a new user
   def create
-    user = User.create!(user_params)
-    render json: user, status: :created
+    user = User.create(user_params)
 
-    # if user.valid?
-    #   render json: user, status: :created
-    # else
-    #   render json: user.errors, status: :unprocessable_entity
-    # end
+    if user.valid?
+      render json: user, status: :created
+    else
+      render json: user.errors, status: :unprocessable_entity
+    end
   end
 
   # # update a specific user
@@ -52,10 +54,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:id, :username, :password, :password_confirmation)
-  end
-
-  def render_unprocessable_entity_response(invalid)
-    render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end
