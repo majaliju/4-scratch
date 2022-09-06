@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if user
       render json: user
     else
-      render json: { error: "Not authorized" }, status: :unauthorized
+      render json: { error: "Either: Unprocessable Entity or User Not Found" }, status: :unprocessable_entity
     end
   end
 

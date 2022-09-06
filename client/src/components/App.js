@@ -26,7 +26,7 @@ function App() {
     fetch('/me').then((response) => {
       if (response.ok) {
         response.json().then((user) => setUser(user));
-      } else console.log('no work bc: ', response);
+      } else console.log('fetch /me failed due to: ', response);
     });
   }, []);
 
@@ -83,10 +83,7 @@ function App() {
         <Route path='/artists' element={<ArtistsDisplay />} />
         <Route path='/concerts' element={<ConcertsDisplay />} />
         <Route path='/venues' element={<VenuesDisplay />} />
-        <Route
-          path='/login'
-          element={<Login user={user} onLogin={onLogin} />}
-        />
+        <Route path='/login' element={<Login onLogin={onLogin} />} />
         <Route path='/signup' element={<SignUp onLogin={onLogin} />} />
         <Route path='*' element={<NotFound />} />
       </Routes>

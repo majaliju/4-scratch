@@ -15,7 +15,7 @@ function Login({ onLogin }) {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ username: username, password_digest: password }),
+      body: JSON.stringify({ username, password }),
     })
       .then((r) => r.json())
       .then((item) => {
@@ -42,6 +42,7 @@ function Login({ onLogin }) {
               <span class='text uppercase font-extralight'>password</span>
               <input
                 type='text'
+                id='password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
