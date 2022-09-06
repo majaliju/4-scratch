@@ -67,11 +67,9 @@ function SignUp({ onLogin }) {
             Login
           </button>
           <br />
-          <button>
+          <button type='submit' class='btn btn-ghostfont-bold uppercase'>
             <Link to='/'>Go Back</Link>
-          </button>{' '}
-          <br />
-          <button>First time here? Sign up!</button>
+          </button>
         </form>
       </div>
     </div>

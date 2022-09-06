@@ -1,10 +1,9 @@
 import '../../src/App.css';
-import MainPage from './MainPage';
 import ArtistsDisplay from './ArtistsDisplay';
 import ConcertsDisplay from './ConcertsDisplay';
 import VenuesDisplay from './VenuesDisplay';
-import FrontPage from './FrontPage';
 import Login from './Login';
+import SignUp from './SignUp';
 import NotFound from './NotFound';
 import Header from './Header';
 import { Route, Routes } from 'react-router-dom';
@@ -68,6 +67,7 @@ function App() {
           path='/login'
           element={<Login user={user} onLogin={onLogin} />}
         />
+        <Route path='/signup' element={<SignUp />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>

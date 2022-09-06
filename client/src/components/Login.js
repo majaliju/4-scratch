@@ -54,10 +54,10 @@ function Login({ user, onLogin }) {
           </button>
           <button type='submit' class='btn btn-ghostfont-bold uppercase'>
             <Link to='/'>Go Back</Link>
-          </button>{' '}
+          </button>
           <br />
           <button type='submit' class='btn btn-ghostfont-bold uppercase'>
-            First time here? Sign up!
+            <Link to='/signup'>First time here? Sign up!</Link>
           </button>
         </form>
       </div>
