@@ -8,7 +8,7 @@ function SignUp({ onLogin }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch('/login', {
+    fetch('/new_user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ function SignUp({ onLogin }) {
     })
       .then((r) => r.json())
       .then((item) => {
-        console.log(item);
+        onLogin(item);
       });
     // navigate('/');
   }

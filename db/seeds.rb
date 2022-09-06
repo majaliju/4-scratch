@@ -6,20 +6,22 @@
 #   movies = Movie.create([{ username: "Star Wars" }, { username: "Lord of the Rings" }])
 #   Character.create(username: "Luke", movie: movies.first)
 
-# pull actual info from seatgeek API https://platform.seatgeek.com/
+#  TODO RAILS
+#^  seed with this link: https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
 
+#^ pull actual info from seatgeek API https://platform.seatgeek.com/
 
-puts '---------------------- Seeding as we speak...'
+puts "---------------------- Seeding as we speak..."
 
-u1 = User.create({username: 'onlineguy1', password: '123'})
-u2 = User.create({username: 'anotherDude', password: '123'})
-u3 = User.create({username: 'p3rs0n', password: '123'})
-u4 = User.create({username: 'thatsme', password: '123'})
-u6 = User.create({username: 'testing', password: '123'})
-u7 = User.create({username: 'asdf', password: '123'})
-u8 = User.create({username: 'heythere', password: '123'})
-u9 = User.create({username: '12345', password: '123'})
-u10 = User.create({username: 'me', password: '123'})
-u11 = User.create({username: 'whatsup', password: '123'})
+u1 = User.create({ username: "onlineguy1", password: "123" })
+u2 = User.create({ username: "anotherDude", password: "123" })
+u3 = User.create({ username: "p3rs0n", password: "123" })
+u4 = User.create({ username: "thatsme", password: "123" })
+u6 = User.create({ username: "testing", password: "123" })
+u7 = User.create({ username: "asdf", password: "123" })
+u8 = User.create({ username: "heythere", password: "123" })
+u9 = User.create({ username: "12345", password: "123" })
+u10 = User.create({ username: "me", password: "123" })
+u11 = User.create({ username: "whatsup", password: "123" })
 
-puts '---------------------- Success!!'
+puts "---------------------- Success!!"

@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
-import SignUp from './SignUp';
 
 function Login({ user, onLogin }) {
   const navigate = useNavigate();
@@ -20,9 +19,9 @@ function Login({ user, onLogin }) {
     })
       .then((r) => r.json())
       .then((item) => {
-        console.log(item);
+        onLogin(item);
       });
-    // navigate('/');
+    navigate('/');
   }
 
   return (
@@ -52,11 +51,11 @@ function Login({ user, onLogin }) {
           <button type='submit' class='btn btn-ghostfont-bold uppercase'>
             Login
           </button>
-          <button type='submit' class='btn btn-ghostfont-bold uppercase'>
+          <button class='btn btn-ghostfont-bold uppercase'>
             <Link to='/'>Go Back</Link>
           </button>
           <br />
-          <button type='submit' class='btn btn-ghostfont-bold uppercase'>
+          <button class='btn btn-ghostfont-bold uppercase'>
             <Link to='/signup'>First time here? Sign up!</Link>
           </button>
         </form>

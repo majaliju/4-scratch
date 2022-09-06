@@ -15,7 +15,8 @@ import UsersPage from './UsersPage';
 
 function App() {
   const [user, setUser] = useState(null);
-  console.log('🚀 ~ file: App.js ~ line 19 ~ App ~ user', user);
+  const [sessionInfo, setSessionInfo] = useState({});
+  const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     fetch('/me').then((response) => {
@@ -27,25 +28,29 @@ function App() {
 
   function onLogin(username) {
     setUser(username);
+    setLoggedIn(true);
     getSession();
   }
 
-  const [sessionInfo, setSessionInfo] = useState({});
-  console.log('🚀 ~ file: App.js ~ line 36 ~ App ~ sessionInfo', sessionInfo);
+  function onLogout() {
+    setUser(null);
+    setLoggedIn(false);
+    setSessionInfo({});
+  }
 
   function getSession() {
     fetch('/show_session')
       .then((r) => r.json())
       .then((thisInfo) => setSessionInfo(thisInfo));
   }
+
+  function clearSession() {
+    // test
+  }
+
   useEffect(() => {
     getSession();
   }, []);
-
-  function onLogout() {
-    setUser(null);
-    setSessionInfo({});
-  }
 
   return (
     <>
@@ -58,7 +63,13 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={<UsersPage user={user} sessionInfo={sessionInfo} />}
+          element={
+            <UsersPage
+              user={user}
+              sessionInfo={sessionInfo}
+              loggedIn={loggedIn}
+            />
+          }
         />
         <Route path='/artists' element={<ArtistsDisplay />} />
         <Route path='/concerts' element={<ConcertsDisplay />} />

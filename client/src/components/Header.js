@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
+import { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import Login from './Login';
 
@@ -16,7 +17,7 @@ import Login from './Login';
 // TODO RAILS
 // seed with this link: https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
 
-function Header({ user, onLogin, onLogout }) {
+function Header({ user, onLogin, onLogout, loggedIn }) {
   // const location = useLocation();
   // console.log('🚀 ~ file: Header.js ~ line 21 ~ Header ~ location', location);
 
@@ -53,19 +54,19 @@ function Header({ user, onLogin, onLogout }) {
                 <button class='uppercase font-bold'>venues</button>
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to='/'>
                 <button class='uppercase font-bold'>{user.username}</button>
               </NavLink>
-            </li>
-            {user === null && (
+            </li> */}
+            {loggedIn === false && (
               <li>
                 <NavLink class='uppercase font-bold' to='/login'>
                   <button class='uppercase font-bold'>login</button>
                 </NavLink>
               </li>
             )}
-            {user != null && (
+            {loggedIn === true && (
               <li>
                 <button class='uppercase font-bold' onClick={handleLogout}>
                   logout
