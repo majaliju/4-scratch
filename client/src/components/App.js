@@ -44,9 +44,9 @@ function App() {
       .then((thisInfo) => setSessionInfo(thisInfo));
   }
 
-  function clearSession() {
-    // test
-  }
+  // function clearSession() {
+  //   fetch('/')
+  // }
 
   useEffect(() => {
     getSession();
@@ -57,7 +57,14 @@ function App() {
       <Routes location='/'>
         <Route
           path='/'
-          element={<Header user={user} onLogin={onLogin} onLogout={onLogout} />}
+          element={
+            <Header
+              user={user}
+              onLogin={onLogin}
+              onLogout={onLogout}
+              loggedIn={loggedIn}
+            />
+          }
         />
       </Routes>
       <Routes>
@@ -78,7 +85,7 @@ function App() {
           path='/login'
           element={<Login user={user} onLogin={onLogin} />}
         />
-        <Route path='/signup' element={<SignUp />} />
+        <Route path='/signup' element={<SignUp onLogin={onLogin} />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>

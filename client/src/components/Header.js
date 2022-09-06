@@ -14,9 +14,6 @@ import Login from './Login';
 // 2 conditions: LOGIN or LOGOUT
 // within the LOGIN, there's an extra SIGNUP option
 
-// TODO RAILS
-// seed with this link: https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
-
 function Header({ user, onLogin, onLogout, loggedIn }) {
   // const location = useLocation();
   // console.log('🚀 ~ file: Header.js ~ line 21 ~ Header ~ location', location);
@@ -59,14 +56,14 @@ function Header({ user, onLogin, onLogout, loggedIn }) {
                 <button class='uppercase font-bold'>{user.username}</button>
               </NavLink>
             </li> */}
-            {loggedIn === false && (
+            {user === null && (
               <li>
                 <NavLink class='uppercase font-bold' to='/login'>
                   <button class='uppercase font-bold'>login</button>
                 </NavLink>
               </li>
             )}
-            {loggedIn === true && (
+            {user !== null && (
               <li>
                 <button class='uppercase font-bold' onClick={handleLogout}>
                   logout

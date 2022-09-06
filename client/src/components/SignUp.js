@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function SignUp({ onLogin }) {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
@@ -24,7 +25,7 @@ function SignUp({ onLogin }) {
       .then((item) => {
         onLogin(item);
       });
-    // navigate('/');
+    navigate('/');
   }
 
   return (
@@ -64,7 +65,7 @@ function SignUp({ onLogin }) {
           </label>
           <br />
           <button type='submit' class='btn btn-ghostfont-bold uppercase'>
-            Login
+            Sign up
           </button>
           <br />
           <button type='submit' class='btn btn-ghostfont-bold uppercase'>
