@@ -53,6 +53,11 @@ function Header({ user, onLogin, onLogout }) {
                 <button class='uppercase font-bold'>venues</button>
               </NavLink>
             </li>
+            <li>
+              <NavLink to='/'>
+                <button class='uppercase font-bold'>{user.username}</button>
+              </NavLink>
+            </li>
             {user === null && (
               <li>
                 <NavLink class='uppercase font-bold' to='/login'>

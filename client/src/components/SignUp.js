@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 function SignUp({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

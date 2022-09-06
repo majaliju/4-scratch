@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
+import SignUp from './SignUp';
 
 function Login({ user, onLogin }) {
   const navigate = useNavigate();
@@ -51,11 +52,13 @@ function Login({ user, onLogin }) {
           <button type='submit' class='btn btn-ghostfont-bold uppercase'>
             Login
           </button>
-          <br />
-          <button>
+          <button type='submit' class='btn btn-ghostfont-bold uppercase'>
             <Link to='/'>Go Back</Link>
+          </button>{' '}
+          <br />
+          <button type='submit' class='btn btn-ghostfont-bold uppercase'>
+            First time here? Sign up!
           </button>
-          <button>First time here? Sign up!</button>
         </form>
       </div>
     </div>
