@@ -15,7 +15,10 @@ function Login({ onLogin }) {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({
+        username,
+        password,
+      }),
     })
       .then((r) => r.json())
       .then((item) => {
