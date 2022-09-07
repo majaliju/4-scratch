@@ -52,14 +52,16 @@ function Login({ onLogin }) {
             </label>
           </label>
           <br />
-          <button type='submit' class='btn btn-ghostfont-bold uppercase'>
+          <button
+            type='submit'
+            class='btn btn-ghost font-bold bg-primary hover:bg-success uppercase'>
             Login
           </button>
           {/* <button class='btn btn-ghostfont-bold uppercase'>
             <Link to='/'>Go Back</Link>
           </button> */}
           <br />
-          <button class='btn btn-ghostfont-bold uppercase'>
+          <button class='btn btn-ghostfont-bold bg-secondary hover:bg-success uppercase'>
             <Link to='/signup'>First time here? Sign up!</Link>
           </button>
         </form>
