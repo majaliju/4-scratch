@@ -41,7 +41,7 @@ function Header({ user, onLogin, onLogout, loggedIn }) {
             </label>
             <ul
               tabindex='0'
-              class='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'>
+              class='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-56'>
               <li>
                 <NavLink to='/artists'>
                   <button class='uppercase font-bold'>artists</button>

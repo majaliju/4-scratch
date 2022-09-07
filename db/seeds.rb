@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ username: "Star Wars" }, { username: "Lord of the Rings" }])
 #   Character.create(username: "Luke", movie: movies.first)
 
-require 'faker'
-
 #  TODO RAILS
 #^  seed with this link: https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
 
