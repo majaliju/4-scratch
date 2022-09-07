@@ -10,16 +10,9 @@ import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import UsersPage from './UsersPage';
 
-// TODO
-// <Route /> doesn't actually pass props or render any routes
-
 function App() {
   const [user, setUser] = useState(null);
-  console.log('🚀 ~ file: App.js ~ line 18 ~ App ~ user', user);
-
   const [sessionInfo, setSessionInfo] = useState({});
-  console.log('🚀 ~ file: App.js ~ line 21 ~ App ~ sessionInfo', sessionInfo);
-
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -47,10 +40,6 @@ function App() {
       .then((r) => r.json())
       .then((thisInfo) => setSessionInfo(thisInfo));
   }
-
-  // function clearSession() {
-  //   fetch('/')
-  // }
 
   useEffect(() => {
     getSession();

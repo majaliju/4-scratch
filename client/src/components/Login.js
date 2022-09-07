@@ -2,6 +2,9 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 
+//! TAILWIND DOCS FOR STYLING: hovers, form input etc
+// https://tailwindcss.com/docs/hover-focus-and-other-states
+
 function Login({ onLogin }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
@@ -28,7 +31,7 @@ function Login({ onLogin }) {
   }
 
   return (
-    <div>
+    <div class='text-primary-content'>
       <div className='form-control'>
         <form onSubmit={handleSubmit}>
           <label className='input-group'>
@@ -61,7 +64,7 @@ function Login({ onLogin }) {
             <Link to='/'>Go Back</Link>
           </button> */}
           <br />
-          <button class='btn btn-ghostfont-bold bg-secondary hover:bg-success uppercase'>
+          <button class='btn btn-ghostfont-bold bg-secondary text-secondary-content hover:bg-success uppercase'>
             <Link to='/signup'>First time here? Sign up!</Link>
           </button>
         </form>
