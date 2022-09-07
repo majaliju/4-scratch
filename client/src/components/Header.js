@@ -26,7 +26,7 @@ function Header({ user, onLogin, onLogout, loggedIn }) {
 
   return (
     <div>
-      <div class='navbar bg-base-100'>
+      <div class='navbar bg-base-700 text-primary-content'>
         <div class='flex-1'>
           <NavLink to='/'>
             <button class='btn btn-ghost normal-case text-2xl'>

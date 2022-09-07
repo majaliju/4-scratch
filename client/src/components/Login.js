@@ -55,9 +55,9 @@ function Login({ onLogin }) {
           <button type='submit' class='btn btn-ghostfont-bold uppercase'>
             Login
           </button>
-          <button class='btn btn-ghostfont-bold uppercase'>
+          {/* <button class='btn btn-ghostfont-bold uppercase'>
             <Link to='/'>Go Back</Link>
-          </button>
+          </button> */}
           <br />
           <button class='btn btn-ghostfont-bold uppercase'>
             <Link to='/signup'>First time here? Sign up!</Link>
