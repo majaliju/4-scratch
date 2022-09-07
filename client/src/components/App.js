@@ -32,11 +32,13 @@ function App() {
 
   function onLogin(username) {
     setUser(username);
+    setLoggedIn(true);
     getSession();
   }
 
   function onLogout() {
     setUser(null);
+    setLoggedIn(false);
     setSessionInfo({});
   }
 

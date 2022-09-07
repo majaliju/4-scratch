@@ -1,12 +1,5 @@
 class UsersController < ApplicationController
 
-  # #show all of our users
-  # def index
-  #   users = User.all
-
-  #   render json: users
-  # end
-
   def index
     users = User.all
     render json: users, status: 200
@@ -24,12 +17,13 @@ class UsersController < ApplicationController
 
   # create a new user
   def create
-    user = User.create(user_params)
+    user = User.create(signup_user_params)
 
     if user.valid?
+      session[:user_id] = user.id
       render json: user, status: :created
     else
-      render json: user.errors, status: :unprocessable_entity
+      render json: user.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -49,11 +43,8 @@ class UsersController < ApplicationController
 
   private
 
-  def set_user
-    @user = User.find(params[:id])
-  end
 
-  def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+  def signup_user_params
+    params.permit(:username, :password, :password_confirmation)
   end
 end

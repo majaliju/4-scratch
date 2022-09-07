@@ -16,8 +16,8 @@ function SignUp({ onLogin }) {
         'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({
-        username,
-        password,
+        username: username,
+        password: password,
         password_confirmation: passwordConfirmation,
       }),
     })
@@ -65,10 +65,10 @@ function SignUp({ onLogin }) {
           <button type='submit' class='btn btn-ghostfont-bold uppercase'>
             Sign up
           </button>
-          <br />
-          <button type='submit' class='btn btn-ghostfont-bold uppercase'>
+          {/* <br />
+          <button class='btn btn-ghostfont-bold uppercase'>
             <Link to='/'>Go Back</Link>
-          </button>
+          </button> */}
         </form>
       </div>
     </div>
