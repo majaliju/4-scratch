@@ -15,6 +15,19 @@ function App() {
   const [sessionInfo, setSessionInfo] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
 
+  const [artists, setArtists] = useState([]);
+
+  function getArtists() {
+    fetch('/artists')
+      .then((r) => r.json())
+      .then((info) => setArtists(info));
+  }
+
+  useEffect(() => {
+    getArtists();
+  }, []);
+
+  // our initial fetch to get user's ID for maintaing session state
   useEffect(() => {
     fetch('/me').then((response) => {
       if (response.ok) {
@@ -23,24 +36,28 @@ function App() {
     });
   }, []);
 
+  // the onLogin function for SignUp & Login submissions
   function onLogin(username) {
     setUser(username);
     setLoggedIn(true);
     getSession();
   }
 
+  // to log the user out
   function onLogout() {
     setUser(null);
     setLoggedIn(false);
     setSessionInfo({});
   }
 
+  // get the session ID
   function getSession() {
     fetch('/show_session')
       .then((r) => r.json())
       .then((thisInfo) => setSessionInfo(thisInfo));
   }
 
+  // runs on each render to update session info
   useEffect(() => {
     getSession();
   }, []);
@@ -71,7 +88,7 @@ function App() {
             />
           }
         />
-        <Route path='/artists' element={<ArtistsDisplay />} />
+        <Route path='/artists' element={<ArtistsDisplay artists={artists} />} />
         <Route path='/concerts' element={<ConcertsDisplay />} />
         <Route path='/venues' element={<VenuesDisplay />} />
         <Route path='/login' element={<Login onLogin={onLogin} />} />

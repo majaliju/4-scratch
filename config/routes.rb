@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  # get 'genres'
-  # get 'genres/show'
+
+  ##~ FOR THE ARTIST-CONCERTS-VENUES DISPLAYS
+  #& to get a master list of artists (with each one's genre)
   get 'artists', to: "artists#index"
-  # get 'artists/show'
+
 
   #& Defines the root path route ("/")
   #& root "articles#index"
