@@ -29,6 +29,18 @@ u10 = User.create({ username: "musiclover123", password: "123123123123" })
 u11 = User.create({ username: "ilovemj", password: "123123123123" })
 
 
+#* the genres in the database
+g1 = Genre.create({name: 'Pop'})
+g2 = Genre.create({name: 'Hip-Hop'})
+g3 = Genre.create({name: 'Country'})
+g4 = Genre.create({name: 'Rock'})
+g5 = Genre.create({name: 'Jazz'})
+g6 = Genre.create({name: 'Electronic'})
+g7 = Genre.create({name: 'R&B'})
+g8 = Genre.create({name: 'Latin'})
+g9 = Genre.create({name: 'Afrobeats'})
+
+
 #* the artists in the database
 a1 = Artist.create({ name: 'Adele', genre_id: g1.id})
 a2 = Artist.create({ name: 'John Legend', genre_id: g1.id})
@@ -67,7 +79,7 @@ a34 = Artist.create({ name: 'Kali Uchis', genre_id: g8.id})
 a35 = Artist.create({ name: 'Maneskin', genre_id: g4.id})
 a36 = Artist.create({ name: 'Romeo Santos', genre_id: g8.id})
 a37 = Artist.create({ name: 'Tchami', genre_id: g6.id})
-a38 = Artist.create({ name: 'J Balvin', genre_id: })
+a38 = Artist.create({ name: 'J Balvin', genre_id: g8.id})
 a39 = Artist.create({ name: 'Malaa', genre_id: g6.id})
 a40 = Artist.create({ name: 'Fall Out Boy', genre_id: g4.id})
 a41 = Artist.create({ name: 'Daddy Yankee', genre_id: g8.id})
@@ -116,16 +128,6 @@ a83 = Artist.create({ name: 'Yemi Alade', genre_id: g9.id})
 a84 = Artist.create({ name: 'Kizz Daniel', genre_id: g9.id})
 
 
-#* the genres in the database
-g1 = Genre.create({name: 'Pop'})
-g2 = Genre.create({name: 'Hip-Hop'})
-g3 = Genre.create({name: 'Country'})
-g4 = Genre.create({name: 'Rock'})
-g5 = Genre.create({name: 'Jazz'})
-g6 = Genre.create({name: 'Electronic'})
-g7 = Genre.create({name: 'R&B'})
-g8 = Genre.create({name: 'Latin'})
-g9 = Genre.create({name: 'Afrobeats'})
 
 
 puts "---------------------- Success!!"

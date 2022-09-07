@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'genres/index'
-  get 'genres/show'
-  get 'artists/index'
-  get 'artists/show'
+  # get 'genres'
+  # get 'genres/show'
+  get 'artists', to: "artists#index"
+  # get 'artists/show'
 
   #& Defines the root path route ("/")
   #& root "articles#index"
