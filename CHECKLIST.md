@@ -10,10 +10,10 @@ For this project, you must:
   *one CONCERT can have many TICKETS*</br>
   *one VENUE can have many CONCERTS*</br>
   - [ ] full CRUD actions for at least one resource</br>
-  *maybe something like selling the tickets or leaving a comment looking for tickets*</br>
+  *creating, editing, deleting a post that you make*</br>
   *you can't delete others reviews but you can create/delete/update your own, matching your own userID*
 - [x] Have at least three different client-side routes using React Router. Be sure to include a nav bar or other UI element that allows users to navigate between routes.
-- [ ] Implement authentication/authorization, including password protection. A user should be able to log in to the site with a secure password and stay logged in via user ID in the session hash.
+- [x] Implement authentication/authorization, including password protection. A user should be able to log in to the site with a secure password and stay logged in via user ID in the session hash.
 
 // TODO
 **WHAT IS THE SITE?**
