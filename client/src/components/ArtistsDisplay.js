@@ -19,6 +19,14 @@ function ArtistsDisplay({ artists }) {
                 key={artist.id}
                 class='card w-96 max-w-xs bg-neutral text-neutral-content shadow-xl'>
                 <div class='card-body p-4 m-2 mx-0 items-center text-center'>
+                  <div class='avatar'>
+                    <div class='w-30 rounded'>
+                      <img
+                        src={artist.image}
+                        alt='a small avatar of the musical artist'
+                      />
+                    </div>
+                  </div>
                   <h1 class='card-title'>{artist.name}</h1>
                   <p>{artist.genre.name}</p>
                   <div class='card-actions justify-end'>

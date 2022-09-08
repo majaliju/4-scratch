@@ -1,18 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ username: "Star Wars" }, { username: "Lord of the Rings" }])
-#   Character.create(username: "Luke", movie: movies.first)
 
 #  TODO RAILS
 #^  seed with this link: https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
 
-#^ pull actual info from seatgeek API https://platform.seatgeek.com/
+# require 'rest-client'
+
+# def lastfm_api_key
+#   ENV["LASTFM_API_KEY"]
+# end
+
+# def artists_dataset
+#   api_data = {key: lastfm_api_key}
+
+#   artists = RestClient.get("https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key=${api_data[:key]}&format=json")
+# end
+
+puts "---------------------- The Manual method!! "
 
 puts "---------------------- Removing old data..."
 User.delete_all
+Genre.delete_all
+Artist.delete_all
 
 puts "---------------------- Seeding as we speak..."
 
@@ -42,12 +49,12 @@ g9 = Genre.create({name: 'Afrobeats'})
 
 
 #* the artists in the database
-a1 = Artist.create({ name: 'Adele', genre_id: g1.id})
-a2 = Artist.create({ name: 'John Legend', genre_id: g1.id})
-a3 = Artist.create({ name: 'Lil Uzi Vert', genre_id: g2.id})
-a4 = Artist.create({ name: 'Alicia Keys', genre_id: g1.id})
-a5 = Artist.create({ name: 'Brent Faiyaz', genre_id: g7.id})
-a6 = Artist.create({ name: 'Freddie Gibbs', genre_id: g2.id})
+a1 = Artist.create({ name: 'Adele', image: "https://i.imgur.com/zmGbfKS.jpg", genre_id: g1.id})
+a2 = Artist.create({ name: 'John Legend', image: "https://i.imgur.com/Nogyupg.jpg", genre_id: g1.id})
+a3 = Artist.create({ name: 'Lil Uzi Vert', image: "https://i.imgur.com/ym9sg7Z.jpg", genre_id: g2.id})
+a4 = Artist.create({ name: 'Alicia Keys', image: "https://i.imgur.com/L7JvoeU.jpg", genre_id: g1.id})
+a5 = Artist.create({ name: 'Brent Faiyaz', image: "https://i.imgur.com/srjaIKm.jpg", genre_id: g7.id})
+a6 = Artist.create({ name: 'Freddie Gibbs', image: "https://i.imgur.com/JO6zENC.jpg", genre_id: g2.id})
 a7 = Artist.create({ name: 'Ed Sheeran', genre_id: g1.id})
 a8 = Artist.create({ name: 'Chris Stapleton', genre_id: g3.id})
 a9 = Artist.create({ name: 'Lil Wayne', genre_id: g2.id})
