@@ -34,3 +34,8 @@
 
 #? the suffix for seatgeek
  client_id=Mjg3ODc3NzR8MTY2MTkxMzg4MS4wMjY3Njk&client_secret=31beacda086823ba592ae9076ef94c53fa6d04c800d4e8b6351e5b707f0372fd
+
+ #? the api key & secret for last.fm API
+ application: ticketblaster
+ API Key: 780c8436b2dd069ca45978d6bdf52434
+ Shared secret: bf3d6e579769c357e50e94727b95218e
