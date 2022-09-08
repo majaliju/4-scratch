@@ -54,3 +54,9 @@ gem "active_model_serializers",
     git: "https://github.com/jpawlyn/active_model_serializers.git",
     branch: "0-10-stable"
 
+## https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
+# Our http/rest client gem for accessing the url for our external api via get request.
+gem "rest-client"
+
+# Our gem that will help us hide our api key.
+gem "dotenv-rails"
