@@ -15,7 +15,11 @@ function App() {
   const [sessionInfo, setSessionInfo] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
 
+  const [searchTerm, setSearchTerm] = useState('');
+
   const [artists, setArtists] = useState([]);
+  const [concerts, setConcerts] = useState([]);
+  const [venues, setVenues] = useState([]);
 
   function getArtists() {
     fetch('/artists')
