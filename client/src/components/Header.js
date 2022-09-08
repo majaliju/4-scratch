@@ -61,14 +61,14 @@ function Header({ user, onLogin, onLogout, loggedIn }) {
           </div>
           <div class='flex'>
             <NavLink to='/'>
-              <button class='btn btn-ghost normal-case text-2xl'>
+              <button class='btn btn-ghost normal-case text-2xl flex-auto'>
                 ticketblaster
               </button>
             </NavLink>
           </div>
         </div>
         <div class='navbar-center hidden sm:flex'>
-          <div class='flex-1'>
+          <div class='flex-auto'>
             <ul class='menu menu-horizontal p-0'>
               <li>
                 <NavLink to='/artists'>
@@ -89,7 +89,7 @@ function Header({ user, onLogin, onLogout, loggedIn }) {
           </div>
         </div>
         <div class='navbar-end sm:flex'>
-          <div class='flex-1'>
+          <div class='flex-initial'>
             <ul class='menu menu-horizontal float-right p-0'>
               {user === null && (
                 <li>
