@@ -20,6 +20,7 @@ puts "---------------------- Removing old data..."
 User.delete_all
 Genre.delete_all
 Artist.delete_all
+Venue.delete_all
 
 puts "---------------------- Seeding as we speak..."
 
