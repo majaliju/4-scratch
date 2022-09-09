@@ -16,6 +16,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   const [searchTerm, setSearchTerm] = useState('');
+  const [genres, setGenres] = useState([]);
 
   const [artists, setArtists] = useState([]);
   const [concerts, setConcerts] = useState([]);
@@ -31,7 +32,7 @@ function App() {
     getArtists();
   }, []);
 
-  // our initial fetch to get user's ID for maintaing session state
+  // our initial fetch to get user's ID for maintaining session state
   useEffect(() => {
     fetch('/me').then((response) => {
       if (response.ok) {
@@ -92,9 +93,31 @@ function App() {
             />
           }
         />
-        <Route path='/artists' element={<ArtistsDisplay artists={artists} />} />
-        <Route path='/concerts' element={<ConcertsDisplay />} />
-        <Route path='/venues' element={<VenuesDisplay />} />
+        <Route
+          path='/artists'
+          element={
+            <ArtistsDisplay
+              artists={artists}
+              genres={genres}
+              searchTerm={searchTerm}
+            />
+          }
+        />
+        <Route
+          path='/concerts'
+          element={
+            <ConcertsDisplay
+              concerts={concerts}
+              artists={artists}
+              genres={genres}
+              searchTerm={searchTerm}
+            />
+          }
+        />
+        <Route
+          path='/venues'
+          element={<VenuesDisplay venues={venues} searchTerm={searchTerm} />}
+        />
         <Route path='/login' element={<Login onLogin={onLogin} />} />
         <Route path='/signup' element={<SignUp onLogin={onLogin} />} />
         <Route path='*' element={<NotFound />} />

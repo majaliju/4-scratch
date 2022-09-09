@@ -4,7 +4,7 @@
 
 //& make the search bar center itself -- check tailwind to find the right class
 
-function ArtistsDisplay({ artists }) {
+function ArtistsDisplay({ artists, genres, searchTerm }) {
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
       <div class='form-control'>

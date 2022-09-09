@@ -1,4 +1,4 @@
-// function VenuesDisplay({ venues }) {
+// function VenuesDisplay({ venues, searchTerm }) {
 //   return (
 //     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
 //       <div class='mx-auto max-w-screen-xl px-4 md:px-8'>
