@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   #& to get a master list of artists (with each one's genre)
   get 'artists', to: "artists#index"
 
+  #& get a master list of genres, each with the artists that belong to it
+  get 'genres', to: "genres#index"
 
   #& Defines the root path route ("/")
   #& root "articles#index"

@@ -34,10 +34,10 @@ STRETCH: As a user, I can:
 
 ## VIA CHARLOTTE NEFF
 Use a Rails API backend with a React frontend.
-Follow best practices for both front and back end
-Proper RESTful routing
-Do not rely on redirects and reloads to refresh data
-No document.reload or window.reload in your application
+  Follow best practices for both front and back end
+  Proper RESTful routing
+  Do not rely on redirects and reloads to refresh data
+  No document.reload or window.reload in your application
 Have at least three models on the backend, that include:
 at least one many-to-many relationship
 You need a joins table with two foreign keys

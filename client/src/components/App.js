@@ -100,6 +100,7 @@ function App() {
               artists={artists}
               genres={genres}
               searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
             />
           }
         />
@@ -111,6 +112,7 @@ function App() {
               artists={artists}
               genres={genres}
               searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
             />
           }
         />
