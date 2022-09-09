@@ -1,5 +1,6 @@
 // TODO
 //! USE A FILTER DISPLAY FOR THE SEARCH
+//! ALSO IMPLEMENT A FILTER BY GENRE BUTTON SECTION (ALL - HIPHOP - RAP, ETC selector)
 
 function ArtistsDisplay({ artists }) {
   return (
