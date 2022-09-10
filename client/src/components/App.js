@@ -118,7 +118,13 @@ function App() {
         />
         <Route
           path='/venues'
-          element={<VenuesDisplay venues={venues} searchTerm={searchTerm} />}
+          element={
+            <VenuesDisplay
+              venues={venues}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
+          }
         />
         <Route path='/login' element={<Login onLogin={onLogin} />} />
         <Route path='/signup' element={<SignUp onLogin={onLogin} />} />
