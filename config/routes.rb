@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   #& get a master list of genres, each with the artists that belong to it
   get 'venues', to: "venues#index"
 
+  #& get a master list of genres, each with the artists that belong to it
+  get 'concerts', to: "concerts#index"
+
+
 
 
   ##~ THE LOGIN/LOGOUT ROUTES

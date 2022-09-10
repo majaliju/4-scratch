@@ -21,6 +21,7 @@ User.delete_all
 Genre.delete_all
 Artist.delete_all
 Venue.delete_all
+Concert.delete_all
 
 puts "---------------------- Seeding as we speak..."
 
@@ -193,6 +194,27 @@ v52 = Venue.create({name: "Palacio de Bellas Artes", location: "Mexico City, Mex
 v53 = Venue.create({name: "House of Blues", location: "Boston, MA, USA", image: "https://i.imgur.com/EaTJwSZ.jpg"})
 # v48 = Venue.create({name: "", location: "", image: ""})
 
+#* the concerts in the database
+c1 = Concert.create({date: Date.new(2023, 1, 2), artist_id: a1.id, venue_id: v1.id})
+c2 = Concert.create({date: Date.new(2023, 1, 2), artist_id: a2.id, venue_id: v2.id})
+c3 = Concert.create({date: Date.new(2023, 1, 2), artist_id: a3.id, venue_id: v3.id})
+c4 = Concert.create({date: Date.new(2023, 1, 3), artist_id: a10.id, venue_id: v4.id})
+c5 = Concert.create({date: Date.new(2023, 1, 4), artist_id: a18.id, venue_id: v5.id})
+c6 = Concert.create({date: Date.new(2023, 1, 5), artist_id: a14.id, venue_id: v6.id})
+c7 = Concert.create({date: Date.new(2023, 1, 5), artist_id: a4.id, venue_id: v7.id})
+c8 = Concert.create({date: Date.new(2023, 1, 6), artist_id: a7.id, venue_id: v8.id})
+c9 = Concert.create({date: Date.new(2023, 1, 6), artist_id: a8.id, venue_id: v9.id})
+c10 = Concert.create({date: Date.new(2023, 1, 6), artist_id: a2.id, venue_id: v10.id})
+c11 = Concert.create({date: Date.new(2023, 1, 6), artist_id: a20.id, venue_id: v11.id})
+c12 = Concert.create({date: Date.new(2023, 1, 7), artist_id: a35.id, venue_id: v12.id})
+c13 = Concert.create({date: Date.new(2023, 1, 8), artist_id: a23.id, venue_id: v13.id})
+c14 = Concert.create({date: Date.new(2023, 1, 9), artist_id: a20.id, venue_id: v14.id})
+c15 = Concert.create({date: Date.new(2023, 1, 9), artist_id: a44.id, venue_id: v15.id})
+c16 = Concert.create({date: Date.new(2023, 1, 10), artist_id: a72.id, venue_id: v16.id})
+c17 = Concert.create({date: Date.new(2023, 1, 12), artist_id: a84.id, venue_id: v17.id})
+c18 = Concert.create({date: Date.new(2023, 1, 13), artist_id: a29.id, venue_id: v18.id})
+c19 = Concert.create({date: Date.new(2023, 1, 14), artist_id: a30.id, venue_id: v19.id})
+c20 = Concert.create({date: Date.new(2023, 1, 14), artist_id: a23.id, venue_id: v20.id})
 
 
 

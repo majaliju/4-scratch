@@ -1,3 +1,6 @@
+// TODO
+//^ same as the genre system within ArtistsDisplay -- render each individual location then make it a search term to show each location
+
 function VenuesDisplay({ venues, searchTerm, setSearchTerm }) {
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>

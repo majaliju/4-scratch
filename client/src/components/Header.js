@@ -57,11 +57,33 @@ function Header({ user, onLogin, onLogout, loggedIn }) {
                   <button class='uppercase font-bold'>venues</button>
                 </NavLink>
               </li>
+              <div>
+                {user === null && (
+                  <li>
+                    <NavLink class='uppercase font-bold' to='/login'>
+                      <button class='uppercase font-bold'>login</button>
+                    </NavLink>
+                  </li>
+                )}
+                {user !== null && (
+                  <div>
+                    <li>
+                      <NavLink class='uppercase font-bold' to='/'>
+                        <button
+                          class='uppercase font-bold'
+                          onClick={handleLogout}>
+                          logout {user.username}
+                        </button>
+                      </NavLink>
+                    </li>
+                  </div>
+                )}
+              </div>
             </ul>
           </div>
           <div class='flex'>
             <NavLink to='/'>
-              <button class='btn btn-ghost normal-case text-2xl flex-auto'>
+              <button class='btn btn-ghost normal-case text-5xl flex-auto'>
                 ticketblaster
               </button>
             </NavLink>
@@ -88,7 +110,7 @@ function Header({ user, onLogin, onLogout, loggedIn }) {
             </ul>
           </div>
         </div>
-        <div class='navbar-end sm:flex'>
+        <div class='navbar-end hidden sm:flex'>
           <div class='flex-initial'>
             <ul class='menu menu-horizontal float-right p-0'>
               {user === null && (
@@ -99,14 +121,16 @@ function Header({ user, onLogin, onLogout, loggedIn }) {
                 </li>
               )}
               {user !== null && (
-                <li>
-                  {/*               
+                <div>
+                  <li>
+                    {/*               
                   //^ USE A NAVIGATE HERE TO SEND USER TO USERSPAGE (aka '/') when user logs out 
               */}
-                  <button class='uppercase font-bold' onClick={handleLogout}>
-                    logout
-                  </button>
-                </li>
+                    <button class='uppercase font-bold' onClick={handleLogout}>
+                      logout {user.username}
+                    </button>
+                  </li>
+                </div>
               )}
             </ul>
           </div>

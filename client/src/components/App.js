@@ -17,11 +17,10 @@ function App() {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [genres, setGenres] = useState([]);
-
+  const [venues, setVenues] = useState([]);
   const [artists, setArtists] = useState([]);
   const [concerts, setConcerts] = useState([]);
-  const [venues, setVenues] = useState([]);
-  console.log('🚀 ~ file: App.js ~ line 24 ~ App ~ venues', venues);
+  console.log('🚀 ~ file: App.js ~ line 23 ~ App ~ concerts', concerts);
 
   function getArtists() {
     fetch('/artists')
@@ -41,6 +40,17 @@ function App() {
 
   useEffect(() => {
     getVenues();
+  }, []);
+
+  function getConcerts() {
+    fetch('/concerts')
+      .then((r) => r.json())
+      .then((info) => getConcerts());
+    //line 48 registers properly but it doesn't save to state properly for some reason
+  }
+
+  useEffect(() => {
+    getConcerts();
   }, []);
 
   // our initial fetch to get user's ID for maintaining session state
@@ -122,6 +132,7 @@ function App() {
               concerts={concerts}
               artists={artists}
               genres={genres}
+              venues={venues}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />

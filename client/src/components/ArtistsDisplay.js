@@ -1,8 +1,7 @@
 // TODO
-//! USE A FILTER DISPLAY FOR THE SEARCH
-//! ALSO IMPLEMENT A FILTER BY GENRE BUTTON SECTION (ALL - HIPHOP - RAP, ETC selector)
+//^ potentially add a map unique genres that generates buttons for each, that upon each button click renders artists only with that genre classification
 
-//& make the search bar center itself -- check tailwind to find the right class
+//^ make the search bar center itself -- check tailwind to find the right class
 
 function ArtistsDisplay({ artists, genres, searchTerm, setSearchTerm }) {
   return (
