@@ -10,7 +10,7 @@ For this project, you must:
   *one CONCERT can have many POSTS* </br>
   - [x] at least one many-to-many relationship</br>
  *many ARTISTS can have many VENUES, through CONCERTS*</br>
- *many VENUES can have many ARTISTS, through CONCERTS*
+ *many VENUES can have many ARTISTS, through CONCERTS*</br>
   - [ ] full CRUD actions for at least one resource</br>
   *creating, editing, deleting a post that you make*</br>
   *you can't delete others reviews but you can create/delete/update your own, matching your own userID*
