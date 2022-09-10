@@ -32,7 +32,12 @@ function ConcertsDisplay({
                 if (searchTerm === '') {
                   return concert;
                 } else if (
-                  concert.name.toLowerCase().includes(searchTerm.toLowerCase())
+                  concert.artist.name
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase()) ||
+                  concert.venue.name
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
                 ) {
                   return concert;
                 }
@@ -60,7 +65,8 @@ function ConcertsDisplay({
                         </div>
                       </div>
                       <h1 class='card-title'>{concert.artist.name}</h1>
-                      <h2>{concert.venue}</h2>
+                      <h2>{concert.venue.name}</h2>
+                      <h3>{concert.date}</h3>
                       <div class='card-actions justify-end'>
                         <button class='btn btn-primary'>Sell Tickets</button>
                         <button class='btn btn-primary'>Find Tickets</button>

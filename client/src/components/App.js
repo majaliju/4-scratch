@@ -45,8 +45,7 @@ function App() {
   function getConcerts() {
     fetch('/concerts')
       .then((r) => r.json())
-      .then((info) => getConcerts());
-    //line 48 registers properly but it doesn't save to state properly for some reason
+      .then((info) => setConcerts(info));
   }
 
   useEffect(() => {
