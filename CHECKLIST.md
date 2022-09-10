@@ -6,7 +6,7 @@ For this project, you must:
   - [x] at least one one-to-many relationship </br>
   *one GENRE can have many ARTISTS* </br>
   - [x] at least one many-to-many relationship</br>
- *many ARISTS can have many VENUES, through CONCERTS*
+ *many ARTISTS can have many VENUES, through CONCERTS*</br>
  *many VENUES can have many ARTISTS, through CONCERTS*
   - [ ] full CRUD actions for at least one resource</br>
   *creating, editing, deleting a post that you make*</br>
