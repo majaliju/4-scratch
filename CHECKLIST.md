@@ -5,6 +5,9 @@ For this project, you must:
 - [x] Have at least three models on the backend, that include:
   - [x] at least one one-to-many relationship </br>
   *one GENRE can have many ARTISTS* </br>
+  *one ARTIST can have many CONCERTS* </br>
+  *one VENUE can have many CONCERTS* </br>
+  *one CONCERT can have many POSTS* </br>
   - [x] at least one many-to-many relationship</br>
  *many ARTISTS can have many VENUES, through CONCERTS*</br>
  *many VENUES can have many ARTISTS, through CONCERTS*
