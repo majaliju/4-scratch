@@ -6,9 +6,8 @@ For this project, you must:
   - [x] at least one one-to-many relationship </br>
   *one GENRE can have many ARTISTS* </br>
   - [x] at least one many-to-many relationship</br>
-  *one ARTIST can have many CONCERTS*</br>
-  *one CONCERT can have many TICKETS*</br>
-  *one VENUE can have many CONCERTS*</br>
+ *many ARISTS can have many VENUES, through CONCERTS*
+ *many VENUES can have many ARTISTS, through CONCERTS*
   - [ ] full CRUD actions for at least one resource</br>
   *creating, editing, deleting a post that you make*</br>
   *you can't delete others reviews but you can create/delete/update your own, matching your own userID*
