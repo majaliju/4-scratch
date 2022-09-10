@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #& Defines the root path route ("/")
+  #& root "articles#index"
 
   ##~ FOR THE ARTIST-CONCERTS-VENUES DISPLAYS
   #& to get a master list of artists (with each one's genre)
@@ -7,8 +9,10 @@ Rails.application.routes.draw do
   #& get a master list of genres, each with the artists that belong to it
   get 'genres', to: "genres#index"
 
-  #& Defines the root path route ("/")
-  #& root "articles#index"
+  #& get a master list of genres, each with the artists that belong to it
+  get 'venues', to: "venues#index"
+
+
 
   ##~ THE LOGIN/LOGOUT ROUTES
   #& to create a new user outright

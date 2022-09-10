@@ -41,7 +41,7 @@ function VenuesDisplay({ venues, searchTerm, setSearchTerm }) {
                         <div class='w-30 rounded'>
                           <img
                             src={venue.image}
-                            alt='a small avatar of the musical artist'
+                            alt='a small avatar of the venue'
                           />
                         </div>
                       </div>

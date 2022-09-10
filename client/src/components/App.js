@@ -32,6 +32,16 @@ function App() {
     getArtists();
   }, []);
 
+  function getVenues() {
+    fetch('/venues')
+      .then((r) => r.json())
+      .then((info) => setArtists(info));
+  }
+
+  useEffect(() => {
+    getVenues();
+  }, []);
+
   // our initial fetch to get user's ID for maintaining session state
   useEffect(() => {
     fetch('/me').then((response) => {
