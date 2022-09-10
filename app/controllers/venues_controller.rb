@@ -1,12 +1,12 @@
 class VenuesController < ApplicationController
 
   def index
-    venues = Venues.all
+    venues = Venue.all
     render json: venues, status: 200
   end
 
   def show
-    venue = Venues.find_by(id: params[:id])
+    venue = Venue.find_by(id: params[:id])
     render json: venue
   end
 

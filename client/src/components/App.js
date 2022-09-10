@@ -21,6 +21,7 @@ function App() {
   const [artists, setArtists] = useState([]);
   const [concerts, setConcerts] = useState([]);
   const [venues, setVenues] = useState([]);
+  console.log('🚀 ~ file: App.js ~ line 24 ~ App ~ venues', venues);
 
   function getArtists() {
     fetch('/artists')
@@ -35,7 +36,7 @@ function App() {
   function getVenues() {
     fetch('/venues')
       .then((r) => r.json())
-      .then((info) => setArtists(info));
+      .then((info) => setVenues(info));
   }
 
   useEffect(() => {
