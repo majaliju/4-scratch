@@ -216,6 +216,24 @@ c18 = Concert.create({date: Date.new(2023, 1, 13), artist_id: a29.id, venue_id: 
 c19 = Concert.create({date: Date.new(2023, 1, 14), artist_id: a30.id, venue_id: v19.id})
 c20 = Concert.create({date: Date.new(2023, 1, 14), artist_id: a23.id, venue_id: v20.id})
 
-
+#* the posts in the database
+p = Post.create({body: "2 tickets, $100 total OBO", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c1.id})
+p = Post.create({body: "Need 3 tickets badly! Willing to pay $400 total for 3 tix", for_sale: false, how_many_tickets: 3, user_id: u1.id, concert_id: c2.id})
+p = Post.create({body: "All 3 tickets together = $250, one ticket = $100", for_sale: true, how_many_tickets: 3, user_id: u1.id, concert_id: c3.id})
+p = Post.create({body: "My daughter loves him (dont ask), will pay up to $500 per ticket", for_sale: false, how_many_tickets: 2, user_id: u1.id, concert_id: c4.id})
+p = Post.create({body: "Email me with your best offer", for_sale: true, how_many_tickets: 1, user_id: u1.id, concert_id: c5.id})
+p = Post.create({body: "TICKETS SOLD ONLY AS TRIO -- CONTACT FOR PRICE", for_sale: true, how_many_tickets: 3, user_id: u1.id, concert_id: c6.id})
+p = Post.create({body: "I NEEEEEED TICKETS, PLEASE CONTACT ME AT 777-777-7777", for_sale: false, how_many_tickets: 2, user_id: u1.id, concert_id: c7.id})
+p = Post.create({body: "", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c8.id})
+p = Post.create({body: "", for_sale: true, how_many_tickets: 3, user_id: u1.id, concert_id: c1.id})
+p = Post.create({body: "", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c1.id})
+p = Post.create({body: "", for_sale: false, how_many_tickets: 3, user_id: u1.id, concert_id: c2.id})
+p = Post.create({body: "", for_sale: false, how_many_tickets: 2, user_id: u1.id, concert_id: c2.id})
+p = Post.create({body: "", for_sale: true, how_many_tickets: 3, user_id: u1.id, concert_id: c3.id})
+p = Post.create({body: "", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c4.id})
+p = Post.create({body: "", for_sale: false, how_many_tickets: 2, user_id: u1.id, concert_id: c4.id})
+p = Post.create({body: "", for_sale: false, how_many_tickets: 1, user_id: u1.id, concert_id: c5.id})
+p = Post.create({body: "", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c6.id})
+p = Post.create({body: "", for_sale: true, how_many_tickets: 4, user_id: u1.id, concert_id: c7.id})
 
 puts "---------------------- Success!!"
