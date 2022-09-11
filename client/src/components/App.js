@@ -10,6 +10,7 @@ import Header from './Header';
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import UsersPage from './UsersPage';
+import ArtistTicketActivity from './ArtistTicketActivity';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -21,7 +22,8 @@ function App() {
   const [venues, setVenues] = useState([]);
   const [artists, setArtists] = useState([]);
   const [concerts, setConcerts] = useState([]);
-  console.log('🚀 ~ file: App.js ~ line 23 ~ App ~ concerts', concerts);
+  const [posts, setPosts] = useState([]);
+  console.log('🚀 ~ file: App.js ~ line 25 ~ App ~ posts', posts);
 
   function getArtists() {
     fetch('/artists')
@@ -53,6 +55,16 @@ function App() {
     getConcerts();
   }, []);
 
+  function getPosts() {
+    fetch('/posts')
+      .then((r) => r.json())
+      .then((info) => setPosts(info));
+  }
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
   // our initial fetch to get user's ID for maintaining session state
   useEffect(() => {
     fetch('/me').then((response) => {
@@ -76,14 +88,12 @@ function App() {
     setSessionInfo({});
   }
 
-  // get the session ID
   function getSession() {
     fetch('/show_session')
       .then((r) => r.json())
       .then((thisInfo) => setSessionInfo(thisInfo));
   }
 
-  // runs on each render to update session info
   useEffect(() => {
     getSession();
   }, []);
@@ -122,6 +132,18 @@ function App() {
               genres={genres}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
+            />
+          }
+        />
+        <Route
+          path='/artists/{id}'
+          element={
+            <ArtistTicketActivity
+              artists={artists}
+              concerts={concerts}
+              posts={posts}
+              setPosts={setPosts}
+              user={user}
             />
           }
         />

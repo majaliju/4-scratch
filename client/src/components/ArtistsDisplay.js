@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function ArtistsDisplay({ artists, genres, searchTerm, setSearchTerm }) {
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
@@ -49,10 +51,7 @@ function ArtistsDisplay({ artists, genres, searchTerm, setSearchTerm }) {
                       <p>{artist.genre.name}</p>
                       <div class='card-actions justify-end'>
                         <button class='btn btn-primary'>
-                          X People Selling Z Tickets
-                        </button>
-                        <button class='btn btn-primary'>
-                          X People Looking For Z Tickets
+                          <Link to='/artists/id'>view ticket activity</Link>
                         </button>
                       </div>
                     </div>
