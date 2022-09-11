@@ -68,8 +68,12 @@ function ConcertsDisplay({
                       <h2>{concert.venue.name}</h2>
                       <h3>{concert.date}</h3>
                       <div class='card-actions justify-end'>
-                        <button class='btn btn-primary'>Sell Tickets</button>
-                        <button class='btn btn-primary'>Find Tickets</button>
+                        <button class='btn btn-primary'>
+                          X People Selling Z Tickets
+                        </button>
+                        <button class='btn btn-primary'>
+                          X People Looking For Z Tickets
+                        </button>
                       </div>
                     </div>
                   </div>

@@ -53,8 +53,12 @@ function ArtistsDisplay({ artists, genres, searchTerm, setSearchTerm }) {
                       <h1 class='card-title'>{artist.name}</h1>
                       <p>{artist.genre.name}</p>
                       <div class='card-actions justify-end'>
-                        <button class='btn btn-primary'>Sell Tickets</button>
-                        <button class='btn btn-primary'>Find Tickets</button>
+                        <button class='btn btn-primary'>
+                          X People Selling Z Tickets
+                        </button>
+                        <button class='btn btn-primary'>
+                          X People Looking For Z Tickets
+                        </button>
                       </div>
                     </div>
                   </div>
