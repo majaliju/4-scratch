@@ -1,18 +1,4 @@
-
-#  TODO RAILS
-#^  seed with this link: https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
-
-# require 'rest-client'
-
-# def lastfm_api_key
-#   ENV["LASTFM_API_KEY"]
-# end
-
-# def artists_dataset
-#   api_data = {key: lastfm_api_key}
-
-#   artists = RestClient.get("https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key=${api_data[:key]}&format=json")
-# end
+require "faker"
 
 puts "---------------------- The Manual method!! "
 
@@ -22,20 +8,42 @@ Genre.delete_all
 Artist.delete_all
 Venue.delete_all
 Concert.delete_all
+Post.delete_all
 
 puts "---------------------- Seeding as we speak..."
 
 #* seeding an initial 11 users for login tests
-u1 = User.create({ username: "onlineguy1", password: "123123123123" })
-u2 = User.create({ username: "anotherDude5", password: "123123123123" })
-u3 = User.create({ username: "p3rs0n", password: "123123123123" })
-u4 = User.create({ username: "thatsme", password: "123123123123" })
-u6 = User.create({ username: "testing", password: "123123123123" })
-u7 = User.create({ username: "asdf", password: "123123123123" })
-u8 = User.create({ username: "johnnyboy", password: "123123123123" })
-u9 = User.create({ username: "thatdude", password: "123123123123" })
-u10 = User.create({ username: "musiclover123", password: "123123123123" })
-u11 = User.create({ username: "ilovemj", password: "123123123123" })
+u1 = User.create({ username: "onlineguy1", password: "123123123123",  email: Faker::Internet.email})
+u2 = User.create({ username: "anotherDude5", password: "123123123123",  email: Faker::Internet.email})
+u3 = User.create({ username: "p3rs0n", password: "123123123123",  email: Faker::Internet.email})
+u4 = User.create({ username: "thatsme", password: "123123123123",  email: Faker::Internet.email})
+u5 = User.create({ username: "BECCAA<3", password: "123123123123",  email: Faker::Internet.email})
+u6 = User.create({ username: "testing", password: "123123123123",  email: Faker::Internet.email})
+u7 = User.create({ username: "asdf", password: "123123123123",  email: Faker::Internet.email})
+u8 = User.create({ username: "johnnyboy", password: "123123123123",  email: Faker::Internet.email})
+u9 = User.create({ username: "thatdude", password: "123123123123",  email: Faker::Internet.email})
+u10 = User.create({ username: "musiclover123", password: "123123123123",  email: Faker::Internet.email})
+u11 = User.create({ username: "ilovemj", password: "123123123123",  email: Faker::Internet.email})
+u12 = User.create({ username: "i_love_bad_bunny", password: "123123123123",  email: Faker::Internet.email})
+u13 = User.create({ username: "HELLO", password: "123123123123",  email: Faker::Internet.email})
+u14 = User.create({ username: "tix4sale", password: "123123123123",  email: Faker::Internet.email})
+u15 = User.create({ username: "hustlerbabyx0", password: "123123123123",  email: Faker::Internet.email})
+u16 = User.create({ username: "queens123", password: "123123123123",  email: Faker::Internet.email})
+u17 = User.create({ username: "L0V3MUSIC", password: "123123123123",  email: Faker::Internet.email})
+u18 = User.create({ username: "gettingMONEY247", password: "123123123123",  email: Faker::Internet.email})
+u19 = User.create({ username: "guapchaser77", password: "123123123123",  email: Faker::Internet.email})
+u20 = User.create({ username: "ihatetheknicks", password: "123123123123",  email: Faker::Internet.email})
+u21 = User.create({ username: "benjamindisraeli", password: "123123123123",  email: Faker::Internet.email})
+u22 = User.create({ username: "thequeenisdead", password: "123123123123",  email: Faker::Internet.email})
+u23 = User.create({ username: "ilovethesmiths11", password: "123123123123",  email: Faker::Internet.email})
+u24 = User.create({ username: "nymuzik", password: "123123123123",  email: Faker::Internet.email})
+u25 = User.create({ username: "rainygirl", password: "123123123123",  email: Faker::Internet.email})
+u26 = User.create({ username: "qwerty22", password: "123123123123",  email: Faker::Internet.email})
+u27 = User.create({ username: "generic_username", password: "123123123123",  email: Faker::Internet.email})
+u28 = User.create({ username: "AHHHHH", password: "123123123123",  email: Faker::Internet.email})
+u29 = User.create({ username: "okletsgetit", password: "123123123123",  email: Faker::Internet.email})
+u30 = User.create({ username: "mulholland_driver", password: "123123123123",  email: Faker::Internet.email})
+u31 = User.create({ username: "marvin_gaye_rip87", password: "123123123123",  email: Faker::Internet.email})
 
 
 #* the genres in the database
@@ -195,45 +203,45 @@ v53 = Venue.create({name: "House of Blues", location: "Boston, MA, USA", image: 
 # v48 = Venue.create({name: "", location: "", image: ""})
 
 #* the concerts in the database
-c1 = Concert.create({date: Date.new(2023, 1, 2), artist_id: a1.id, venue_id: v1.id})
-c2 = Concert.create({date: Date.new(2023, 1, 2), artist_id: a2.id, venue_id: v2.id})
-c3 = Concert.create({date: Date.new(2023, 1, 2), artist_id: a3.id, venue_id: v3.id})
-c4 = Concert.create({date: Date.new(2023, 1, 3), artist_id: a10.id, venue_id: v4.id})
-c5 = Concert.create({date: Date.new(2023, 1, 4), artist_id: a18.id, venue_id: v5.id})
-c6 = Concert.create({date: Date.new(2023, 1, 5), artist_id: a14.id, venue_id: v6.id})
-c7 = Concert.create({date: Date.new(2023, 1, 5), artist_id: a4.id, venue_id: v7.id})
-c8 = Concert.create({date: Date.new(2023, 1, 6), artist_id: a7.id, venue_id: v8.id})
-c9 = Concert.create({date: Date.new(2023, 1, 6), artist_id: a8.id, venue_id: v9.id})
-c10 = Concert.create({date: Date.new(2023, 1, 6), artist_id: a2.id, venue_id: v10.id})
-c11 = Concert.create({date: Date.new(2023, 1, 6), artist_id: a20.id, venue_id: v11.id})
-c12 = Concert.create({date: Date.new(2023, 1, 7), artist_id: a35.id, venue_id: v12.id})
-c13 = Concert.create({date: Date.new(2023, 1, 8), artist_id: a23.id, venue_id: v13.id})
-c14 = Concert.create({date: Date.new(2023, 1, 9), artist_id: a20.id, venue_id: v14.id})
-c15 = Concert.create({date: Date.new(2023, 1, 9), artist_id: a44.id, venue_id: v15.id})
-c16 = Concert.create({date: Date.new(2023, 1, 10), artist_id: a72.id, venue_id: v16.id})
-c17 = Concert.create({date: Date.new(2023, 1, 12), artist_id: a84.id, venue_id: v17.id})
-c18 = Concert.create({date: Date.new(2023, 1, 13), artist_id: a29.id, venue_id: v18.id})
-c19 = Concert.create({date: Date.new(2023, 1, 14), artist_id: a30.id, venue_id: v19.id})
-c20 = Concert.create({date: Date.new(2023, 1, 14), artist_id: a23.id, venue_id: v20.id})
+c1 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a1.id, venue_id: v1.id})
+c2 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a2.id, venue_id: v2.id})
+c3 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a3.id, venue_id: v3.id})
+c4 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a10.id, venue_id: v4.id})
+c5 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a18.id, venue_id: v5.id})
+c6 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a14.id, venue_id: v6.id})
+c7 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a4.id, venue_id: v7.id})
+c8 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a7.id, venue_id: v8.id})
+c9 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a8.id, venue_id: v9.id})
+c10 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a2.id, venue_id: v10.id})
+c11 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a20.id, venue_id: v11.id})
+c12 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a35.id, venue_id: v12.id})
+c13 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a23.id, venue_id: v13.id})
+c14 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a20.id, venue_id: v14.id})
+c15 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a44.id, venue_id: v15.id})
+c16 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a72.id, venue_id: v16.id})
+c17 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a84.id, venue_id: v17.id})
+c18 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a29.id, venue_id: v18.id})
+c19 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a30.id, venue_id: v19.id})
+c20 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a23.id, venue_id: v20.id})
 
 #* the posts in the database
-p = Post.create({body: "2 tickets, $100 total OBO", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c1.id})
-p = Post.create({body: "Need 3 tickets badly! Willing to pay $400 total for 3 tix", for_sale: false, how_many_tickets: 3, user_id: u1.id, concert_id: c2.id})
-p = Post.create({body: "All 3 tickets together = $250, one ticket = $100", for_sale: true, how_many_tickets: 3, user_id: u1.id, concert_id: c3.id})
-p = Post.create({body: "My daughter loves him (dont ask), will pay up to $500 per ticket", for_sale: false, how_many_tickets: 2, user_id: u1.id, concert_id: c4.id})
-p = Post.create({body: "Email me with your best offer", for_sale: true, how_many_tickets: 1, user_id: u1.id, concert_id: c5.id})
-p = Post.create({body: "TICKETS SOLD ONLY AS TRIO -- CONTACT FOR PRICE", for_sale: true, how_many_tickets: 3, user_id: u1.id, concert_id: c6.id})
-p = Post.create({body: "I NEEEEEED TICKETS, PLEASE CONTACT ME AT 777-777-7777", for_sale: false, how_many_tickets: 2, user_id: u1.id, concert_id: c7.id})
-p = Post.create({body: "", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c8.id})
-p = Post.create({body: "", for_sale: true, how_many_tickets: 3, user_id: u1.id, concert_id: c1.id})
-p = Post.create({body: "", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c1.id})
-p = Post.create({body: "", for_sale: false, how_many_tickets: 3, user_id: u1.id, concert_id: c2.id})
-p = Post.create({body: "", for_sale: false, how_many_tickets: 2, user_id: u1.id, concert_id: c2.id})
-p = Post.create({body: "", for_sale: true, how_many_tickets: 3, user_id: u1.id, concert_id: c3.id})
-p = Post.create({body: "", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c4.id})
-p = Post.create({body: "", for_sale: false, how_many_tickets: 2, user_id: u1.id, concert_id: c4.id})
-p = Post.create({body: "", for_sale: false, how_many_tickets: 1, user_id: u1.id, concert_id: c5.id})
-p = Post.create({body: "", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c6.id})
-p = Post.create({body: "", for_sale: true, how_many_tickets: 4, user_id: u1.id, concert_id: c7.id})
+p1 = Post.create({body: "2 tickets, $100 total OBO", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c1.id})
+p2 = Post.create({body: "Need 3 tickets badly! Willing to pay $400 total for 3 tix", for_sale: false, how_many_tickets: 3, user_id: u2.id, concert_id: c2.id})
+p3 = Post.create({body: "All 3 tickets together = $250, one ticket = $100", for_sale: true, how_many_tickets: 3, user_id: u3.id, concert_id: c3.id})
+p4 = Post.create({body: "My daughter loves him (dont ask), will pay up to $500 per ticket", for_sale: false, how_many_tickets: 2, user_id: u4.id, concert_id: c4.id})
+p5 = Post.create({body: "Email me with your best offer", for_sale: true, how_many_tickets: 1, user_id: u5.id, concert_id: c5.id})
+p6 = Post.create({body: "TICKETS SOLD ONLY AS TRIO -- CONTACT FOR PRICE", for_sale: true, how_many_tickets: 3, user_id: u6.id, concert_id: c6.id})
+p7 = Post.create({body: "I NEEEEEED TICKETS, PLEASE CONTACT ME AT 777-777-7777", for_sale: false, how_many_tickets: 2, user_id: u7.id, concert_id: c7.id})
+p8 = Post.create({body: "best offer only! email me", for_sale: true, how_many_tickets: 2, user_id: u2.id, concert_id: c8.id})
+p9 = Post.create({body: "each ticket is $65, only selling one a piece", for_sale: true, how_many_tickets: 3, user_id: u3.id, concert_id: c10.id})
+p10 = Post.create({body: "Selling both tickets together, email for price.", for_sale: true, how_many_tickets: 2, user_id: u4.id, concert_id: c11.id})
+p11 = Post.create({body: "Hey I'm looking for 3 tickets together! Willing to pay over $400 for all 3", for_sale: false, how_many_tickets: 3, user_id: u5.id, concert_id: c12.id})
+p12 = Post.create({body: "Hiii does anyone have 2 tickets together for this show?", for_sale: false, how_many_tickets: 2, user_id: u6.id, concert_id: c13.id})
+p13 = Post.create({body: "3 tix, $100+ each OBO hmu", for_sale: true, how_many_tickets: 3, user_id: u7.id, concert_id: c14.id})
+p14 = Post.create({body: "both tickets sold together only!", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c14.id})
+p15 = Post.create({body: "neeeeeed 2 tix, please lmk", for_sale: false, how_many_tickets: 2, user_id: u2.id, concert_id: c15.id})
+p16 = Post.create({body: "looking for a ticket", for_sale: false, how_many_tickets: 1, user_id: u3.id, concert_id: c16.id})
+p17 = Post.create({body: "selling 2 tickets!! hmu for price", for_sale: true, how_many_tickets: 2, user_id: u4.id, concert_id: c17.id})
+p18 = Post.create({body: "Hi I'm selling 4 tickets, altogether. No seperate tickets being sold. Contact me", for_sale: true, how_many_tickets: 4, user_id: u5.id, concert_id: c18.id})
 
 puts "---------------------- Success!!"
