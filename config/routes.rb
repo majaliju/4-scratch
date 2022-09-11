@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   #& get a master list of concerts & each concert
   get 'concerts', to: "concerts#index"
 
+  #& get a master list of posts
+  get 'posts', to: "posts#index"
 
 
 
