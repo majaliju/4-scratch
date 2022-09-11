@@ -23,7 +23,10 @@ function UsersPage({ user, sessionInfo, loggedIn }) {
                   Welcome back, {user.username}!
                 </h1>
                 <p class='mb-5'>Your sessionID is {sessionInfo.session_id}</p>
-                <button class='btn btn-primary'>Get Started</button>
+                <h2 class='mb-5 text-3xl font-bold'>
+                  HERE ONE DISPLAYS THE USER'S POSTS, BOTH FOR SALE AND
+                  REQUESTING!
+                </h2>
               </div>
             </div>
           </div>
