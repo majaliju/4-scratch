@@ -1,3 +1,3 @@
 class ArtistGenreSerializer < ActiveModel::Serializer
-  attributes :name, :id
+  attributes :name
 end

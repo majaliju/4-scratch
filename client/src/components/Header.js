@@ -1,15 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import { useState } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
-import Login from './Login';
-
-// TODO use a different navbar -- responsive one
+import { NavLink } from 'react-router-dom';
 
 function Header({ user, onLogin, onLogout, loggedIn }) {
-  // const location = useLocation();
-  // console.log('🚀 ~ file: Header.js ~ line 21 ~ Header ~ location', location);
-
   function handleLogout() {
     fetch('/logout', {
       method: 'DELETE',
@@ -17,7 +10,6 @@ function Header({ user, onLogin, onLogout, loggedIn }) {
   }
 
   // TODO dropdown should exit as soon as item is clicked
-  //& maybe look into cleaning up the navbar as well, aggregating everything into the ticketblaster tab that becomes a dropdown menu
 
   return (
     <div>
@@ -55,6 +47,11 @@ function Header({ user, onLogin, onLogout, loggedIn }) {
               <li>
                 <NavLink to='/venues'>
                   <button class='uppercase font-bold'>venues</button>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to='/genres'>
+                  <button class='uppercase font-bold'>genres</button>
                 </NavLink>
               </li>
               <div>
@@ -105,6 +102,11 @@ function Header({ user, onLogin, onLogout, loggedIn }) {
               <li>
                 <NavLink to='/venues'>
                   <button class='uppercase font-bold'>venues</button>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to='/genres'>
+                  <button class='uppercase font-bold'>genres</button>
                 </NavLink>
               </li>
             </ul>

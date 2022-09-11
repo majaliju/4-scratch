@@ -1,8 +1,3 @@
-// TODO
-//^ potentially add a map unique genres that generates buttons for each, that upon each button click renders artists only with that genre classification
-
-//^ make the search bar center itself -- check tailwind to find the right class
-
 function ArtistsDisplay({ artists, genres, searchTerm, setSearchTerm }) {
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>

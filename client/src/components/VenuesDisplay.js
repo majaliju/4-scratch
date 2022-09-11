@@ -1,6 +1,3 @@
-// TODO
-//^ same as the genre system within ArtistsDisplay -- render each individual location then make it a search term to show each location
-
 function VenuesDisplay({ venues, searchTerm, setSearchTerm }) {
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
@@ -51,8 +48,12 @@ function VenuesDisplay({ venues, searchTerm, setSearchTerm }) {
                       <h1 class='card-title'>{venue.name}</h1>
                       <p>{venue.location}</p>
                       <div class='card-actions justify-end'>
-                        <button class='btn btn-primary'>Sell Tickets</button>
-                        <button class='btn btn-primary'>Find Tickets</button>
+                        <button class='btn btn-primary'>
+                          X People Selling Z Tickets
+                        </button>
+                        <button class='btn btn-primary'>
+                          X People Looking For Z Tickets
+                        </button>
                       </div>
                     </div>
                   </div>

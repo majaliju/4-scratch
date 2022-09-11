@@ -2,6 +2,7 @@ import '../../src/App.css';
 import ArtistsDisplay from './ArtistsDisplay';
 import ConcertsDisplay from './ConcertsDisplay';
 import VenuesDisplay from './VenuesDisplay';
+import GenreDisplay from './GenreDisplay';
 import Login from './Login';
 import SignUp from './SignUp';
 import NotFound from './NotFound';
@@ -147,6 +148,7 @@ function App() {
             />
           }
         />
+        <Route path='/genres' element={<GenreDisplay genres={genres} />} />
         <Route path='/login' element={<Login onLogin={onLogin} />} />
         <Route path='/signup' element={<SignUp onLogin={onLogin} />} />
         <Route path='*' element={<NotFound />} />
