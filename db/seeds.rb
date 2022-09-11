@@ -12,7 +12,7 @@ Post.delete_all
 
 puts "---------------------- Seeding as we speak..."
 
-#* seeding an initial 11 users for login tests
+#* the users in the database
 u1 = User.create({ username: "onlineguy1", password: "123123123123",  email: Faker::Internet.email})
 u2 = User.create({ username: "anotherDude5", password: "123123123123",  email: Faker::Internet.email})
 u3 = User.create({ username: "p3rs0n", password: "123123123123",  email: Faker::Internet.email})

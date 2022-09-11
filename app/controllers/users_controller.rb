@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     render json: users, status: 200
   end
 
-  # get our specific user
   def show
     user = User.find_by(id: session[:user_id])
     if user
@@ -15,7 +14,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # create a new user
   def create
     user = User.create(signup_user_params)
 
@@ -45,6 +43,6 @@ class UsersController < ApplicationController
 
 
   def signup_user_params
-    params.permit(:username, :password, :password_confirmation)
+    params.permit(:username, :password, :password_confirmation, :email)
   end
 end

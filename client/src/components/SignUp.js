@@ -6,6 +6,7 @@ function SignUp({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [email, setEmail] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,6 +20,7 @@ function SignUp({ onLogin }) {
         username: username,
         password: password,
         password_confirmation: passwordConfirmation,
+        email: email,
       }),
     })
       .then((r) => r.json())
@@ -58,6 +60,15 @@ function SignUp({ onLogin }) {
                 id='passwordConfirmation'
                 value={passwordConfirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
+              />
+            </label>
+            <label className='email-entry'>
+              <span class='text uppercase font-extralight'>email</span>
+              <input
+                type='text'
+                id='email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </label>
           </label>
