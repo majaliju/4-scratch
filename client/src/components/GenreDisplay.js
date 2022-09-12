@@ -11,7 +11,7 @@ function GenreDisplay({ genres, searchTerm, setSearchTerm }) {
           <input
             type='text'
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder='Search for any venue here by typing...'
+            placeholder='Search for any genre here by typing...'
             class='input input-bordered w-full input-lg text-center'
           />
         </label>
