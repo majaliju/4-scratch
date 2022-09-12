@@ -180,7 +180,7 @@ v30 = Venue.create({name: "Dalhalla", location: "Rättvik, Sweden", image: "http
 v31 = Venue.create({name: "House of Eternal Return", location: "Sante Fe, New Mexico, USA", image: "https://i.imgur.com/k9qXxmG.jpg"})
 v32 = Venue.create({name: "Slane Castle", location: "County Meath, Ireland", image: "https://i.imgur.com/SQBIzTz.jpg"})
 v33 = Venue.create({name: "Jay Pritzker Pavilion ", location: "Chicago, IL, USA", image: "https://i.imgur.com/21140aZ.jpg"})
-v34 = Venue.create({name: "Tower Theater,", location: "Philadelphia, PA, USA", image: "https://i.imgur.com/YWwDAth.jpg"})
+v34 = Venue.create({name: "Tower Theater", location: "Philadelphia, PA, USA", image: "https://i.imgur.com/YWwDAth.jpg"})
 v35 = Venue.create({name: "El Club", location: "Detroit, MI, USA", image: "https://i.imgur.com/6Jm3E6Q.jpg"})
 v36 = Venue.create({name: "9:30 Club", location: "Washington DC, USA", image: "https://i.imgur.com/Dxt35tz.jpg"})
 v37 = Venue.create({name: "Brooklyn Steel", location: "Brooklyn, NY, USA", image: "https://i.imgur.com/SmFrzTC.jpg"})
@@ -264,5 +264,6 @@ p16 = Post.create({body: "looking for a ticket", for_sale: false, how_many_ticke
 p17 = Post.create({body: "selling 2 tickets!! hmu for price", for_sale: true, how_many_tickets: 2, user_id: u4.id, concert_id: c17.id})
 p18 = Post.create({body: "Hi I'm selling 4 tickets, altogether. No seperate tickets being sold. Contact me", for_sale: true, how_many_tickets: 4, user_id: u5.id, concert_id: c18.id})
 p19 = Post.create({body: "I LOVE THE WEEKEND I NEED TICKETS PLEASE HMU!!!!!", for_sale: false, how_many_tickets: 1, user_id: u9.id, concert_id:c11.id})
+p20 = Post.create({body: "Selling 6 tickets. Contact me via email ONLY", for_sale: true, how_many_tickets: 6, user_id: u23.id, concert_id: c19.id})
 
 puts "---------------------- Success!!"
