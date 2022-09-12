@@ -1,13 +1,17 @@
+import { useNavigate } from 'react-router-dom';
+
 //TODO
 //^ need to configure the date properly for the shows
 
 function ConcertsDisplay({
   concerts,
+  user,
   artists,
   venues,
   searchTerm,
   setSearchTerm,
 }) {
+  let navigate = useNavigate();
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
       <div class='form-control'>
@@ -79,12 +83,21 @@ function ConcertsDisplay({
                         </div>
                       </div>
                       <div class='card-actions justify-end'>
-                        <button class='btn btn-secondary w-full'>
-                          I have tickets to sell
-                        </button>
-                        <button class='btn btn-secondary w-full'>
-                          I'm Looking For Tickets
-                        </button>
+                        {user === null ? (
+                          <button
+                            class='btn btn-primary'
+                            onClick={() => navigate(`/login`)}>
+                            Login to view tickets
+                          </button>
+                        ) : (
+                          (<button class='btn btn-secondary w-full'>
+                            I have tickets to sell
+                          </button>)(
+                            <button class='btn btn-secondary w-full'>
+                              I'm Looking For Tickets
+                            </button>
+                          )
+                        )}
                       </div>
                     </div>
                   </div>

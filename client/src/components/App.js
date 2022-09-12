@@ -166,6 +166,7 @@ function App() {
               artists={artists}
               genres={genres}
               venues={venues}
+              user={user}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />
@@ -176,6 +177,7 @@ function App() {
           element={
             <VenuesDisplay
               venues={venues}
+              user={user}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />
@@ -186,6 +188,7 @@ function App() {
           element={
             <GenreDisplay
               genres={genres}
+              user={user}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />
