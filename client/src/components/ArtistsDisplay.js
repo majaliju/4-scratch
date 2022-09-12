@@ -1,6 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
 
 function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
+  console.log(
+    '🚦 ~ file: ArtistsDisplay.js ~ line 4 ~ ArtistsDisplay ~ artists',
+    artists
+  );
   let navigate = useNavigate();
 
   return (

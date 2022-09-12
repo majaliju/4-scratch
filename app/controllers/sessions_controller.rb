@@ -17,9 +17,5 @@ class SessionsController < ApplicationController
     head :no_content
   end
 
-  # private
 
-  # def set_session
-  #   @session = Session.find(params[:id])
-  # end
 end

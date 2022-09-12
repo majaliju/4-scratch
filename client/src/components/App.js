@@ -21,9 +21,9 @@ function App() {
   const [genres, setGenres] = useState([]);
   const [venues, setVenues] = useState([]);
   const [artists, setArtists] = useState([]);
+  console.log('🚦 ~ file: App.js ~ line 24 ~ App ~ artists', artists);
   const [concerts, setConcerts] = useState([]);
   const [posts, setPosts] = useState([]);
-  console.log('🚦 -- file: App.js -- line 26 -- App -- posts', posts);
 
   function getArtists() {
     fetch('/artists')
