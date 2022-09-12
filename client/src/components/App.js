@@ -55,6 +55,16 @@ function App() {
     getConcerts();
   }, []);
 
+  function getGenres() {
+    fetch("/genres")
+      .then((r) => r.json())
+      .then((info) => setGenres(info));
+  }
+
+  useEffect(() => {
+    getGenres();
+  }, []);
+
   function getPosts() {
     fetch("/posts")
       .then((r) => r.json())
@@ -170,7 +180,16 @@ function App() {
             />
           }
         />
-        <Route path="/genres" element={<GenreDisplay genres={genres} />} />
+        <Route
+          path="/genres"
+          element={
+            <GenreDisplay
+              genres={genres}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
+          }
+        />
         <Route path="/login" element={<Login onLogin={onLogin} />} />
         <Route path="/signup" element={<SignUp onLogin={onLogin} />} />
         <Route path="*" element={<NotFound />} />

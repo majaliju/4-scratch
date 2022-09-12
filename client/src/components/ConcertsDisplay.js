@@ -6,30 +6,30 @@ function ConcertsDisplay({
   setSearchTerm,
 }) {
   return (
-    <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
-      <div class='form-control'>
-        <label class='flex input-group input-group-lg'>
+    <div class="bg-base-900 py-6 sm:py-8 lg:py-12">
+      <div class="form-control">
+        <label class="flex input-group input-group-lg">
           <span>SEARCH</span>
           <input
-            type='text'
+            type="text"
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder='Search for any venue here by typing...'
-            class='input input-bordered w-full input-lg text-center'
+            placeholder="Search for any venue here by typing..."
+            class="input input-bordered w-full input-lg text-center"
           />
         </label>
       </div>
       <div>
-        <div class='mx-auto max-w-screen-xl px-4 md:px-8'>
-          <div class='mb-10 md:mb-16'>
-            <h1 class='mb-4 text-center text-6xl font-thin text-primary md:mb-6 lg:text-7xl'>
+        <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+          <div class="mb-10 md:mb-16">
+            <h1 class="mb-4 text-center text-6xl font-thin text-primary md:mb-6 lg:text-7xl">
               CONCERTS
             </h1>
-            <p class='mx-auto uppercase text-center max-w-screen-md text-secondary text-gray-500 md:text-lg'></p>
+            <p class="mx-auto uppercase text-center max-w-screen-md text-secondary text-gray-500 md:text-lg"></p>
           </div>
-          <div class='grid gap-8 mx-6 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 '>
+          <div class="grid gap-8 mx-6 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 ">
             {concerts
               .filter((concert) => {
-                if (searchTerm === '') {
+                if (searchTerm === "") {
                   return concert;
                 } else if (
                   concert.artist.name
@@ -46,33 +46,41 @@ function ConcertsDisplay({
                 <div>
                   <div
                     key={concert.id}
-                    class='card w-96 max-w-xs bg-neutral text-neutral-content shadow-xl'>
-                    <div class='card-body p-4 m-2 mx-0 items-center text-center'>
-                      <div class='avatar'>
-                        <div class='w-30 rounded'>
+                    class="card w-96 max-w-xs bg-neutral text-neutral-content shadow-xl">
+                    <div class="card-body p-4 m-2 mx-0 items-center text-center">
+                      <div class="avatar">
+                        <div class="w-30 rounded">
                           <img
                             src={concert.artist.image}
-                            alt='a small avatar of the concert'
+                            alt="a small avatar of the concert"
                           />
                         </div>
                       </div>
-                      <div class='avatar'>
-                        <div class='w-30 rounded'>
+                      <div class="avatar">
+                        <div class="w-30 rounded">
                           <img
                             src={concert.venue.image}
-                            alt='a small avatar of the concert'
+                            alt="a small avatar of the concert"
                           />
                         </div>
                       </div>
-                      <h1 class='card-title'>{concert.artist.name}</h1>
+                      <h1 class="card-title">{concert.artist.name}</h1>
                       <h2>{concert.venue.name}</h2>
                       <h3>{concert.date}</h3>
-                      <div class='card-actions justify-end'>
-                        <button class='btn btn-primary'>
-                          X People Selling Z Tickets
+                      <div>
+                        <div class="badge badge-primary uppercase">
+                          Z selling
+                        </div>
+                        <div class="badge badge-primary uppercase">
+                          Z looking
+                        </div>
+                      </div>
+                      <div class="card-actions justify-end">
+                        <button class="btn btn-secondary w-full">
+                          I have tickets to sell
                         </button>
-                        <button class='btn btn-primary'>
-                          X People Looking For Z Tickets
+                        <button class="btn btn-secondary w-full">
+                          I'm Looking For Tickets
                         </button>
                       </div>
                     </div>
