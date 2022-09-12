@@ -10,8 +10,4 @@ class ArtistsController < ApplicationController
     render json: artist
   end
 
-  private
-
-  def artist_params
-  end
 end
