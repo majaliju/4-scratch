@@ -47,15 +47,15 @@ u31 = User.create({ username: "marvin_gaye_rip87", password: "123123123123",  em
 
 
 #* the genres in the database
-g1 = Genre.create({name: 'Pop'})
-g2 = Genre.create({name: 'Hip-Hop'})
-g3 = Genre.create({name: 'Country'})
-g4 = Genre.create({name: 'Rock'})
-g5 = Genre.create({name: 'Jazz'})
-g6 = Genre.create({name: 'Electronic'})
-g7 = Genre.create({name: 'R&B'})
-g8 = Genre.create({name: 'Latin'})
-g9 = Genre.create({name: 'Afrobeats'})
+g1 = Genre.create({name: 'Pop', image: "https://i.imgur.com/OwkWsZK.jpg"})
+g2 = Genre.create({name: 'Hip-Hop', image: "https://i.imgur.com/sTo5wmP.jpg"})
+g3 = Genre.create({name: 'Country', image: "https://i.imgur.com/2wAlWdL.jpg"})
+g4 = Genre.create({name: 'Rock', image: "https://i.imgur.com/gzmlghm.jpg"})
+g5 = Genre.create({name: 'Jazz', image: "https://i.imgur.com/ulLskg0.jpg"})
+g6 = Genre.create({name: 'Electronic', image: "https://i.imgur.com/uEjQ1Tz.jpg"})
+g7 = Genre.create({name: 'R&B', image: "https://i.imgur.com/eU82Fg6.jpg"})
+g8 = Genre.create({name: 'Latin', image: "https://i.imgur.com/x3tIvG5.jpg"})
+g9 = Genre.create({name: 'Afrobeats', image: "https://i.imgur.com/alynnw6.jpg"})
 
 
 #* the artists in the database
