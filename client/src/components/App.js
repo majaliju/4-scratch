@@ -10,7 +10,7 @@ import Header from './Header';
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import UsersPage from './UsersPage';
-import ArtistTicketActivity from './ArtistTicketActivity';
+import EachArtistCard from './EachArtistCard';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -140,7 +140,7 @@ function App() {
         <Route
           path='/artists/:id'
           element={
-            <ArtistTicketActivity
+            <EachArtistCard
               artists={artists}
               concerts={concerts}
               posts={posts}

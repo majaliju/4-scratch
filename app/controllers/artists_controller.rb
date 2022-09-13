@@ -10,4 +10,9 @@ class ArtistsController < ApplicationController
     render json: artist
   end
 
+  def upcoming_shows
+    artist = Artist.find_by(id: params[:id])
+    ## for each concert, have a concert that increments each concert by 1 
+  end
+
 end

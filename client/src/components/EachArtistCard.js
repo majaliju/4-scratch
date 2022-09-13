@@ -1,19 +1,33 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import IndividualPost from './IndividualPost';
 
 function ArtistTicketActivity({ posts, setPosts, artists, concerts }) {
   let { id } = useParams();
 
   const artist = artists.find((artist) => parseInt(id) === artist.id);
-  const artistPosts = artist.posts;
 
-  console.log('artist.posts: ', artist.posts);
+  // TODO
+  //^ HANDLE THESE 3 OPERATIONS ON THE BACK-END, TO MAKE SURE THE TALLIES DON'T GET SKEWED BY RELOADS
 
-  artistPosts.map((each) => {
-    console.log('this is the content of each: ', each);
-    console.log('this is each.body: ', each.body);
-  });
+  const [selling, setSelling] = useState(0);
+  const [looking, setLooking] = useState(0);
+  const [upcomingShows, setUpcomingShows] = useState(0);
+
+  useEffect(() => {
+    artist.posts.map((each) => {
+      if (each.for_sale === true) {
+        setSelling(selling + 1);
+      } else {
+        setLooking(looking + 1);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    artist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
+  }, []);
 
   // TODO
   //^ center the card in the middle of the page
@@ -40,10 +54,17 @@ function ArtistTicketActivity({ posts, setPosts, artists, concerts }) {
               </div>
               <div class='card-body items-center text-center'>
                 <h2 class='card-title'>{artist.name}</h2>
-                <p>There's X upcoming concerts listed for {artist.name}!</p>
+                <p>
+                  There's {upcomingShows} upcoming concerts listed for{' '}
+                  {artist.name}!
+                </p>
                 <div>
-                  <div class='badge badge-primary uppercase'>Z selling</div>
-                  <div class='badge badge-primary uppercase'>Z looking</div>
+                  <div class='badge badge-primary uppercase'>
+                    {selling} selling
+                  </div>
+                  <div class='badge badge-primary uppercase'>
+                    {looking} looking
+                  </div>
                 </div>
                 <div class='card-actions justify-end'>
                   <button class='btn btn-secondary w-full'>
@@ -59,7 +80,7 @@ function ArtistTicketActivity({ posts, setPosts, artists, concerts }) {
           <h2 class='my-10 text-center text-5xl font-thin uppercase text-primary md:mb-6 lg:text-6xl'>
             ALL POSTS
           </h2>
-          {artistPosts.map((each) => (
+          {artist.posts.map((each) => (
             <IndividualPost eachPost={each} />
           ))}
         </div>
