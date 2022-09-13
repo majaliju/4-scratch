@@ -1,11 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
 function GenreDisplay({ genres, user, searchTerm, setSearchTerm }) {
-  console.log(
-    '🚦 ~ file: GenreDisplay.js ~ line 2 ~ GenreDisplay ~ genres',
-    genres
-  );
-
   let navigate = useNavigate();
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>

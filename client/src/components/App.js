@@ -21,48 +21,31 @@ function App() {
   const [genres, setGenres] = useState([]);
   const [venues, setVenues] = useState([]);
   const [artists, setArtists] = useState([]);
-  console.log('🚦 ~ file: App.js ~ line 24 ~ App ~ artists', artists);
   const [concerts, setConcerts] = useState([]);
   const [posts, setPosts] = useState([]);
 
-  function getArtists() {
+  useEffect(() => {
     fetch('/artists')
       .then((r) => r.json())
       .then((info) => setArtists(info));
-  }
-
-  useEffect(() => {
-    getArtists();
   }, []);
 
-  function getVenues() {
+  useEffect(() => {
     fetch('/venues')
       .then((r) => r.json())
       .then((info) => setVenues(info));
-  }
-
-  useEffect(() => {
-    getVenues();
   }, []);
 
-  function getConcerts() {
+  useEffect(() => {
     fetch('/concerts')
       .then((r) => r.json())
       .then((info) => setConcerts(info));
-  }
-
-  useEffect(() => {
-    getConcerts();
   }, []);
 
-  function getGenres() {
+  useEffect(() => {
     fetch('/genres')
       .then((r) => r.json())
       .then((info) => setGenres(info));
-  }
-
-  useEffect(() => {
-    getGenres();
   }, []);
 
   function getPosts() {
@@ -108,6 +91,12 @@ function App() {
     getSession();
   }, []);
 
+  //TODO
+  //^ explore ROUTING using <outlet> for every page that's underneath <Header> ; rendering <Header> on every page by default
+
+  //TODO
+  //^ break search button off into it's own component but fix the routing first to make it smooth
+
   return (
     <>
       <Routes location='/'>
@@ -141,6 +130,8 @@ function App() {
               artists={artists}
               genres={genres}
               user={user}
+              posts={posts}
+              setPosts={setPosts}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />
