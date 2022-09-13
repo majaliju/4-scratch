@@ -12,7 +12,8 @@ class ArtistsController < ApplicationController
 
   def upcoming_shows
     artist = Artist.find_by(id: params[:id])
-    ## for each concert, have a concert that increments each concert by 1 
+    concerts = artist.concerts
+    puts concerts
   end
 
 end

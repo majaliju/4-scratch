@@ -3,20 +3,15 @@ Rails.application.routes.draw do
   #& root "articles#index"
 
   ##~ FOR THE ARTIST-CONCERTS-VENUES DISPLAYS
-  #& to get a master list of artists & each artists
-  get 'artists', to: "artists#index"
+  #& get all the artists-genres-venues-concerts-posts; to save to each state
+  get '/artists', to: "artists#index"
+  get '/genres', to: "genres#index"
+  get '/venues', to: "venues#index"
+  get '/concerts', to: "concerts#index"
+  get '/posts', to: "posts#index"
 
-  #& get a master list of genres & each genre
-  get 'genres', to: "genres#index"
-
-  #& get a master list of venues & each genre
-  get 'venues', to: "venues#index"
-
-  #& get a master list of concerts & each concert
-  get 'concerts', to: "concerts#index"
-
-  #& get a master list of posts
-  get 'posts', to: "posts#index"
+  #& get info about the artist's upcoming shows
+  get '/upcoming_shows', to: "artists#upcoming_shows"
 
 
 
