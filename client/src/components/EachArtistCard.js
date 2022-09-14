@@ -9,7 +9,31 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
   //! issues with reload when using this style below
   // const artist = artists.find((artist) => parseInt(id) === artist.id);
 
-  const [thisArtist, setThisArtist] = useState([]);
+  const [thisArtist, setThisArtist] = useState([
+    {
+      name: 'N/A',
+      image: '/artist-images/Adele.jpg',
+      genre: {
+        id: 109,
+        name: 'N/A',
+        image: '/genre-images/pop-music.jpg',
+      },
+      concerts: [
+        {
+          id: 621,
+          date: '2023-04-09T00:00:00.000Z',
+        },
+      ],
+      posts: [
+        {
+          id: 342,
+          body: 'TEST',
+          for_sale: true,
+          how_many_tickets: 2,
+        },
+      ],
+    },
+  ]);
   const [selling, setSelling] = useState(0);
   const [looking, setLooking] = useState(0);
   const [upcomingShows, setUpcomingShows] = useState(0);
@@ -41,19 +65,19 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
   //   }
   // });
 
-  // useEffect(() => {
-  //   thisArtist.posts.map((each) => {
-  //     if (each.for_sale === true) {
-  //       setSelling(selling + 1);
-  //     } else {
-  //       setLooking(looking + 1);
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    thisArtist.posts.map((each) => {
+      if (each.for_sale === true) {
+        setSelling(selling + 1);
+      } else {
+        setLooking(looking + 1);
+      }
+    });
+  }, []);
 
-  // useEffect(() => {
-  //   thisArtist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
-  // }, []);
+  useEffect(() => {
+    thisArtist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
+  }, []);
 
   // TODO
   //^ center the card in the middle of the page
