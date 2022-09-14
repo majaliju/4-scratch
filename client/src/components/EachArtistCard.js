@@ -20,19 +20,40 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
       .then((artistInfo) => setThisArtist(artistInfo));
   }, []);
 
-  useEffect(() => {
-    thisArtist.posts.map((each) => {
-      if (each.for_sale === true) {
-        setSelling(selling + 1);
-      } else {
-        setLooking(looking + 1);
-      }
-    });
-  }, []);
+  console.log('thisArtist.posts: ', thisArtist.posts);
 
-  useEffect(() => {
-    thisArtist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
-  }, []);
+  // useEffect(() => {
+  //   if (thisArtist != []) {
+  //     thisArtist.posts.map((each) => {
+  //       if (each.for_sale === true) {
+  //         setSelling(selling + 1);
+  //       } else {
+  //         setLooking(looking + 1);
+  //       }
+  //     }) &&
+  //       thisArtist.posts.map((each) => {
+  //         if (each.for_sale === true) {
+  //           setSelling(selling + 1);
+  //         } else {
+  //           setLooking(looking + 1);
+  //         }
+  //       });
+  //   }
+  // });
+
+  // useEffect(() => {
+  //   thisArtist.posts.map((each) => {
+  //     if (each.for_sale === true) {
+  //       setSelling(selling + 1);
+  //     } else {
+  //       setLooking(looking + 1);
+  //     }
+  //   });
+  // }, []);
+
+  // useEffect(() => {
+  //   thisArtist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
+  // }, []);
 
   // TODO
   //^ center the card in the middle of the page

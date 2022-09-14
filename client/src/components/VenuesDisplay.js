@@ -59,19 +59,11 @@ function VenuesDisplay({ venues, user, searchTerm, setSearchTerm }) {
                         </div>
                       </div>
                       <div class='card-actions justify-end'>
-                        {user === null ? (
-                          <button
-                            class='btn btn-primary'
-                            onClick={() => navigate(`/login`)}>
-                            Login to view tickets
-                          </button>
-                        ) : (
-                          <button
-                            class='btn btn-primary'
-                            onClick={() => navigate(`/venues/${venue.id}`)}>
-                            view ticket activity
-                          </button>
-                        )}
+                        <button
+                          class='btn btn-primary'
+                          onClick={() => navigate(`/venues/${venue.id}`)}>
+                          view ticket activity
+                        </button>
                       </div>
                     </div>
                   </div>

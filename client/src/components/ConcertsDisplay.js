@@ -83,21 +83,13 @@ function ConcertsDisplay({
                         </div>
                       </div>
                       <div class='card-actions justify-end'>
-                        {user === null ? (
-                          <button
-                            class='btn btn-primary'
-                            onClick={() => navigate(`/login`)}>
-                            Login to view tickets
-                          </button>
-                        ) : (
-                          (<button class='btn btn-secondary w-full'>
-                            I have tickets to sell
-                          </button>)(
-                            <button class='btn btn-secondary w-full'>
-                              I'm Looking For Tickets
-                            </button>
-                          )
-                        )}
+                        <button class='btn btn-secondary w-full'>
+                          I have tickets to sell
+                        </button>
+
+                        <button class='btn btn-secondary w-full'>
+                          I'm Looking For Tickets
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -111,3 +103,22 @@ function ConcertsDisplay({
 }
 
 export default ConcertsDisplay;
+
+//? saving for later
+// <div class='card-actions justify-end'>
+//                         {user === null ? (
+//                           <button
+//                             class='btn btn-primary'
+//                             onClick={() => navigate(`/login`)}>
+//                             Login to view tickets
+//                           </button>
+//                         ) : (
+//                           (<button class='btn btn-secondary w-full'>
+//                             I have tickets to sell
+//                           </button>)(
+//                             <button class='btn btn-secondary w-full'>
+//                               I'm Looking For Tickets
+//                             </button>
+//                           )
+//                         )}
+//                       </div>
