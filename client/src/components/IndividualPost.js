@@ -1,11 +1,6 @@
 import { useState } from 'react';
 
 function IndividualPost({ eachPost }) {
-  console.log(
-    '🚦 ~ file: IndividualPost.js ~ line 4 ~ IndividualPost ~ eachPost',
-    eachPost
-  );
-
   return (
     <div>
       <div class='indicator'>
