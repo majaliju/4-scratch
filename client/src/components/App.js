@@ -105,6 +105,7 @@ function App() {
           element={
             <Header
               user={user}
+              setUser={setUser}
               onLogin={onLogin}
               onLogout={onLogout}
               loggedIn={loggedIn}

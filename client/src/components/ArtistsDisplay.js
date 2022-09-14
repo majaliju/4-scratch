@@ -79,30 +79,20 @@ function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
 
 export default ArtistsDisplay;
 
-// //& the artist cards
-// <div class='grid gap-8 mx-6 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 '>
-// {artists.map((artist) => (
-//   <div>
-//     <div
-//       key={artist.id}
-//       class='card w-96 max-w-xs bg-neutral text-neutral-content shadow-xl'>
-//       <div class='card-body p-4 m-2 mx-0 items-center text-center'>
-//         <div class='avatar'>
-//           <div class='w-30 rounded'>
-//             <img
-//               src={artist.image}
-//               alt='a small avatar of the musical artist'
-//             />
-//           </div>
-//         </div>
-//         <h1 class='card-title'>{artist.name}</h1>
-//         <p>{artist.genre.name}</p>
-//         <div class='card-actions justify-end'>
-//           <button class='btn btn-primary'>Sell Tickets</button>
-//           <button class='btn btn-primary'>Find Tickets</button>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// ))}
-// </div>
+//? this is how I login-checked for user display
+//? saving for down the line
+// <div class='card-actions justify-end'>
+//                         {user === null ? (
+//                           <button
+//                             class='btn btn-primary'
+//                             onClick={() => navigate(`/login`)}>
+//                             Login to view tickets
+//                           </button>
+//                         ) : (
+//                           <button
+//                             class='btn btn-primary'
+//                             onClick={() => navigate(`/artists/${artist.id}`)}>
+//                             view ticket activity
+//                           </button>
+//                         )}
+//                       </div>

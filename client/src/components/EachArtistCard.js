@@ -3,20 +3,25 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import IndividualPost from './IndividualPost';
 
-function ArtistTicketActivity({ posts, setPosts, artists, concerts }) {
+function EachArtistCard({ posts, setPosts, artists, concerts }) {
   let { id } = useParams();
 
-  const artist = artists.find((artist) => parseInt(id) === artist.id);
+  //! issues with reload when using this style below
+  // const artist = artists.find((artist) => parseInt(id) === artist.id);
 
-  // TODO
-  //^ HANDLE THESE 3 OPERATIONS ON THE BACK-END, TO MAKE SURE THE TALLIES DON'T GET SKEWED BY RELOADS
-
+  const [thisArtist, setThisArtist] = useState([]);
   const [selling, setSelling] = useState(0);
   const [looking, setLooking] = useState(0);
   const [upcomingShows, setUpcomingShows] = useState(0);
 
   useEffect(() => {
-    artist.posts.map((each) => {
+    fetch(`/artists/${id}`)
+      .then((r) => r.json())
+      .then((artistInfo) => setThisArtist(artistInfo));
+  }, []);
+
+  useEffect(() => {
+    thisArtist.posts.map((each) => {
       if (each.for_sale === true) {
         setSelling(selling + 1);
       } else {
@@ -26,7 +31,7 @@ function ArtistTicketActivity({ posts, setPosts, artists, concerts }) {
   }, []);
 
   useEffect(() => {
-    artist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
+    thisArtist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
   }, []);
 
   // TODO
@@ -34,11 +39,11 @@ function ArtistTicketActivity({ posts, setPosts, artists, concerts }) {
 
   return (
     <div>
-      <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
+      <div class='bg-base-900 py-6 sm:py-8 lg:py-'>
         <div class='mx-auto max-w-screen-xl px-4 md:px-8'>
           <div class='mb-10 md:mb-16'>
             <h1 class='mb-4 text-center text-6xl font-thin uppercase text-primary md:mb-6 lg:text-7xl'>
-              {artist.name}
+              {thisArtist.name}
             </h1>
           </div>
 
@@ -47,16 +52,16 @@ function ArtistTicketActivity({ posts, setPosts, artists, concerts }) {
               <div class='avatar'>
                 <div class='w-30 rounded'>
                   <img
-                    src={artist.image}
-                    alt='a small avatar of the music artist'
+                    src={thisArtist.image}
+                    alt='a small avatar of the music Artist'
                   />
                 </div>
               </div>
               <div class='card-body items-center text-center'>
-                <h2 class='card-title'>{artist.name}</h2>
+                <h2 class='card-title'>{thisArtist.name}</h2>
                 <p>
                   There's {upcomingShows} upcoming concerts listed for{' '}
-                  {artist.name}!
+                  {thisArtist.name}!
                 </p>
                 <div>
                   <div class='badge badge-primary uppercase'>
@@ -73,6 +78,9 @@ function ArtistTicketActivity({ posts, setPosts, artists, concerts }) {
                   <button class='btn btn-secondary w-full'>
                     I'm Looking For Tickets
                   </button>
+                  <button class='btn btn-outline btn-black w-full'>
+                    Go Back
+                  </button>
                 </div>
               </div>
             </div>
@@ -80,13 +88,13 @@ function ArtistTicketActivity({ posts, setPosts, artists, concerts }) {
           <h2 class='my-10 text-center text-5xl font-thin uppercase text-primary md:mb-6 lg:text-6xl'>
             ALL POSTS
           </h2>
-          {artist.posts.map((each) => (
+          {/* {thisArtist.posts.map((each) => (
             <IndividualPost eachPost={each} />
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
   );
 }
 
-export default ArtistTicketActivity;
+export default EachArtistCard;

@@ -1,13 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 
-function Header({ user, onLogin, onLogout, loggedIn }) {
+function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
   function handleLogout() {
     fetch('/logout', {
       method: 'DELETE',
     }).then(() => onLogout());
   }
+
+  // useEffect(() => {
+  //   fetch('/me').then((response) => {
+  //     if (response.ok) {
+  //       response.json().then((user) => setUser(user));
+  //     } else console.log('fetch /me failed due to: ', response);
+  //   });
+  // }, []);
 
   // TODO dropdown should exit as soon as item is clicked
 
