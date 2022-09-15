@@ -1,15 +1,6 @@
-import { useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-function ArtistsDisplay({
-  artists,
-  genres,
-  user,
-  searchTerm,
-  setSearchTerm,
-  showModal,
-  setShowModal,
-}) {
+function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
   let navigate = useNavigate();
 
   return (
@@ -61,26 +52,11 @@ function ArtistsDisplay({
                       <h1 class='card-title'>{artist.name}</h1>
                       <p>{artist.genre.name}</p>
                       <div class='card-actions justify-end'>
-                        <label
-                          for='artist-modal'
-                          class='btn modal-button btn-primary'>
+                        <button
+                          class='btn btn-primary'
+                          onClick={() => navigate(`/artists/${artist.id}`)}>
                           view ticket activity
-                        </label>
-                        <input
-                          type='checkbox'
-                          id='artist-modal'
-                          class='modal-toggle'
-                        />
-                        <label for='artist-modal' class='modal cursor-pointer'>
-                          {console.log('within the artist-modal: ', artist)}
-                          <label class='modal-box relative' for=''>
-                            <h3 class='text-lg font-bold'>{artist.name}</h3>
-                            <p class='py-4'>
-                              You've been selected for a chance to get one year
-                              of subscription to use Wikipedia for free!
-                            </p>
-                          </label>
-                        </label>
+                        </button>
                       </div>
                     </div>
                   </div>

@@ -25,6 +25,8 @@ function App() {
   const [concerts, setConcerts] = useState([]);
   const [posts, setPosts] = useState([]);
 
+  const [showModal, setShowModal] = useState(false);
+
   //TODO
   //* break search button off into it's own component but fix the routing first to make it smooth
   //* create an error message for user not found on the Login component if a wrong user renders
@@ -128,6 +130,8 @@ function App() {
               setPosts={setPosts}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
+              showModal={showModal}
+              setShowModal={setShowModal}
             />
           }
         />
@@ -143,6 +147,7 @@ function App() {
             />
           }
         />
+
         <Route
           path='/concerts'
           element={
