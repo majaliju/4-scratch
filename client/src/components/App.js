@@ -14,12 +14,9 @@ import EachArtistCard from './EachArtistCard';
 
 function App() {
   const [user, setUser] = useState('');
-  console.log('🚦 ~ file: App.js ~ line 17 ~ App ~ user', user);
   const [sessionInfo, setSessionInfo] = useState([]);
-  console.log('🚦 ~ file: App.js ~ line 18 ~ App ~ sessionInfo', sessionInfo);
   const [loggedIn, setLoggedIn] = useState(false);
   const [cookies, setCookies] = useState([]);
-  console.log('🚦 ~ file: App.js ~ line 22 ~ App ~ cookies', cookies);
 
   const [searchTerm, setSearchTerm] = useState('');
   const [genres, setGenres] = useState([]);

@@ -2,12 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function UsersPage({ user, sessionInfo, loggedIn }) {
-  console.log(
-    '🚦 ~ file: UsersPage.js ~ line 5 ~ UsersPage ~ sessionInfo',
-    sessionInfo
-  );
-  console.log('🚦 ~ file: UsersPage.js ~ line 5 ~ UsersPage ~ user', user);
-
   return (
     <div>
       <div>

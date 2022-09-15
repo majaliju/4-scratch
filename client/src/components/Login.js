@@ -9,6 +9,43 @@ function Login({ onLogin }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  console.log('🚦 ~ file: Login.js ~ line 13 ~ Login ~ error', error);
+
+  //& good function -- need catch error done better
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   fetch('/login', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Access-Control-Allow-Origin': '*',
+  //     },
+  //     body: JSON.stringify({
+  //       username,
+  //       password,
+  //     }),
+  //   })
+  //     .then((r) => {
+  //     if (r.ok) {
+  //       r.json()
+  //     .then((item) => {
+  //       onLogin(item)
+  //       navigate('/')
+  //     })}
+  //     .catch((err) => console.log('the catch Error: ', err))
+  //   }}
+
+  function checkError(response) {
+    if (response.status >= 200 && response.status <= 299) {
+      return response.json();
+    } else {
+      console.log('response: ', response);
+      console.log('response.status: ', response.status);
+      console.log('response.statusText: ', response.statusText);
+      throw response;
+    }
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,17 +60,37 @@ function Login({ onLogin }) {
         password,
       }),
     })
-      .then((r) => r.json())
+      .then(checkError)
       .then((item) => {
         onLogin(item);
-      });
-    navigate('/');
+        navigate('/');
+      })
+      .catch((err) => setError(err));
   }
 
   return (
     <div class='text-primary-content'>
       <div class='hero min-h-screen bg-base-200'>
         <div class='hero-content flex-col '>
+          {error !== '' ? (
+            <div class='alert alert-warning shadow-lg'>
+              <div>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  class='stroke-current flex-shrink-0 h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'>
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'
+                  />
+                </svg>
+                <span>Invalid username and/or password!</span>
+              </div>
+            </div>
+          ) : null}
           <div class='text-center lg:text-center'>
             <h1 class='text-5xl font-bold'>LOGIN</h1>
           </div>
