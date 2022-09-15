@@ -44,6 +44,7 @@ u28 = User.create({ username: "AHHHHH", password: "123123123123",  email: Faker:
 u29 = User.create({ username: "okletsgetit", password: "123123123123",  email: Faker::Internet.email})
 u30 = User.create({ username: "mulholland_driver", password: "123123123123",  email: Faker::Internet.email})
 u31 = User.create({ username: "marvin_gaye_rip87", password: "123123123123",  email: Faker::Internet.email})
+u32 = User.create({ username: "majboy", password: "123123123123",  email: Faker::Internet.email})
 
 
 #* the genres in the database

@@ -13,11 +13,13 @@ import UsersPage from './UsersPage';
 import EachArtistCard from './EachArtistCard';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState('');
   console.log('🚦 ~ file: App.js ~ line 17 ~ App ~ user', user);
-  const [sessionInfo, setSessionInfo] = useState({});
+  const [sessionInfo, setSessionInfo] = useState([]);
   console.log('🚦 ~ file: App.js ~ line 18 ~ App ~ sessionInfo', sessionInfo);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [cookies, setCookies] = useState([]);
+  console.log('🚦 ~ file: App.js ~ line 22 ~ App ~ cookies', cookies);
 
   const [searchTerm, setSearchTerm] = useState('');
   const [genres, setGenres] = useState([]);
@@ -28,7 +30,7 @@ function App() {
 
   //TODO
   //* break search button off into it's own component but fix the routing first to make it smooth
-  //* get cookies sessionID then cross-check that each time the user logs in -- on logout, destroy the user_id as well from cookies
+  //* create an error message for user not found on the Login component if a wrong user renders
 
   useEffect(() => {
     fetch('/artists')
@@ -65,7 +67,7 @@ function App() {
   }, []);
 
   //! this is broken -- doesn't sustain state or pull the proper ID
-  // our initial fetch to get user's ID for maintaining session state
+  //* our initial fetch to get user's ID for maintaining session state
   useEffect(() => {
     fetch('/me').then((response) => {
       if (response.ok) {
@@ -83,9 +85,9 @@ function App() {
 
   // to log the user out
   function onLogout() {
-    setUser(null);
+    setUser('');
     setLoggedIn(false);
-    setSessionInfo({});
+    setSessionInfo([]);
   }
 
   function getSession() {
@@ -96,6 +98,16 @@ function App() {
 
   useEffect(() => {
     getSession();
+  }, []);
+
+  function getCookies() {
+    fetch('/cookies')
+      .then((r) => r.json())
+      .then((info) => setCookies(info));
+  }
+
+  useEffect(() => {
+    getCookies();
   }, []);
 
   return (
@@ -113,6 +125,7 @@ function App() {
           element={
             <UsersPage
               user={user}
+              cookies={cookies}
               sessionInfo={sessionInfo}
               loggedIn={loggedIn}
             />

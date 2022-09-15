@@ -2,21 +2,7 @@
 
 import { NavLink } from 'react-router-dom';
 
-function Header({
-  user,
-  setUser,
-  artists,
-  concerts,
-  venues,
-  genres,
-  posts,
-  setPosts,
-  searchTerm,
-  setSearchTerm,
-  onLogin,
-  onLogout,
-  loggedIn,
-}) {
+function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
   function handleLogout() {
     fetch('/logout', {
       method: 'DELETE',
@@ -31,7 +17,9 @@ function Header({
   //   });
   // }, []);
 
-  // TODO dropdown should exit as soon as item is clicked
+  // TODO
+  //* dropdown should exit as soon as item is clicked
+  //* create a sticky navbar that scrolls along with page
 
   return (
     <div>
@@ -137,14 +125,14 @@ function Header({
         <div class='navbar-end hidden sm:flex'>
           <div class='flex-initial'>
             <ul class='menu menu-horizontal float-right p-0'>
-              {user === null && (
+              {user === '' && (
                 <li>
                   <NavLink class='uppercase font-bold' to='/login'>
                     <button class='uppercase font-bold'>login</button>
                   </NavLink>
                 </li>
               )}
-              {user !== null && (
+              {user !== '' && (
                 <div>
                   <li>
                     {/*               

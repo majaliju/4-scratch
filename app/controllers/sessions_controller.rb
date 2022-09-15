@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+
   ## logs in the user & cross-checks if the password is correct
   def create
     user = User.find_by(username: params[:username])
