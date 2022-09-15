@@ -54,8 +54,11 @@ gem "active_model_serializers",
     git: "https://github.com/jpawlyn/active_model_serializers.git",
     branch: "0-10-stable"
 
-
+## faker is for seeding our DB -- email for users, dates for concerts
     gem "faker"
+
+## to validate emails in the user model
+    gem 'email_validator'  
 
 # ## https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
 # # Our http/rest client gem for accessing the url for our external api via get request.
