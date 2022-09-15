@@ -63,7 +63,6 @@ function App() {
     getPosts();
   }, []);
 
-  //! this is broken -- doesn't sustain state or pull the proper ID
   //* our initial fetch to get user's ID for maintaining session state
   useEffect(() => {
     fetch('/me').then((response) => {
@@ -95,16 +94,6 @@ function App() {
 
   useEffect(() => {
     getSession();
-  }, []);
-
-  function getCookies() {
-    fetch('/cookies')
-      .then((r) => r.json())
-      .then((info) => setCookies(info));
-  }
-
-  useEffect(() => {
-    getCookies();
   }, []);
 
   return (

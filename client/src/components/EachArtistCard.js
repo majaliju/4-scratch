@@ -6,24 +6,26 @@ import IndividualPost from './IndividualPost';
 function EachArtistCard({ posts, setPosts, artists, concerts }) {
   let { id } = useParams();
 
-  //! issues with reload when using this style below
-  // const artist = artists.find((artist) => parseInt(id) === artist.id);
+  console.log('id: ', id);
 
-  const [thisArtist, setThisArtist] = useState([]);
+  //! issues with reload when using this style below
+  const thisArtist = artists.find(
+    (artist) => parseInt(id) === parseInt(artist.id)
+  );
+
+  //! why does thisArtist = undefined on page reload??
+  console.log('thisArtist: ', thisArtist);
+
   const [selling, setSelling] = useState(0);
   const [looking, setLooking] = useState(0);
   const [upcomingShows, setUpcomingShows] = useState(0);
 
-  useEffect(() => {
-    fetch(`/artists/${id}`)
-      .then((r) => r.json())
-      .then((artistInfo) => console.log('artistInfo', artistInfo));
-  }, []);
-
+  //! why does thisArtist.posts = undefined on page reload??
   console.log('thisArtist.posts: ', thisArtist.posts);
 
+  //^ this one doesn't take into account the if statement, at ALL
   // useEffect(() => {
-  //   if (thisArtist != []) {
+  //   if (thisArtist != undefined) {
   //     thisArtist.posts.map((each) => {
   //       if (each.for_sale === true) {
   //         setSelling(selling + 1);
@@ -39,8 +41,9 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
   //         }
   //       });
   //   }
-  // });
+  // }, []);
 
+  //* to set Selling & Looking
   // useEffect(() => {
   //   thisArtist.posts.map((each) => {
   //     if (each.for_sale === true) {
@@ -51,6 +54,7 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
   //   });
   // }, []);
 
+  //* to set upcomingShows
   // useEffect(() => {
   //   thisArtist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
   // }, []);
@@ -74,7 +78,7 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                 <div class='w-30 rounded'>
                   <img
                     src={thisArtist.image}
-                    alt='a small avatar of the music Artist'
+                    alt='a small avatar of the music thisArtist'
                   />
                 </div>
               </div>
