@@ -10,31 +10,6 @@ function Login({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  console.log('🚦 ~ file: Login.js ~ line 13 ~ Login ~ error', error);
-
-  //& good function -- need catch error done better
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   fetch('/login', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Access-Control-Allow-Origin': '*',
-  //     },
-  //     body: JSON.stringify({
-  //       username,
-  //       password,
-  //     }),
-  //   })
-  //     .then((r) => {
-  //     if (r.ok) {
-  //       r.json()
-  //     .then((item) => {
-  //       onLogin(item)
-  //       navigate('/')
-  //     })}
-  //     .catch((err) => console.log('the catch Error: ', err))
-  //   }}
 
   function checkError(response) {
     if (response.status >= 200 && response.status <= 299) {
@@ -65,7 +40,7 @@ function Login({ onLogin }) {
         onLogin(item);
         navigate('/');
       })
-      .catch((err) => setError(err));
+      .catch((err) => console.log(err));
   }
 
   return (
