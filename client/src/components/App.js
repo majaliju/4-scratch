@@ -14,7 +14,9 @@ import EachArtistCard from './EachArtistCard';
 
 function App() {
   const [user, setUser] = useState(null);
+  console.log('🚦 ~ file: App.js ~ line 17 ~ App ~ user', user);
   const [sessionInfo, setSessionInfo] = useState({});
+  console.log('🚦 ~ file: App.js ~ line 18 ~ App ~ sessionInfo', sessionInfo);
   const [loggedIn, setLoggedIn] = useState(false);
 
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,6 +25,10 @@ function App() {
   const [artists, setArtists] = useState([]);
   const [concerts, setConcerts] = useState([]);
   const [posts, setPosts] = useState([]);
+
+  //TODO
+  //* break search button off into it's own component but fix the routing first to make it smooth
+  //* get cookies sessionID then cross-check that each time the user logs in -- on logout, destroy the user_id as well from cookies
 
   useEffect(() => {
     fetch('/artists')
@@ -58,6 +64,7 @@ function App() {
     getPosts();
   }, []);
 
+  //! this is broken -- doesn't sustain state or pull the proper ID
   // our initial fetch to get user's ID for maintaining session state
   useEffect(() => {
     fetch('/me').then((response) => {
@@ -91,28 +98,15 @@ function App() {
     getSession();
   }, []);
 
-  //TODO
-  //^ explore ROUTING using <outlet> for every page that's underneath <Header> ; rendering <Header> on every page by default
-
-  //TODO
-  //^ break search button off into it's own component but fix the routing first to make it smooth
-
   return (
-    <>
-      <Routes location='/'>
-        <Route
-          path='/'
-          element={
-            <Header
-              user={user}
-              setUser={setUser}
-              onLogin={onLogin}
-              onLogout={onLogout}
-              loggedIn={loggedIn}
-            />
-          }
-        />
-      </Routes>
+    <div>
+      <Header
+        user={user}
+        setUser={setUser}
+        onLogin={onLogin}
+        onLogout={onLogout}
+        loggedIn={loggedIn}
+      />
       <Routes>
         <Route
           path='/'
@@ -190,7 +184,7 @@ function App() {
         <Route path='/signup' element={<SignUp onLogin={onLogin} />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

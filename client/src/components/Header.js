@@ -1,9 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import { NavLink } from 'react-router-dom';
-import { useEffect } from 'react';
 
-function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
+function Header({
+  user,
+  setUser,
+  artists,
+  concerts,
+  venues,
+  genres,
+  posts,
+  setPosts,
+  searchTerm,
+  setSearchTerm,
+  onLogin,
+  onLogout,
+  loggedIn,
+}) {
   function handleLogout() {
     fetch('/logout', {
       method: 'DELETE',
