@@ -11,6 +11,7 @@ function ConcertsDisplay({
   searchTerm,
   setSearchTerm,
 }) {
+  console.log('concerts: ', concerts);
   let navigate = useNavigate();
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>

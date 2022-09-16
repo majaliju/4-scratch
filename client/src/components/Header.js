@@ -9,14 +9,6 @@ function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
     }).then(() => onLogout());
   }
 
-  // useEffect(() => {
-  //   fetch('/me').then((response) => {
-  //     if (response.ok) {
-  //       response.json().then((user) => setUser(user));
-  //     } else console.log('fetch /me failed due to: ', response);
-  //   });
-  // }, []);
-
   // TODO
   //* dropdown should exit as soon as item is clicked
   //* create a sticky navbar that scrolls along with page
@@ -88,14 +80,17 @@ function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
               </div>
             </ul>
           </div>
-          <div class='flex'>
+          <div class='flex-auto'>
             <NavLink to='/'>
-              <button class='btn btn-ghost normal-case text-5xl flex-auto'>
-                ticketblaster
-              </button>
+              <div class='flex-auto rounded-md '>
+                <button class='btn btn-ghost normal-case focus:bg-secondary hover:bg-primary text-5xl'>
+                  ticketblaster
+                </button>
+              </div>
             </NavLink>
           </div>
         </div>
+
         <div class='navbar-center hidden sm:flex'>
           <div class='flex-auto'>
             <ul class='menu menu-horizontal p-0'>
@@ -135,9 +130,6 @@ function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
               {user !== '' && (
                 <div>
                   <li>
-                    {/*               
-                  //^ USE A NAVIGATE HERE TO SEND USER TO USERSPAGE (aka '/') when user logs out 
-              */}
                     <button class='uppercase font-bold' onClick={handleLogout}>
                       logout {user.username}
                     </button>

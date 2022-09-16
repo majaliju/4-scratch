@@ -1,6 +1,15 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
-function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
+function ArtistsDisplay({
+  artists,
+  genres,
+  user,
+  searchTerm,
+  setSearchTerm,
+  showModal,
+  setShowModal,
+}) {
   let navigate = useNavigate();
 
   return (
@@ -11,7 +20,7 @@ function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
           <input
             type='text'
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder='Search for your favorite artists here by typing their name or their genre...'
+            placeholder='Search for your favorite artists here...just start typing'
             class='input input-bordered w-full input-lg text-center'
           />
         </label>
@@ -30,12 +39,7 @@ function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
                 if (searchTerm === '') {
                   return artist;
                 } else if (
-                  artist.name
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase()) ||
-                  artist.genre.name
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase())
+                  artist.name.toLowerCase().includes(searchTerm.toLowerCase())
                 ) {
                   return artist;
                 }
@@ -57,11 +61,26 @@ function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
                       <h1 class='card-title'>{artist.name}</h1>
                       <p>{artist.genre.name}</p>
                       <div class='card-actions justify-end'>
-                        <button
-                          class='btn btn-primary'
-                          onClick={() => navigate(`/artists/${artist.id}`)}>
+                        <label
+                          for='artist-modal'
+                          class='btn modal-button btn-primary'>
                           view ticket activity
-                        </button>
+                        </label>
+                        <input
+                          type='checkbox'
+                          id='artist-modal'
+                          class='modal-toggle'
+                        />
+                        <label for='artist-modal' class='modal cursor-pointer'>
+                          {console.log('within the artist-modal: ', artist)}
+                          <label class='modal-box relative' for=''>
+                            <h3 class='text-lg font-bold'>{artist.name}</h3>
+                            <p class='py-4'>
+                              You've been selected for a chance to get one year
+                              of subscription to use Wikipedia for free!
+                            </p>
+                          </label>
+                        </label>
                       </div>
                     </div>
                   </div>

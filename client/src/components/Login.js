@@ -38,9 +38,9 @@ function Login({ onLogin }) {
       .then(checkError)
       .then((item) => {
         onLogin(item);
-        navigate('/');
       })
       .catch((err) => console.log(err));
+    navigate(-1);
   }
 
   return (

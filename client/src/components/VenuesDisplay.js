@@ -10,7 +10,7 @@ function VenuesDisplay({ venues, user, searchTerm, setSearchTerm }) {
           <input
             type='text'
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder='Search for any venue here by typing...'
+            placeholder='Search for any venue here by typing the venue name or the city...'
             class='input input-bordered w-full input-lg text-center'
           />
         </label>
@@ -29,7 +29,10 @@ function VenuesDisplay({ venues, user, searchTerm, setSearchTerm }) {
                 if (searchTerm === '') {
                   return venue;
                 } else if (
-                  venue.name.toLowerCase().includes(searchTerm.toLowerCase())
+                  venue.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                  venue.location
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
                 ) {
                   return venue;
                 }
