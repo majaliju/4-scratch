@@ -80,14 +80,14 @@ function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
               </div>
             </ul>
           </div>
-          <div class='flex-auto'>
-            <NavLink to='/'>
-              <div class='flex-auto rounded-md '>
-                <button class='btn btn-ghost normal-case focus:bg-secondary hover:bg-primary text-5xl'>
+          <div class='navbar-start'>
+            <div class='flex-auto p-4 '>
+              <NavLink to='/'>
+                <button class='btn btn-ghost normal-case active:bg-warning text-5xl'>
                   ticketblaster
                 </button>
-              </div>
-            </NavLink>
+              </NavLink>
+            </div>
           </div>
         </div>
 
