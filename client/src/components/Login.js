@@ -115,41 +115,25 @@ function Login({ onLogin }) {
 
 export default Login;
 
-// //^ ORIGINAL LOGIN PAGE
-// <div className='form-control'>
-//   <form onSubmit={handleSubmit}>
-//     <label className='input-group'>
-//       <label className='username-entry'>
-//         <span class='text uppercase font-extralight'>username</span>
-//         <input
-//           type='text'
-//           id='username'
-//           value={username}
-//           onChange={(e) => setUsername(e.target.value)}
-//         />
-//       </label>
-//       <label className='password-entry'>
-//         <span class='text uppercase font-extralight'>password</span>
-//         <input
-//           type='text'
-//           id='password'
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//         />
-//       </label>
-//     </label>
-//     <br />
-//     <button
-//       type='submit'
-//       class='btn btn-ghost font-bold bg-primary hover:bg-success uppercase'>
-//       Login
-//     </button>
-//     {/* <button class='btn btn-ghostfont-bold uppercase'>
-//     <Link to='/'>Go Back</Link>
-//   </button> */}
-//     <br />
-//     <button class='btn btn-ghostfont-bold bg-secondary text-secondary-content hover:bg-success uppercase'>
-//       <Link to='/signup'>First time here? Sign up!</Link>
-//     </button>
-//   </form>
-// </div>;
+// //* use the floating label in input -- it's really nice
+// <!--
+//   This component uses @tailwindcss/forms
+
+//   yarn add @tailwindcss/forms
+//   npm install @tailwindcss/forms
+
+//   plugins: [require('@tailwindcss/forms')]
+// -->
+
+// <label class="relative block p-3 border-2 border-gray-200 rounded-lg" for="name">
+//   <input
+//     class="w-full px-0 pt-3.5 pb-0 text-sm placeholder-transparent border-none focus:ring-0 peer"
+//     id="name"
+//     type="text"
+//     placeholder="Name"
+//   />
+
+//   <span class="absolute text-xs font-medium text-gray-500 transition-all left-3 peer-focus:text-xs peer-focus:top-3 peer-focus:translate-y-0 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm">
+//     Name
+//   </span>
+// </label>
