@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
   let navigate = useNavigate();
 
+  console.log('artists: ', artists);
+
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
       <div class='form-control'>

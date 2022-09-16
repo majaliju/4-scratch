@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 
   def show
     post = Post.find_by(id: params[:id])
-    render json: post
+    render json: post, status: 200
   end
 
 

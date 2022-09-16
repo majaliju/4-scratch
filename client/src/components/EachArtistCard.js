@@ -20,9 +20,6 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
   const [looking, setLooking] = useState(0);
   const [upcomingShows, setUpcomingShows] = useState(0);
 
-  //! why does thisArtist.posts = undefined on page reload??
-  console.log('thisArtist.posts: ', thisArtist.posts);
-
   //^ this one doesn't take into account the if statement, at ALL
   // useEffect(() => {
   //   if (thisArtist != undefined) {
@@ -43,21 +40,19 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
   //   }
   // }, []);
 
-  //* to set Selling & Looking
-  // useEffect(() => {
-  //   thisArtist.posts.map((each) => {
-  //     if (each.for_sale === true) {
-  //       setSelling(selling + 1);
-  //     } else {
-  //       setLooking(looking + 1);
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    thisArtist.posts.map((each) => {
+      if (each.for_sale === true) {
+        setSelling(selling + 1);
+      } else {
+        setLooking(looking + 1);
+      }
+    });
+  }, []);
 
-  //* to set upcomingShows
-  // useEffect(() => {
-  //   thisArtist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
-  // }, []);
+  useEffect(() => {
+    thisArtist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
+  }, []);
 
   // TODO
   //^ center the card in the middle of the page
@@ -123,3 +118,33 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
 }
 
 export default EachArtistCard;
+
+//* cool card component to implement for eachArtistCard
+//* darkened background with content on hover
+
+// <a class="relative block bg-black group" href="">
+//   <img
+//     class="absolute inset-0 object-cover w-full h-full opacity-75 transition-opacity  group-hover:opacity-50"
+//     src="https://www.hyperui.dev/photos/man-6.jpeg"
+//     alt=""
+//   />
+//   <div class="relative p-8">
+//     <p class="text-sm font-medium tracking-widest text-pink-500 uppercase">
+//       Developer
+//     </p>
+
+//     <p class="text-2xl font-bold text-white">Barry Scott</p>
+
+//     <div class="mt-64">
+//       <div
+//         class="opacity-0 transition-all transform translate-y-8  group-hover:opacity-100 group-hover:translate-y-0"
+//       >
+//         <p class="text-sm text-white">
+//           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis
+//           perferendis hic asperiores quibusdam quidem voluptates doloremque
+//           reiciendis nostrum harum. Repudiandae?
+//         </p>
+//       </div>
+//     </div>
+//   </div>
+// </a>

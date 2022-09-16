@@ -6,6 +6,6 @@ class ConcertsController < ApplicationController
 
   def show
     concert = Concert.find_by(id: params[:id])
-    render json: concert
+    render json: concert, status: 200
   end
 end

@@ -7,7 +7,7 @@ class VenuesController < ApplicationController
 
   def show
     venue = Venue.find_by(id: params[:id])
-    render json: venue
+    render json: venue, status: 200
   end
 
 end

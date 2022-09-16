@@ -6,6 +6,6 @@ class GenresController < ApplicationController
 
   def show
     genre = Genre.find_by(id: params[:id])
-    render json: genre
+    render json: genre, status: 200
   end
 end
