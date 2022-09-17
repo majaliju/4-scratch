@@ -1,7 +1,7 @@
 class ConcertsController < ApplicationController
   def index
     concerts = Concert.all
-    render json: concerts, status: 200
+    render json: concerts
   end
 
   def show

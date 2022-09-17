@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
   let navigate = useNavigate();
 
-  console.log('artists: ', artists);
+  console.log('artists within ArtistsDisplay: ', artists);
 
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
@@ -77,21 +77,3 @@ function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
 }
 
 export default ArtistsDisplay;
-
-//? this is how I login-checked for user display
-//? saving for down the line
-// <div class='card-actions justify-end'>
-//                         {user === null ? (
-//                           <button
-//                             class='btn btn-primary'
-//                             onClick={() => navigate(`/login`)}>
-//                             Login to view tickets
-//                           </button>
-//                         ) : (
-//                           <button
-//                             class='btn btn-primary'
-//                             onClick={() => navigate(`/artists/${artist.id}`)}>
-//                             view ticket activity
-//                           </button>
-//                         )}
-//                       </div>
