@@ -1,4 +1,5 @@
 require "faker"
+require 'email_validator'
 
 puts "---------------------- The Manual method!! "
 

@@ -58,7 +58,7 @@ gem "active_model_serializers",
     gem "faker"
 
 ## to validate emails in the user model
-    gem 'email_validator'  
+    gem "email_validator"
 
 # ## https://teapuddles.medium.com/seeding-a-rails-backend-with-an-external-api-1eb192271005
 # # Our http/rest client gem for accessing the url for our external api via get request.
