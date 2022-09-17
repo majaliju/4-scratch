@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
   include ActionController::Cookies
 
   def show_session
-    render json: session, status: 200
+    render json: session
   end
 
   def show_cookies

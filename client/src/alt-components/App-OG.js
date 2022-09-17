@@ -1,16 +1,16 @@
 import '../../src/App.css';
 import ArtistsDisplay from '../ArtistsDisplay-MODAL';
-import ConcertsDisplay from '../ConcertsDisplay';
-import VenuesDisplay from '../VenuesDisplay';
-import GenreDisplay from '../GenreDisplay';
-import Login from '../Login';
-import SignUp from '../SignUp';
-import NotFound from '../NotFound';
-import Header from '../Header';
+import ConcertsDisplay from '../components/ConcertsDisplay';
+import VenuesDisplay from '../components/VenuesDisplay';
+import GenreDisplay from '../components/GenreDisplay';
+import Login from '../components/Login';
+import SignUp from '../components/SignUp';
+import NotFound from '../components/NotFound';
+import Header from '../components/Header';
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import UsersPage from '../UsersPage';
-import EachArtistCard from '../EachArtistCard';
+import UsersPage from '../components/UsersPage';
+import EachArtistCard from '../components/EachArtistCard';
 
 function App() {
   const [user, setUser] = useState(null);

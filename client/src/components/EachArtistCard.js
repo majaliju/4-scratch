@@ -1,7 +1,8 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import IndividualPost from './IndividualPost';
+import Loading from './Loading';
 
 function EachArtistCard({ posts, setPosts, artists, concerts }) {
   let { id } = useParams();
@@ -38,13 +39,19 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
     thisArtist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
   }
 
+  //* fix the going-back function on this button
+  function handleGoBack(e) {
+    e.preventDefault();
+    Navigate(-1);
+  }
+
   // TODO
   //^ center the card in the middle of the page
 
   return (
     <div>
-      {thisArtist !== undefined ? (
-        <div class='bg-base-900 py-6 sm:py-8 lg:py-'>
+      <div class='bg-base-900 py-6 sm:py-8 lg:py-'>
+        {thisArtist !== undefined ? (
           <div class='mx-auto max-w-screen-xl px-4 md:px-8'>
             <div class='mb-10 md:mb-16'>
               <h1 class='mb-4 text-center text-6xl font-thin uppercase text-primary md:mb-6 lg:text-7xl'>
@@ -83,7 +90,9 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                     <button class='btn btn-secondary w-full'>
                       I'm Looking For Tickets
                     </button>
-                    <button class='btn btn-outline btn-black w-full'>
+                    <button
+                      class='btn btn-outline btn-black w-full'
+                      onClick={handleGoBack}>
                       Go Back
                     </button>
                   </div>
@@ -93,16 +102,14 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
             <h2 class='my-10 text-center text-5xl font-thin uppercase text-primary md:mb-6 lg:text-6xl'>
               ALL POSTS
             </h2>
-            {/* {thisArtist.posts.map((each) => (
-            <IndividualPost eachPost={each} />
-          ))} */}
+            {thisArtist.posts.map((each) => (
+              <IndividualPost eachPost={each} />
+            ))}
           </div>
-        </div>
-      ) : (
-        <div>
-          <h1>LOADING</h1>
-        </div>
-      )}
+        ) : (
+          <Loading />
+        )}
+      </div>
     </div>
   );
 }
