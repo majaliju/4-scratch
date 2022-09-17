@@ -103,7 +103,7 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
               ALL POSTS
             </h2>
             {thisArtist.posts.map((each) => (
-              <IndividualPost eachPost={each} />
+              <IndividualPost eachPost={each} posts={posts} />
             ))}
           </div>
         ) : (
