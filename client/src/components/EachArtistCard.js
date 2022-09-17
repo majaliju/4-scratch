@@ -1,13 +1,11 @@
 import React from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import IndividualPost from './IndividualPost';
 import Loading from './Loading';
 
 function EachArtistCard({ posts, setPosts, artists, concerts }) {
   let { id } = useParams();
-
-  console.log('id: ', id);
 
   const thisArtist = artists.find(
     (artist) => parseInt(id) === parseInt(artist.id)
@@ -90,11 +88,11 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                     <button class='btn btn-secondary w-full'>
                       I'm Looking For Tickets
                     </button>
-                    <button
-                      class='btn btn-outline btn-black w-full'
-                      onClick={handleGoBack}>
-                      Go Back
-                    </button>
+                    <Link to='/artists' class='w-full'>
+                      <button class='btn btn-outline btn-secondary w-full'>
+                        Go Back
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
