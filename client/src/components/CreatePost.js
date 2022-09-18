@@ -86,15 +86,8 @@ function CreatePost() {
             <button
               type='submit'
               class='block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg'>
-              Sign in
+              Submit
             </button>
-
-            <p class='text-sm text-center text-gray-500'>
-              No account?
-              <a class='underline' href=''>
-                Sign up
-              </a>
-            </p>
           </form>
         </div>
       </div>

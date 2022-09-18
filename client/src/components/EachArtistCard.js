@@ -83,16 +83,16 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                     </div>
                   </div>
                   <div class='card-actions justify-end'>
-                    <button class='btn btn-secondary w-full'>
+                    <Link to='/createNewPost' class='btn btn-secondary w-full'>
                       I have tickets to sell
-                    </button>
-                    <button class='btn btn-secondary w-full'>
+                    </Link>
+                    <Link to='/createNewPost' class='btn btn-secondary w-full'>
                       I'm Looking For Tickets
-                    </button>
-                    <Link to='/artists' class='w-full'>
-                      <button class='btn btn-outline btn-secondary w-full'>
-                        Go Back
-                      </button>
+                    </Link>
+                    <Link
+                      to='/artists'
+                      class='btn btn-outline btn-secondary w-full'>
+                      Go Back
                     </Link>
                   </div>
                 </div>
