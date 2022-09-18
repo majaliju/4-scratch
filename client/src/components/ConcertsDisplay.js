@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 //TODO
 //^ need to configure the date properly for the shows
@@ -13,6 +14,11 @@ function ConcertsDisplay({
 }) {
   console.log('concerts: ', concerts);
   let navigate = useNavigate();
+
+  useEffect(() => {
+    setSearchTerm('');
+  }, [concerts]);
+
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
       <div class='form-control'>

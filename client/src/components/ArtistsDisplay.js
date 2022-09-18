@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from './Loading';
 
@@ -5,6 +6,10 @@ function ArtistsDisplay({ artists, genres, user, searchTerm, setSearchTerm }) {
   let navigate = useNavigate();
 
   console.log('artists within ArtistsDisplay: ', artists);
+
+  useEffect(() => {
+    setSearchTerm('');
+  }, [artists]);
 
   //* fix the search bar better to reset values once the app is exited
 

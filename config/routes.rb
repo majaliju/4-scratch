@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # get '/upcoming_shows', to: "artists#upcoming_shows"
 
 
+  ##~ FOR THE POSTS CREATION/EDITS/DELETION
+  post '/new_post', to: "posts#create"
 
   ##~ THE LOGIN/LOGOUT ROUTES
   #& to create a new user outright

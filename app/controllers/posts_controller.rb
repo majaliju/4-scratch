@@ -22,5 +22,19 @@ class PostsController < ApplicationController
     render json: post, status: 200
   end
 
+  def create
+    post = Post.create(new_post_params)
+
+    if post.valid? 
+      render json: post, status: 200
+    else
+      render json: user.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
+
+  def new_post_params
+    params.permit(:body, :for_sale, :how_many_tickets, :email, :concert_id, :user_id)
+  end
 
 end

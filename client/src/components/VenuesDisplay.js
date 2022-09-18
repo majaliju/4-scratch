@@ -1,7 +1,13 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function VenuesDisplay({ venues, user, searchTerm, setSearchTerm }) {
   let navigate = useNavigate();
+
+  useEffect(() => {
+    setSearchTerm('');
+  }, [venues]);
+
   return (
     <div class='bg-base-900 py-6 sm:py-8 lg:py-12'>
       <div class='form-control'>
