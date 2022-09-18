@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import EachUser from './EachUser';
 
 function IndividualPost({ eachPost, posts }) {
   const thisPost = posts.find(
     (post) => parseInt(eachPost.id) === parseInt(post.id)
   );
+
+  //* include the user and link to EachUser page, where each users Posts display
 
   //* do the thing where you can click the link and open up the email app
   //* stylize the app better as well
