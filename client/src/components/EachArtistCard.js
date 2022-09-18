@@ -3,6 +3,7 @@ import { Navigate, useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import IndividualPost from './IndividualPost';
 import Loading from './Loading';
+import CreatePost from './CreatePost';
 
 function EachArtistCard({ posts, setPosts, artists, concerts }) {
   let { id } = useParams();

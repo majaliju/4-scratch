@@ -11,6 +11,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import UsersPage from './UsersPage';
 import EachArtistCard from './EachArtistCard';
+import CreatePost from './CreatePost';
 
 function App() {
   const [user, setUser] = useState('');
@@ -181,6 +182,17 @@ function App() {
               user={user}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
+            />
+          }
+        />
+        <Route
+          path='/createNewPost'
+          element={
+            <CreatePost
+              user={user}
+              concerts={concerts}
+              venues={venues}
+              artists={artists}
             />
           }
         />

@@ -204,67 +204,187 @@ v52 = Venue.create({name: "Palacio de Bellas Artes", location: "Mexico City, Mex
 v53 = Venue.create({name: "House of Blues", location: "Boston, MA, USA", image: "/venues-images/house-of-blues-boston.jpg"})
 
 #* the concerts in the database
+
+#~ Adele
 c1 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a1.id, venue_id: v1.id})
+
+#~ John Legend
 c2 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a2.id, venue_id: v2.id})
+
+#~ Lil Uzi Vert
 c3 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a3.id, venue_id: v3.id})
+
+#~ Alicia Keys
 c4 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a4.id, venue_id: v4.id})
+
+#~ Brent Faiyaz
 c5 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a5.id, venue_id: v5.id})
+
+#~ Freddie Gibbs
 c6 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a6.id, venue_id: v6.id})
+
+#~ Ed Sheeran
 c7 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a7.id, venue_id: v7.id})
+
+#~ Chris Stapleton
 c8 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a8.id, venue_id: v8.id})
+
+#~ Lil Wayne
 c9 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a9.id, venue_id: v9.id})
+
+#~Bad Bunny
 c10 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a10.id, venue_id: v10.id})
+
+#~ Weeknd
 c11 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a11.id, venue_id: v11.id})
+
+#~ Doja Cat
 c12 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a12.id, venue_id: v12.id})
+
+#~ Dua Lipa
 c13 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a13.id, venue_id: v13.id})
+
+#~ Billie Eilish
 c14 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a14.id, venue_id: v14.id})
+
+#~ Lil Durk
 c15 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a15.id, venue_id: v15.id})
+
+#~ Giveon
 c16 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a16.id, venue_id: v16.id})
+
+#~ SZA
 c17 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a17.id, venue_id: v17.id})
+
+#~ Tyler the Creator
 c18 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a18.id, venue_id: v18.id})
+
+#~ Morgan Wallen
 c19 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a19.id, venue_id: v19.id})
+
+#~ Arctic Monkeys
 c20 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a20.id, venue_id: v20.id})
+
+#~ Red Hot Chili Peppers
 c21 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a21.id, venue_id: v21.id})
+
+#~ Sturgil Simpson
 c22 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a22.id, venue_id: v22.id})
+
+#~ Diplo
 c23 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a23.id, venue_id: v23.id})
+
+#~ My Chemical Romance
 c24 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a24.id, venue_id: v24.id})
+
+#~ Tiesto
 c25 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a25.id, venue_id: v25.id})
+
+#~ Jason Aldean
 c26 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a26.id, venue_id: v26.id})
+
+#~ Armin Van Buuren
 c27 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a27.id, venue_id: v27.id})
+
+#~ Calvin Harris
 c28 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a28.id, venue_id: v28.id})
+
+#~ Luke Combs
 c29 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a29.id, venue_id: v29.id})
+
+#~ Lilly Palmer
 c30 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a30.id, venue_id: v30.id})
+
+#~ Greta Van Fleet
 c31 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a31.id, venue_id: v31.id})
+
+#~ Cody Johnson
 c32 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a32.id, venue_id: v32.id})
+
+#~ Kodak Black
 c33 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a33.id, venue_id: v33.id})
+
+#~ Kali Uchis
 c34 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a34.id, venue_id: v34.id})
+
+#~ Maneskin
 c35 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a35.id, venue_id: v35.id})
+
+#~ Romeo Santos
 c36 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a36.id, venue_id: v36.id})
+
+#~ Tchami
 c37 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a37.id, venue_id: v37.id})
+
+#~ J Balvin
 c38 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a38.id, venue_id: v38.id})
+
+#~ Malaa
 c39 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a39.id, venue_id: v39.id})
+
+#~ Fall Out Boy
 c40 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a40.id, venue_id: v40.id})
 
+
 #* the posts in the database
-p1 = Post.create({body: "2 tickets, $100 total OBO", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c1.id})
+#~ Adele
+p1 = Post.create({body: "2 tickets, $100 total OBO -- CHEAPEST YOU'LL EVER FIND FOR ADELE!!", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c1.id})
+
+#~ John Legend
 p2 = Post.create({body: "Need 3 tickets badly! Willing to pay $400 total for 3 tix", for_sale: false, how_many_tickets: 3, user_id: u2.id, concert_id: c2.id})
-p3 = Post.create({body: "All 3 tickets together = $250, one ticket = $100", for_sale: true, how_many_tickets: 3, user_id: u3.id, concert_id: c3.id})
-p4 = Post.create({body: "My daughter loves him (dont ask), will pay up to $500 per ticket", for_sale: false, how_many_tickets: 2, user_id: u4.id, concert_id: c4.id})
-p5 = Post.create({body: "Email me with your best offer", for_sale: true, how_many_tickets: 1, user_id: u5.id, concert_id: c5.id})
+
+#~ Lil Uzi Vert
+p3 = Post.create({body: "All 3 tickets together = $250, one ticket = $100", for_sale: true, how_many_tickets: 3, user_id: u4.id, concert_id: c3.id})
+
+#~ Alicia Keys
+p4 = Post.create({body: "My daughter loves him (dont ask), will pay up to $500 per ticket", for_sale: false, how_many_tickets: 2, user_id: u4.id, concert_id: c3.id})
+
+#~ Brent Faiyaz
+p5 = Post.create({body: "Email me with your best offer. I'm open.", for_sale: true, how_many_tickets: 1, user_id: u5.id, concert_id: c5.id})
+
+#~ Freddie Gibbs
 p6 = Post.create({body: "TICKETS SOLD ONLY AS TRIO -- CONTACT FOR PRICE", for_sale: true, how_many_tickets: 3, user_id: u6.id, concert_id: c6.id})
+
+#~ Ed Sheeran
 p7 = Post.create({body: "I NEEEEEED TICKETS, PLEASE CONTACT ME AT 777-777-7777", for_sale: false, how_many_tickets: 2, user_id: u7.id, concert_id: c7.id})
+
+#~ Chris Stapleton
 p8 = Post.create({body: "best offer only! email me", for_sale: true, how_many_tickets: 2, user_id: u2.id, concert_id: c8.id})
+
+#~ Lil Wayne
+
+
+#~Bad Bunny
 p9 = Post.create({body: "each ticket is $65, only selling one a piece", for_sale: true, how_many_tickets: 3, user_id: u3.id, concert_id: c10.id})
+
+
+#~ Weeknd
 p10 = Post.create({body: "Selling both tickets together, email for price.", for_sale: true, how_many_tickets: 2, user_id: u4.id, concert_id: c11.id})
+p19 = Post.create({body: "I LOVE THE WEEKEND I NEED TICKETS PLEASE HMU!!!!!", for_sale: false, how_many_tickets: 1, user_id: u9.id, concert_id:c11.id})
+
+#~ Doja Cat
 p11 = Post.create({body: "Hey I'm looking for 3 tickets together! Willing to pay over $400 for all 3", for_sale: false, how_many_tickets: 3, user_id: u5.id, concert_id: c12.id})
+
+#~ Dua Lipa
 p12 = Post.create({body: "Hiii does anyone have 2 tickets together for this show?", for_sale: false, how_many_tickets: 2, user_id: u6.id, concert_id: c13.id})
+
+#~ Billie Eilish
 p13 = Post.create({body: "3 tix, $100+ each OBO hmu", for_sale: true, how_many_tickets: 3, user_id: u7.id, concert_id: c14.id})
 p14 = Post.create({body: "both tickets sold together only!", for_sale: true, how_many_tickets: 2, user_id: u1.id, concert_id: c14.id})
+
+#~ Lil Durk
 p15 = Post.create({body: "neeeeeed 2 tix, please lmk", for_sale: false, how_many_tickets: 2, user_id: u2.id, concert_id: c15.id})
+
+#~ Giveon
 p16 = Post.create({body: "looking for a ticket", for_sale: false, how_many_tickets: 1, user_id: u3.id, concert_id: c16.id})
+
+#~ SZA
 p17 = Post.create({body: "selling 2 tickets!! hmu for price", for_sale: true, how_many_tickets: 2, user_id: u4.id, concert_id: c17.id})
+
+#~ Tyler the Creator
 p18 = Post.create({body: "Hi I'm selling 4 tickets, altogether. No seperate tickets being sold. Contact me", for_sale: true, how_many_tickets: 4, user_id: u5.id, concert_id: c18.id})
-p19 = Post.create({body: "I LOVE THE WEEKEND I NEED TICKETS PLEASE HMU!!!!!", for_sale: false, how_many_tickets: 1, user_id: u9.id, concert_id:c11.id})
-p20 = Post.create({body: "Selling 6 tickets. Contact me via email ONLY", for_sale: true, how_many_tickets: 6, user_id: u23.id, concert_id: c19.id})
+
+#~ Morgan Wallen
+p20 = Post.create({body: "Selling 6 tickets. Contact me via email ONLY. TROLLS WILL BE BLOCKED", for_sale: true, how_many_tickets: 6, user_id: u23.id, concert_id: c19.id})
 
 puts "---------------------- Success!!"
