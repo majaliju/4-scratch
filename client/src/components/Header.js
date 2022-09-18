@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
   function handleLogout() {
@@ -37,30 +37,30 @@ function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
               tabindex='0'
               class='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-56'>
               <li>
-                <NavLink to='/artists'>
-                  <button class='uppercase font-bold'>artists</button>
+                <NavLink to='/artists' class='uppercase font-bold'>
+                  artists
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/venues'>
-                  <button class='uppercase font-bold'>venues</button>
+                <NavLink to='/venues' class='uppercase font-bold'>
+                  venues
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/genres'>
-                  <button class='uppercase font-bold'>genres</button>
+                <NavLink to='/genres' class='uppercase font-bold'>
+                  genres
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/concerts'>
-                  <button class='uppercase font-bold'>concerts</button>
+                <NavLink to='/concerts' class='uppercase font-bold'>
+                  concerts
                 </NavLink>
               </li>
               <div>
                 {user === null && (
                   <li>
                     <NavLink class='uppercase font-bold' to='/login'>
-                      <button class='uppercase font-bold'>login</button>
+                      login
                     </NavLink>
                   </li>
                 )}
@@ -81,12 +81,12 @@ function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
             </ul>
           </div>
           <div class='navbar-start'>
-            <div class='flex-auto p-4 '>
-              <NavLink to='/'>
-                <button class='btn btn-ghost normal-case active:bg-warning text-5xl'>
+            <div class='flex-auto p-4'>
+              <Link to='/'>
+                <h3 class='btn btn-secondary normal-case bg-transparent btn-outline  text-5xl'>
                   ticketblaster
-                </button>
-              </NavLink>
+                </h3>
+              </Link>
             </div>
           </div>
         </div>
@@ -95,23 +95,31 @@ function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
           <div class='flex-auto'>
             <ul class='menu menu-horizontal p-0'>
               <li>
-                <NavLink to='/artists'>
-                  <button class='uppercase font-bold'>artists</button>
+                <NavLink
+                  to='/artists'
+                  class='btn btn-primary uppercase font-bold'>
+                  <h3 class='uppercase font-bold'>artists</h3>
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/venues'>
-                  <button class='uppercase font-bold'>venues</button>
+                <NavLink
+                  to='/venues'
+                  class='btn btn-primary uppercase font-bold'>
+                  <h3 class='uppercase font-bold'>venues</h3>
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/genres'>
-                  <button class='uppercase font-bold'>genres</button>
+                <NavLink
+                  to='/genres'
+                  class='btn btn-primary uppercase font-bold'>
+                  <h3 class='uppercase font-bold'>genres</h3>
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/concerts'>
-                  <button class='uppercase font-bold'>concerts</button>
+                <NavLink
+                  to='/concerts'
+                  class='btn btn-primary uppercase font-bold'>
+                  <h3 class='uppercase font-bold'>concerts</h3>
                 </NavLink>
               </li>
             </ul>
@@ -123,7 +131,7 @@ function Header({ user, setUser, onLogin, onLogout, loggedIn }) {
               {user === '' && (
                 <li>
                   <NavLink class='uppercase font-bold' to='/login'>
-                    <button class='uppercase font-bold'>login</button>
+                    <h3 class='uppercase font-bold'>login</h3>
                   </NavLink>
                 </li>
               )}

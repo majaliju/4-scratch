@@ -44,9 +44,10 @@ function UsersPage({ user, sessionInfo, loggedIn }) {
                   The #1 place to find tickets or sell tickets directly to other
                   fans of your favorite artist!
                 </p>
-                <button class='btn btn-primary'>
-                  <Link to='/login'>Login or Sign Up to get started!</Link>
-                </button>
+
+                <Link to='/login' class='btn btn-primary'>
+                  Login or Sign Up to get started!
+                </Link>
               </div>
             </div>
           </div>

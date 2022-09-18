@@ -4,15 +4,11 @@ function CreatePost() {
       <div class='px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8'>
         <div class='max-w-lg mx-auto'>
           <h1 class='text-2xl font-bold text-center text-indigo-600 sm:text-3xl'>
-            Get started today
+            Easily post your tickets!
           </h1>
 
-          <p class='max-w-md mx-auto mt-4 text-center text-gray-500'>
-            Create a post!!
-          </p>
-
           <form action='' class='p-8 mt-6 mb-0 rounded-lg shadow-2xl space-y-4'>
-            <p class='text-lg font-medium'>Sign in to your account</p>
+            <p class='text-lg font-lg'>T</p>
 
             <div>
               <label for='body' class='text-sm font-medium'>
