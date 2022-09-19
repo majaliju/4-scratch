@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react';
 import UsersPage from './UsersPage';
 import EachArtistCard from './EachArtistCard';
 import CreatePost from './CreatePost';
+import Footer from './Footer';
 
 function App() {
   const [user, setUser] = useState('');
