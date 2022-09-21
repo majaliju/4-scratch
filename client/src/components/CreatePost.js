@@ -8,6 +8,8 @@ function CreatePost() {
   const [ticketAmount, setTicketAmount] = useState('');
   const [error, setError] = useState('');
 
+  console.log('ticketAmount: ', ticketAmount);
+
   function checkError(response) {
     if (response.status >= 200 && response.status <= 299) {
       return response.json();
@@ -49,23 +51,57 @@ function CreatePost() {
       <div class='px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8'>
         <div class='max-w-lg mx-auto'>
           <h1 class='text-2xl font-bold text-center text-indigo-600 sm:text-3xl'>
-            Easily post your tickets!
+            TICKET POST
           </h1>
 
-          <form class='p-8 mt-6 mb-0 rounded-lg shadow-2xl space-y-4'>
-            <select class='select select-ghost w-full '>
-              <option disabled selected>
-                Are you selling or requesting?
-              </option>
-              <option>I'm Selling Tickets</option>
-              <option>I'm Requesting Tickets</option>
-            </select>
+          <form class='p-8 mt-2 mb-0 rounded-lg shadow-2xl space-y-4'>
+            <div>
+              <fieldset>
+                <strong class='flex justify-center mb-6'>
+                  Are you selling tickets or looking to buy them?
+                </strong>
+
+                <div class='flex items-center mb-4'>
+                  <input
+                    id='requesting-tickets'
+                    type='radio'
+                    value='Selling!'
+                    class='h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300'
+                    aria-labelledby='requesting-tickets'
+                    aria-describedby='requesting-tickets'
+                    checked
+                  />
+                  <label
+                    for='requesting-tickets'
+                    class='text-sm font-medium text-gray-900 ml-2 block'>
+                    Selling!
+                  </label>
+                </div>
+                <div class='flex items-center mb-4'>
+                  <input
+                    id='selling-tickets'
+                    type='radio'
+                    value='Looking!'
+                    class='h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300'
+                    aria-labelledby='selling-tickets'
+                    aria-describedby='selling-tickets'
+                    checked
+                  />
+                  <label
+                    for='selling-tickets'
+                    class='text-md font-light text-bg-accent ml-2 block'>
+                    Looking!
+                  </label>
+                </div>
+              </fieldset>
+            </div>
             <div>
               <input
-                type='text'
-                id='selling'
-                value={selling}
-                placeholder='what price? best offer only? write all that here!'
+                type='number'
+                id='ticketAmount'
+                value={ticketAmount}
+                onChange={(e) => setTicketAmount(e.target.value)}
+                placeholder='how many tickets?'
                 class='input input-ghost w-full '
               />
             </div>
@@ -73,7 +109,10 @@ function CreatePost() {
             <div>
               <input
                 type='text'
-                placeholder='how many tickets are you selling/requesting?'
+                id='body'
+                value={body}
+                onChange={(e) => setBody(e.target.value)}
+                placeholder='write your message here! price, offers, etc'
                 class='input input-ghost w-full '
               />
             </div>
