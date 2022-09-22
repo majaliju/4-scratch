@@ -10,6 +10,12 @@ function CreatePost() {
 
   console.log('ticketAmount: ', ticketAmount);
 
+  const handleRadioChange = (e) => {
+    console.log("within handleRadioChange, e: ", e)
+    console.log("within handleRadioChange, e.target.value: ", e.target.value)
+    // setSelling(e.target.value);
+  };
+
   function checkError(response) {
     if (response.status >= 200 && response.status <= 299) {
       return response.json();
@@ -66,6 +72,7 @@ function CreatePost() {
                     id='requesting-tickets'
                     type='radio'
                     value='Selling!'
+                    checked={}
                     class='h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300'
                     aria-labelledby='requesting-tickets'
                     aria-describedby='requesting-tickets'
