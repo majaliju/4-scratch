@@ -18,7 +18,6 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
 
   useEffect(() => {
     if (thisArtist !== undefined) {
-      console.log('within useEffect, thisArtist: ', thisArtist);
       getPostType();
       getShows();
     }

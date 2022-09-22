@@ -3,16 +3,17 @@ import { useNavigate } from 'react-router-dom';
 
 function CreatePost() {
   const navigate = useNavigate();
-  const [selling, setSelling] = useState(true);
+  const [selling, setSelling] = useState(false);
   const [body, setBody] = useState('');
   const [ticketAmount, setTicketAmount] = useState('');
   const [error, setError] = useState('');
 
-  console.log('ticketAmount: ', ticketAmount);
+  //^ this state below is experimental, for dealing with checked
+  const [ticketType, setTicketType] = useState('');
 
   const handleRadioChange = (e) => {
-    console.log("within handleRadioChange, e: ", e)
-    console.log("within handleRadioChange, e.target.value: ", e.target.value)
+    console.log('within handleRadioChange, e.target.value: ', e.target.value);
+
     // setSelling(e.target.value);
   };
 
@@ -27,7 +28,7 @@ function CreatePost() {
     }
   }
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log('within the handleSubmit for form: ', e);
     // fetch('/new_post', {
@@ -50,7 +51,7 @@ function CreatePost() {
     //   })
     //   .catch((err) => console.log(err));
     // navigate(-1);
-  }
+  };
 
   return (
     <div>
@@ -71,33 +72,30 @@ function CreatePost() {
                   <input
                     id='requesting-tickets'
                     type='radio'
-                    value='Selling!'
-                    checked={}
+                    value='Looking'
+                    onChange={handleRadioChange}
+                    checked={ticketType === 'Looking'}
                     class='h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300'
-                    aria-labelledby='requesting-tickets'
-                    aria-describedby='requesting-tickets'
-                    checked
                   />
                   <label
                     for='requesting-tickets'
-                    class='text-sm font-medium text-gray-900 ml-2 block'>
-                    Selling!
+                    class='text-sm font-medium  ml-2 block'>
+                    Looking!
                   </label>
                 </div>
                 <div class='flex items-center mb-4'>
                   <input
                     id='selling-tickets'
                     type='radio'
-                    value='Looking!'
-                    class='h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300'
-                    aria-labelledby='selling-tickets'
-                    aria-describedby='selling-tickets'
-                    checked
+                    value='Selling'
+                    onChange={handleRadioChange}
+                    checked={ticketType === 'Selling'}
+                    class='h-4 w-4 border-gray-300 focus:ring-2 focus:ring-primary'
                   />
                   <label
                     for='selling-tickets'
                     class='text-md font-light text-bg-accent ml-2 block'>
-                    Looking!
+                    Selling!
                   </label>
                 </div>
               </fieldset>
