@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function CreatePost() {
   const navigate = useNavigate();
@@ -7,14 +7,11 @@ function CreatePost() {
   const [ticketAmount, setTicketAmount] = useState('');
   const [error, setError] = useState('');
 
-  //^ this state below is experimental, for dealing with checked
-  const [ticketType, setTicketType] = useState('');
-
-  const handleRadioChange = (e) => {
-    console.log('within handleRadioChange, e.target.value: ', e.target.value);
-
-    // setSelling(e.target.value);
-  };
+  const location = useLocation();
+  const data = location.state.isSelling;
+  let isSelling = data;
+  console.log('data: ', data);
+  console.log('isSelling: ', isSelling);
 
   function checkError(response) {
     if (response.status >= 200 && response.status <= 299) {
@@ -29,27 +26,26 @@ function CreatePost() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('within the handleSubmit for form: ', e);
-    // fetch('/new_post', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Access-Control-Allow-Origin': '*',
-    //   },
-    //   body: JSON.stringify({
-    //     body,
-    //     for_sale: selling,
-    //     how_many_tickets: ticketAmount,
-    //     concert_id: null,
-    //     user_id: null,
-    //   }),
-    // })
-    //   .then(checkError)
-    //   .then((item) => {
-    //     console.log(item);
-    //   })
-    //   .catch((err) => console.log(err));
-    // navigate(-1);
+    fetch('/new_post', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+      body: JSON.stringify({
+        body,
+        for_sale: isSelling,
+        how_many_tickets: ticketAmount,
+        concert_id: null,
+        user_id: null,
+      }),
+    })
+      .then(checkError)
+      .then((item) => {
+        console.log(item);
+      })
+      .catch((err) => console.log(err));
+    navigate(-1);
   };
 
   return (

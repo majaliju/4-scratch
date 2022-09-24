@@ -83,10 +83,16 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                   </div>
                   <div class='card-actions justify-end'>
                     {/* here is where I pass in a variable that says isSelling === true, or isSelling === false ; then that gets sent in the POST request as the true/false that corresponds */}
-                    <Link to='/createNewPost' class='btn btn-secondary w-full'>
+                    <Link
+                      to='/createNewPost'
+                      state={{ isSelling: true, userID: , concertID:  }}
+                      class='btn btn-secondary w-full'>
                       I have tickets to sell
                     </Link>
-                    <Link to='/createNewPost' class='btn btn-secondary w-full'>
+                    <Link
+                      to='/createNewPost'
+                      state={{ isSelling: false }}
+                      class='btn btn-secondary w-full'>
                       I'm Looking For Tickets
                     </Link>
                     <Link
