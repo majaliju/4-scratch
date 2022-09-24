@@ -11,6 +11,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import UsersPage from './UsersPage';
 import EachArtistCard from './EachArtistCard';
+import EachConcertCard from './EachConcertCard';
 import CreatePost from './CreatePost';
 import Footer from './Footer';
 
@@ -161,6 +162,18 @@ function App() {
               user={user}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
+            />
+          }
+        />
+        <Route
+          path='/concerts/:id'
+          element={
+            <EachConcertCard
+              artists={artists}
+              concerts={concerts}
+              posts={posts}
+              setPosts={setPosts}
+              user={user}
             />
           }
         />

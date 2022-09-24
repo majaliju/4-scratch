@@ -5,6 +5,8 @@ import IndividualPost from './IndividualPost';
 import Loading from './Loading';
 import CreatePost from './CreatePost';
 
+//* GOTTA ADJUST STYLING HERE TO FORM EVERYTHING IN THE CENTER CLEANLY
+
 function EachArtistCard({ posts, setPosts, artists, concerts }) {
   let { id } = useParams();
 
@@ -104,9 +106,13 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
               <h2 class='my-10 text-center text-5xl font-thin uppercase text-primary md:mb-6 lg:text-6xl'>
                 ALL POSTS
               </h2>
-              {thisArtist.posts.map((each) => (
-                <IndividualPost eachPost={each} posts={posts} />
-              ))}
+              {posts
+                .filter((post) => {
+                  post.artist.id === thisArtist.id;
+                })
+                .map((each) => (
+                  <IndividualPost eachPost={each} posts={posts} />
+                ))}
             </div>
             <div>
               <div class='mx-auto max-w-screen-xl px-4 md:px-8'>

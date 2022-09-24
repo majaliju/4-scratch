@@ -29,6 +29,9 @@ function IndividualPost({ eachPost, posts }) {
           <h2 class='mt-2 text-lg text-white'>{thisPost.body}</h2>
         </div>
         <h4 class='mt-2 text-lg text-white'>EMAIL: {thisPost.user.email}</h4>
+        <h4 class='mt-2 text-lg text-white'>
+          <Link to=''> LINK TO CONCERT: {thisPost.concert.id}</Link>
+        </h4>
       </div>
     </div>
   );
