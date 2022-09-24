@@ -37,12 +37,6 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
     thisArtist.concerts.map((each) => setUpcomingShows(upcomingShows + 1));
   }
 
-  //* fix the going-back function on this button
-  function handleGoBack(e) {
-    e.preventDefault();
-    Navigate(-1);
-  }
-
   // TODO
   //^ center the card in the middle of the page
 
@@ -85,7 +79,7 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                     {/* here is where I pass in a variable that says isSelling === true, or isSelling === false ; then that gets sent in the POST request as the true/false that corresponds */}
                     <Link
                       to='/createNewPost'
-                      state={{ isSelling: true, userID: , concertID:  }}
+                      state={{ isSelling: true }}
                       class='btn btn-secondary w-full'>
                       I have tickets to sell
                     </Link>
@@ -104,12 +98,14 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                 </div>
               </div>
             </div>
-            <h2 class='my-10 text-center text-5xl font-thin uppercase text-primary md:mb-6 lg:text-6xl'>
-              ALL POSTS
-            </h2>
-            {thisArtist.posts.map((each) => (
-              <IndividualPost eachPost={each} posts={posts} />
-            ))}
+            <div class='grid mx-40'>
+              <h2 class='my-10 text-center text-5xl font-thin uppercase text-primary md:mb-6 lg:text-6xl'>
+                ALL POSTS
+              </h2>
+              {thisArtist.posts.map((each) => (
+                <IndividualPost eachPost={each} posts={posts} />
+              ))}
+            </div>
           </div>
         ) : (
           <Loading />
