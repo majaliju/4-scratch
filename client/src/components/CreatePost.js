@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 function CreatePost() {
   const navigate = useNavigate();
-  const [selling, setSelling] = useState(false);
   const [body, setBody] = useState('');
   const [ticketAmount, setTicketAmount] = useState('');
   const [error, setError] = useState('');
@@ -62,44 +61,6 @@ function CreatePost() {
           </h1>
 
           <form class='p-8 mt-2 mb-0 rounded-lg shadow-2xl space-y-4'>
-            <div>
-              <fieldset>
-                <strong class='flex justify-center mb-6'>
-                  Are you selling tickets or looking to buy them?
-                </strong>
-
-                <div class='flex items-center mb-4'>
-                  <input
-                    id='requesting-tickets'
-                    type='radio'
-                    value='Looking'
-                    onChange={handleRadioChange}
-                    checked={ticketType === 'Looking'}
-                    class='h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300'
-                  />
-                  <label
-                    for='requesting-tickets'
-                    class='text-sm font-medium  ml-2 block'>
-                    Looking!
-                  </label>
-                </div>
-                <div class='flex items-center mb-4'>
-                  <input
-                    id='selling-tickets'
-                    type='radio'
-                    value='Selling'
-                    onChange={handleRadioChange}
-                    checked={ticketType === 'Selling'}
-                    class='h-4 w-4 border-gray-300 focus:ring-2 focus:ring-primary'
-                  />
-                  <label
-                    for='selling-tickets'
-                    class='text-md font-light text-bg-accent ml-2 block'>
-                    Selling!
-                  </label>
-                </div>
-              </fieldset>
-            </div>
             <div>
               <input
                 type='number'
