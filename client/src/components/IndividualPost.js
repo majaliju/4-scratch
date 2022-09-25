@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import EachUser from './EachUser';
+import { Link, useNavigate } from 'react-router-dom';
 
 function IndividualPost({ eachPost, posts }) {
+  let navigate = useNavigate();
+
   const thisPost = posts.find(
     (post) => parseInt(eachPost.id) === parseInt(post.id)
   );
@@ -30,7 +33,11 @@ function IndividualPost({ eachPost, posts }) {
         </div>
         <h4 class='mt-2 text-lg text-white'>EMAIL: {thisPost.user.email}</h4>
         <h4 class='mt-2 text-lg text-white'>
-          <Link to=''> LINK TO CONCERT: {thisPost.concert.id}</Link>
+          <button
+            class='btn btn-ghost btn-outline outline-black'
+            onClick={() => navigate(`/concerts/${thisPost.concert.id}`)}>
+            SEE CONCERT INFO
+          </button>
         </h4>
       </div>
     </div>

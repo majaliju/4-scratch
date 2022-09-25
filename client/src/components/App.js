@@ -157,6 +157,7 @@ function App() {
             <ConcertsDisplay
               concerts={concerts}
               artists={artists}
+              posts={posts}
               genres={genres}
               venues={venues}
               user={user}

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import IndividualPost from './IndividualPost';
 import Loading from './Loading';
 import CreatePost from './CreatePost';
+import EachConcertCard from './EachConcertCard';
 
 //* GOTTA ADJUST STYLING HERE TO FORM EVERYTHING IN THE CENTER CLEANLY
 
@@ -43,6 +44,7 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
 
   // TODO
   //^ center the card in the middle of the page
+  //* potentially remove I have tickets to sell and I'm looking for tickets
 
   return (
     <div>
@@ -81,7 +83,7 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                   </div>
                   <div class='card-actions justify-end'>
                     {/* here is where I pass in a variable that says isSelling === true, or isSelling === false ; then that gets sent in the POST request as the true/false that corresponds */}
-                    <Link
+                    {/* <Link
                       to='/createNewPost'
                       state={{ isSelling: true }}
                       class='btn btn-secondary w-full'>
@@ -92,7 +94,7 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                       state={{ isSelling: false }}
                       class='btn btn-secondary w-full'>
                       I'm Looking For Tickets
-                    </Link>
+                    </Link> */}
                     <Link
                       to='/artists'
                       class='btn btn-outline btn-secondary w-full'>
@@ -106,13 +108,9 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
               <h2 class='my-10 text-center text-5xl font-thin uppercase text-primary md:mb-6 lg:text-6xl'>
                 ALL POSTS
               </h2>
-              {posts
-                .filter((post) => {
-                  post.artist.id === thisArtist.id;
-                })
-                .map((each) => (
-                  <IndividualPost eachPost={each} posts={posts} />
-                ))}
+              {thisArtist.posts.map((each) => (
+                <IndividualPost eachPost={each} posts={posts} />
+              ))}
             </div>
             <div>
               <div class='mx-auto max-w-screen-xl px-4 md:px-8'>
@@ -130,50 +128,7 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                       }
                     })
                     .map((concert) => (
-                      <div>
-                        <div
-                          key={concert.id}
-                          class='card w-96 max-w-xs bg-neutral text-neutral-content shadow-xl'>
-                          <div class='card-body p-4 m-2 mx-0 items-center text-center'>
-                            <div class='avatar'>
-                              <div class='w-30 rounded'>
-                                <img
-                                  src={concert.artist.image}
-                                  alt='a small avatar of the concert'
-                                />
-                              </div>
-                            </div>
-                            <div class='avatar'>
-                              <div class='w-30 rounded'>
-                                <img
-                                  src={concert.venue.image}
-                                  alt='a small avatar of the concert'
-                                />
-                              </div>
-                            </div>
-                            <h1 class='card-title'>{concert.artist.name}</h1>
-                            <h2>{concert.venue.name}</h2>
-                            <h3>{concert.date}</h3>
-                            <div>
-                              <div class='badge badge-primary uppercase'>
-                                Z selling
-                              </div>
-                              <div class='badge badge-primary uppercase'>
-                                Z looking
-                              </div>
-                            </div>
-                            <div class='card-actions justify-end'>
-                              <button class='btn btn-secondary w-full'>
-                                I have tickets to sell
-                              </button>
-
-                              <button class='btn btn-secondary w-full'>
-                                I'm Looking For Tickets
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <EachConcertCard concert={concert} posts={posts} />
                     ))}
                 </div>
               </div>
