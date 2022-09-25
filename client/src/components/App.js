@@ -12,6 +12,8 @@ import { useState, useEffect } from 'react';
 import UsersPage from './UsersPage';
 import EachArtistCard from './EachArtistCard';
 import EachConcertCard from './EachConcertCard';
+import EachVenueCard from './EachVenueCard';
+import EachGenreCard from './EachGenreCard';
 import CreatePost from './CreatePost';
 import Footer from './Footer';
 
@@ -28,11 +30,10 @@ function App() {
   const [concerts, setConcerts] = useState([]);
   const [posts, setPosts] = useState([]);
 
-  const [showModal, setShowModal] = useState(false);
-
   //TODO
   //* break search button off into it's own component but fix the routing first to make it smooth
   //* create an error message for user not found on the Login component if a wrong user renders
+  //* clean up all the props once the app is finished
 
   useEffect(() => {
     fetch('/artists')
@@ -116,6 +117,7 @@ function App() {
           element={
             <UsersPage
               user={user}
+              posts={posts}
               cookies={cookies}
               sessionInfo={sessionInfo}
               loggedIn={loggedIn}
@@ -133,8 +135,6 @@ function App() {
               setPosts={setPosts}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
-              showModal={showModal}
-              setShowModal={setShowModal}
             />
           }
         />
@@ -190,9 +190,31 @@ function App() {
           }
         />
         <Route
+          path='/venues/:id'
+          element={
+            <EachVenueCard
+              venues={venues}
+              user={user}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
+          }
+        />
+        <Route
           path='/genres'
           element={
             <GenreDisplay
+              genres={genres}
+              user={user}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
+          }
+        />
+        <Route
+          path='/genres/:id'
+          element={
+            <EachGenreCard
               genres={genres}
               user={user}
               searchTerm={searchTerm}
