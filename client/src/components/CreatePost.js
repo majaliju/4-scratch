@@ -8,9 +8,8 @@ function CreatePost() {
   const [error, setError] = useState('');
 
   const location = useLocation();
-  const data = location.state.isSelling;
-  let isSelling = data;
-  console.log('data: ', data);
+  let isSelling = location.state.isSelling;
+
   console.log('isSelling: ', isSelling);
 
   function checkError(response) {
@@ -44,7 +43,7 @@ function CreatePost() {
       .then((item) => {
         console.log(item);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => setError(err));
     navigate(-1);
   };
 

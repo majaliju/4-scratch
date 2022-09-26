@@ -39,7 +39,7 @@ function EachConcertCard({ concert, posts, setPosts, artists, concerts }) {
 
   // TODO
   //^ center the card in the middle of the page
-  //* potentially remove I have tickets to sell and I'm looking for tickets
+  //* potentially add click links on artist's name and venue name
 
   return (
     <div>
@@ -52,7 +52,7 @@ function EachConcertCard({ concert, posts, setPosts, artists, concerts }) {
                   <div class='w-30 rounded'>
                     <img
                       src={concert.artist.image}
-                      alt='a small avatar of the music thisArtist'
+                      alt='a small avatar of the musical artist'
                     />
                   </div>
                 </div>
@@ -77,7 +77,6 @@ function EachConcertCard({ concert, posts, setPosts, artists, concerts }) {
                     </div>
                   </div>
                   <div class='card-actions justify-end'>
-                    {/* here is where I pass in a variable that says isSelling === true, or isSelling === false ; then that gets sent in the POST request as the true/false that corresponds */}
                     <Link
                       to='/createNewPost'
                       state={{ isSelling: true }}
@@ -90,11 +89,11 @@ function EachConcertCard({ concert, posts, setPosts, artists, concerts }) {
                       class='btn btn-secondary w-full'>
                       I'm Looking For Tickets
                     </Link>
-                    <Link
+                    {/* <Link
                       to='/concerts'
                       class='btn btn-outline btn-secondary w-full'>
                       Go Back
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>

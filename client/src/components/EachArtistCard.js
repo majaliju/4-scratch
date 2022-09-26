@@ -3,12 +3,11 @@ import { Navigate, useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import IndividualPost from './IndividualPost';
 import Loading from './Loading';
-import CreatePost from './CreatePost';
 import EachConcertCard from './EachConcertCard';
 
 //* GOTTA ADJUST STYLING HERE TO FORM EVERYTHING IN THE CENTER CLEANLY
 
-function EachArtistCard({ posts, setPosts, artists, concerts }) {
+function EachArtistCard({ posts, artists, concerts }) {
   let { id } = useParams();
 
   const thisArtist = artists.find(
@@ -70,7 +69,7 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                 <div class='card-body items-center text-center'>
                   <h2 class='card-title'>{thisArtist.name}</h2>
                   <p>
-                    There's {upcomingShows} upcoming concerts listed for{' '}
+                    There's {upcomingShows} upcoming concerts listed for
                     {thisArtist.name}!
                   </p>
                   <div>
@@ -82,19 +81,6 @@ function EachArtistCard({ posts, setPosts, artists, concerts }) {
                     </div>
                   </div>
                   <div class='card-actions justify-end'>
-                    {/* here is where I pass in a variable that says isSelling === true, or isSelling === false ; then that gets sent in the POST request as the true/false that corresponds */}
-                    {/* <Link
-                      to='/createNewPost'
-                      state={{ isSelling: true }}
-                      class='btn btn-secondary w-full'>
-                      I have tickets to sell
-                    </Link>
-                    <Link
-                      to='/createNewPost'
-                      state={{ isSelling: false }}
-                      class='btn btn-secondary w-full'>
-                      I'm Looking For Tickets
-                    </Link> */}
                     <Link
                       to='/artists'
                       class='btn btn-outline btn-secondary w-full'>
