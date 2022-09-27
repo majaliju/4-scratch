@@ -69,7 +69,7 @@ function EachArtistCard({ posts, artists, concerts }) {
                 <div class='card-body items-center text-center'>
                   <h2 class='card-title'>{thisArtist.name}</h2>
                   <p>
-                    There's {upcomingShows} upcoming concerts listed for
+                    There's {upcomingShows} upcoming concerts listed for{' '}
                     {thisArtist.name}!
                   </p>
                   <div>
