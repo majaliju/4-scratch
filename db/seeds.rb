@@ -203,7 +203,7 @@ v51 = Venue.create({name: "King Tuts Wah Wah Hut", location: "Glasgow, Scotland,
 v52 = Venue.create({name: "Palacio de Bellas Artes", location: "Mexico City, Mexico", image: "/venues-images/pallacio-mexico-city.jpg"})
 v53 = Venue.create({name: "House of Blues", location: "Boston, MA, USA", image: "/venues-images/house-of-blues-boston.jpg"})
 
-#* the concerts in the database
+#* the concerts in the database w/ their posts
 
 #~ Adele
 c1 = Concert.create({date: Faker::Date.between(from: '2023-01-01', to: '2024-05-25'), artist_id: a1.id, venue_id: v1.id})
